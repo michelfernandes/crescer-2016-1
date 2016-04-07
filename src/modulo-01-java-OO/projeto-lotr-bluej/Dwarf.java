@@ -18,7 +18,7 @@ public class Dwarf
     }
     
     public void anaoPerdeVida (){
-        if(status == Status.VIVO)this.vida = this.vida-10;
+        if(status != Status.MORTO)this.vida = this.vida-10;
         if(this.vida==0) status = Status.MORTO;
     }
     
