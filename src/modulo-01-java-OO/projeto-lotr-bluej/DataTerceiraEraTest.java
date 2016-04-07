@@ -9,8 +9,8 @@ import org.junit.Test;
 public class DataTerceiraEraTest
 {
     @Test
-    public void testar400SeEhBissexto(){
-        DataTerceiraEra ano = new DataTerceiraEra(12,12,400);
+    public void testar4000SeEhBissexto(){
+        DataTerceiraEra ano = new DataTerceiraEra(12,12,4000);
         assertEquals(true,ano.ehBissexto());
     }
     @Test
@@ -24,8 +24,8 @@ public class DataTerceiraEraTest
         assertEquals(false,ano.ehBissexto());
     }
     @Test
-    public void testar16SeEhBissexto(){
-        DataTerceiraEra ano = new DataTerceiraEra(12,12,16);
-        assertEquals(true,ano.ehBissexto());
+    public void testar3015SeEhBissexto(){
+        DataTerceiraEra ano = new DataTerceiraEra(12,12,3015);
+        assertEquals(false,ano.ehBissexto());
     }
 }
