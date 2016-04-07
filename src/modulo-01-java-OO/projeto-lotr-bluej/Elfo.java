@@ -22,7 +22,7 @@ public class Elfo
         this.nome = nome;
         //System.out.println(nome);
     }
-        public Elfo(String nome, int f)
+    public Elfo(String nome, int f)
     {
         // inicializa variáveis de instância
         this.nome = nome;
@@ -30,11 +30,11 @@ public class Elfo
         
     }
   
-    public void atirarFlecha(Dwarf flechada)
+    public void atirarFlecha(Dwarf anao)
     {
-            flechas--;
-            experiencia++;
-            flechada.anaoPerdeVida();
+        flechas--;
+        experiencia++;
+        anao.anaoPerdeVida();
     }
     
     public int getFlecha(){
@@ -46,7 +46,7 @@ public class Elfo
     }
     
      public String toString() {  
-        return (nome + " possui" + flechas + " flechas e" + experiencia + "niveis de experiência");  
+        return (nome + " possui " + flechas + " flechas e " + experiencia + " níveis de experiência");  
     }
 }
 

@@ -26,4 +26,12 @@ public class ElfoTest
         e1.atirarFlecha(d1);
         assertEquals(1,e1.getExp());
     }
+    @Test
+    public void testaToString()
+    {
+        Elfo e1 = new Elfo("legolas");
+        String esperado = ("legolas possui 42 flechas e 0 níveis de experiência");
+        assertEquals(esperado,e1.toString());
+        
+    }
 }
