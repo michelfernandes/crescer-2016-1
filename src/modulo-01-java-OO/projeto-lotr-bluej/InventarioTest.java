@@ -8,7 +8,7 @@ import org.junit.Test;
 public class InventarioTest
 {
     @Test
-    public void testaAdicionarUmItem(){
+    public void adicionarUmItem(){
         Inventario inv = new Inventario();
         Item i1 = new Item(5,"mandiocas");
         inv.adicionarItem(i1);
@@ -16,7 +16,7 @@ public class InventarioTest
         assertEquals("mandiocas",i1.getDescricao());
     }
     @Test
-    public void testaRemoverUmItem(){
+    public void removerUmItem(){
         Inventario inv = new Inventario();
         Item i1 = new Item(5,"mandiocas");
         inv.adicionarItem(i1);
