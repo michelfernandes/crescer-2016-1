@@ -101,7 +101,42 @@ public class DwarfTest
         Dwarf d1 = new Dwarf("Bon jovi");
         Item i1 = new Item(1, "marmita");
         d1.adicionarItem(i1);
-
         assertEquals(i1, d1.getInventario().getLista().get(0));
+    }@Test
+    public void anaoEstaComSorte() {
+        DataTerceiraEra data = new DataTerceiraEra(2,12,2016);
+        Dwarf d1 = new Dwarf("Bon jovi",data);
+        Item i1 = new Item(5, "balde");
+        d1.adicionarItem(i1);
+        d1.anaoPerdeVida();
+        d1.anaoPerdeVida();
+        d1.anaoPerdeVida();
+        d1.tentarSorte();
+        assertEquals(1005,d1.getInventario().getLista().get(0).getQuantidade());
+    }
+    @Test
+    public void anaoEstaComMaisSorte() {
+        DataTerceiraEra data = new DataTerceiraEra(2,12,2016);
+        Dwarf d1 = new Dwarf("Bon jovi",data);
+        Item i1 = new Item(5, "balde");
+        Item i2 = new Item(7, "bergamota");
+        d1.adicionarItem(i1);
+        d1.adicionarItem(i2);
+        d1.anaoPerdeVida();
+        d1.anaoPerdeVida();
+        d1.anaoPerdeVida();
+        d1.tentarSorte();
+        assertEquals(1005,d1.getInventario().getLista().get(0).getQuantidade());
+        assertEquals(1007,d1.getInventario().getLista().get(1).getQuantidade());
+    }
+    @Test
+    public void anaoNaoEstaComSorte() {
+        DataTerceiraEra data = new DataTerceiraEra(2,12,2015);
+        Dwarf d1 = new Dwarf("Bon jovi",data);
+        Item i1 = new Item(5, "balde");
+        d1.adicionarItem(i1);
+        d1.anaoPerdeVida();
+        d1.tentarSorte();
+        assertEquals(5,d1.getInventario().getLista().get(0).getQuantidade());
     }
 }
