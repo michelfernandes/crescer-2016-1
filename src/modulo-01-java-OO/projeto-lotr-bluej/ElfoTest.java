@@ -31,7 +31,13 @@ public class ElfoTest
     {
         Elfo e1 = new Elfo("legolas");
         String esperado = ("legolas possui 42 flechas e 0 níveis de experiência");
-        assertEquals(esperado,e1.toString());
-        
+        assertEquals(esperado,e1.toString());   
+    }
+    @Test
+    public void testaToStringCom2Flechas()
+    {
+        Elfo e1 = new Elfo("jao",2);
+        String esperado = ("jao possui 2 flechas e 0 níveis de experiência");
+        assertEquals(esperado,e1.toString());   
     }
 }

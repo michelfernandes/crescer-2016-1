@@ -9,6 +9,7 @@ public class Dwarf
     // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
     private String nome;
     private int vida=110;
+    private Status status = Status.VIVO;
     
     public Dwarf(){
     }
@@ -17,7 +18,8 @@ public class Dwarf
     }
     
     public void anaoPerdeVida (){
-        this.vida = this.vida-10;
+        if(status != Status.MORTO)this.vida = this.vida-10;
+        if(this.vida==0) status = Status.MORTO;
     }
     
     public void setNome(String novoNome){
@@ -30,5 +32,9 @@ public class Dwarf
     
     public int getVida(){
         return this.vida;
+    }
+    
+    public Status getStatus(){
+        return status;        
     }
 }

@@ -25,11 +25,6 @@ public class DataTerceiraEra
         return ano;
     }
     public boolean ehBissexto(){
-        if(ano%400==0){
-            return true;
-        }else if(ano%4==0 && ano%100!=0){
-            return true;
-        }
-        return false;
+        return this.ano%400 == 0 || this.ano%4 == 0 && this.ano%100 !=0 ;
     }
 }

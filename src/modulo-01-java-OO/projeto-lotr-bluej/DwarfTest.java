@@ -19,4 +19,45 @@ public class DwarfTest
         anao.anaoPerdeVida();
         assertEquals(100,anao.getVida());
     }
+    
+    @Test
+    public void dwarfNasceVivo(){
+        Dwarf d1 = new Dwarf();
+        assertEquals(Status.VIVO,d1.getStatus());
+    }
+    
+    @Test
+    public void dwarfMorre(){
+        Dwarf d1 = new Dwarf();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        assertEquals(Status.MORTO,d1.getStatus());
+    }
+    @Test
+    public void dwarfMorreENaoFicaComVidaNegativa(){
+        Dwarf d1 = new Dwarf();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        d1.anaoPerdeVida ();
+        assertEquals(0,d1.getVida());
+    }
 }
