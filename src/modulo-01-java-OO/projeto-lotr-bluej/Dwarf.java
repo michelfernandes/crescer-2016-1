@@ -54,6 +54,14 @@ public class Dwarf
         return dataNascimento.getAno();
     }
     
-    //public double getNumeroSorte
+    public double getNumeroSorte(){
+        if(dataNascimento.ehBissexto()==true && this.vida>=80 && this.vida<=90){
+            return (-33*101.0);        
+        }
+        if(dataNascimento.ehBissexto()==false && this.nome=="Seixas" || this.nome=="Meireles"){
+            return (101*33)%100;        
+        }
+        return 101.0;
+    }
     
 }

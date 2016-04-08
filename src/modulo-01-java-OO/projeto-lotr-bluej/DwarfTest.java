@@ -49,4 +49,12 @@ public class DwarfTest
         assertEquals(1,d1.getMes());
         assertEquals(1,d1.getAno());
     }
+    @Test
+    public void nasceComDataTerceiEraAtribuida(){
+        DataTerceiraEra data = new DataTerceiraEra(2,12,2013);
+        Dwarf d1 = new Dwarf("Pedro Pipoca",data);
+        assertEquals(2,d1.getDia());
+        assertEquals(12,d1.getMes());
+        assertEquals(2013,d1.getAno());
+    }
 }
