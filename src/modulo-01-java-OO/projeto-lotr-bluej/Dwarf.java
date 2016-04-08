@@ -52,6 +52,10 @@ public class Dwarf
         return status;        
     }
     
+    public int getExperiencia(){
+        return this.experiencia;
+    }
+    
     public int getDia(){
         return dataNascimento.getDia();
     }
