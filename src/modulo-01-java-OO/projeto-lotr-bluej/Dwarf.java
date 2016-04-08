@@ -10,11 +10,17 @@ public class Dwarf
     private String nome;
     private int vida=110;
     private Status status = Status.VIVO;
+    private Inventario inv = new Inventario();
+    private DataTerceiraEra dataNascimento = new DataTerceiraEra(1,1,1);
     
     public Dwarf(){
     }
     public Dwarf(String nome){
-       this.nome=nome;     
+        this.nome=nome;     
+    }
+    public Dwarf(String nome, DataTerceiraEra data){
+        this.dataNascimento=data;
+        this.nome=nome;     
     }
     
     public void anaoPerdeVida (){
@@ -37,4 +43,17 @@ public class Dwarf
     public Status getStatus(){
         return status;        
     }
+    
+    public int getDia(){
+        return dataNascimento.getDia();
+    }
+    public int getMes(){
+        return dataNascimento.getMes();
+    }
+    public int getAno(){
+        return dataNascimento.getAno();
+    }
+    
+    //public double getNumeroSorte
+    
 }

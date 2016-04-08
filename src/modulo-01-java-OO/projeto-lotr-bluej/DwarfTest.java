@@ -29,35 +29,24 @@ public class DwarfTest
     @Test
     public void dwarfMorre(){
         Dwarf d1 = new Dwarf();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
+        for(int i=0;i<12;i++){
+            d1.anaoPerdeVida ();
+        }
         assertEquals(Status.MORTO,d1.getStatus());
     }
     @Test
     public void dwarfMorreENaoFicaComVidaNegativa(){
         Dwarf d1 = new Dwarf();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
-        d1.anaoPerdeVida ();
+        for(int i=0;i<14;i++){
+            d1.anaoPerdeVida ();
+        }
         assertEquals(0,d1.getVida());
+    }
+    @Test
+    public void nasceComDataTerceiEraPadrao(){
+        Dwarf d1 = new Dwarf("Pedro Pipoca");
+        assertEquals(1,d1.getDia());
+        assertEquals(1,d1.getMes());
+        assertEquals(1,d1.getAno());
     }
 }
