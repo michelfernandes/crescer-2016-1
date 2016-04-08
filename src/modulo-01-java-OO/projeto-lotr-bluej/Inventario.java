@@ -15,4 +15,13 @@ public class Inventario
     public ArrayList getLista(){
         return lista;
     }
+    
+    public String getDescricoesItens(){
+        String itens="";
+        for(int i=0;i<lista.size();i++){
+            if(i==lista.size()-1)itens += lista.get(i).getDescricao();
+            else itens += lista.get(i).getDescricao()+",";
+        }
+        return itens;
+    }
 }

@@ -22,5 +22,31 @@ public class InventarioTest
         inv.adicionarItem(i1);
         inv.removerItem(i1);
         assertFalse(inv.getLista().contains(i1));
+    }@Test
+    public void pegarDescricaoSemItem(){
+        Inventario inv = new Inventario();
+        assertEquals("",inv.getDescricoesItens());
+    }
+    @Test
+    public void pegarDescricao2Item(){
+        Inventario inv = new Inventario();
+        Item i1 = new Item(5,"mandioca");
+        Item i2 = new Item(5,"flecha");
+        inv.adicionarItem(i1);
+        inv.adicionarItem(i2);
+        assertEquals("mandioca,flecha",inv.getDescricoesItens());
+    }
+    @Test
+    public void pegarDescricao4Item(){
+        Inventario inv = new Inventario();
+        Item i1 = new Item(5,"mandioca");
+        Item i2 = new Item(5,"flecha");
+        Item i3 = new Item(5,"marmita");
+        Item i4 = new Item(5,"gelo");
+        inv.adicionarItem(i1);
+        inv.adicionarItem(i2);
+        inv.adicionarItem(i3);
+        inv.adicionarItem(i4);
+        assertEquals("mandioca,flecha,marmita,gelo",inv.getDescricoesItens());
     }
 }
