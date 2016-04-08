@@ -57,15 +57,16 @@ public class DwarfTest
         assertEquals(12,d1.getMes());
         assertEquals(2013,d1.getAno());
     }
-    /*@Test
+    @Test
     public void testaNumeroDaSorteEmAnoBissextoEVida90(){
         DataTerceiraEra data = new DataTerceiraEra(2,12,2016);
         Dwarf d1 = new Dwarf("Pedro Pipoca",data);
+        double esperado=(-33*101.0);
         d1.anaoPerdeVida();
         d1.anaoPerdeVida();
         d1.anaoPerdeVida();
-        assertEquals(-3333,d1.getNumeroSorte());
-    }*/
+        assertEquals(esperado,d1.getNumeroSorte(),0.001);
+    }
     @Test
     public void anaoPerdeVidaComAnoBissextoE90DeVida(){
         DataTerceiraEra data = new DataTerceiraEra(2,12,2016);
