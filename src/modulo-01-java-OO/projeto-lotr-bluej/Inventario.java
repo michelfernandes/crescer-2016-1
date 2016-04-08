@@ -12,7 +12,7 @@ public class Inventario
         lista.remove(item);
     }
     
-    public ArrayList getLista(){
+    public ArrayList<Item> getLista(){
         return lista;
     }
     
