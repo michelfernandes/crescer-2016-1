@@ -90,8 +90,7 @@ public class Dwarf
     public void tentarSorte(){
         if(-3333.0 == getNumeroSorte()){
             for(int i=0;i<inv.getLista().size();i++){
-                int q = inv.getLista().get(i).getQuantidade();
-                this.inv.getLista().get(i).setQuantidade(q);
+                this.inv.getLista().get(i).adiciona1000();
             }
         }
     }
