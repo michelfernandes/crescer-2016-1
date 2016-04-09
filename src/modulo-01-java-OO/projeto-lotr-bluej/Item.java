@@ -18,5 +18,8 @@ public class Item
     public String getDescricao(){
         return this.descricao;
     }
-
+    
+    public void setQuantidade(int quantidade){
+        this.quantidade = quantidade + 1000;
+    }
 }

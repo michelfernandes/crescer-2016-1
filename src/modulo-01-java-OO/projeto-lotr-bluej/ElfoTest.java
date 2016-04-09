@@ -15,14 +15,14 @@ public class ElfoTest
     @Test
     public void testaFlechaEmAtirarFlecha(){
         Elfo e1 = new Elfo("elfo");
-        Dwarf d1 = new Dwarf();
+        Dwarf d1 = new Dwarf("jao");
         e1.atirarFlecha(d1);
         assertEquals(41,e1.getFlecha());
     }
     @Test
     public void testaExpEmAtirarFlecha(){
         Elfo e1 = new Elfo("elfo");
-        Dwarf d1 = new Dwarf();
+        Dwarf d1 = new Dwarf("jao");
         e1.atirarFlecha(d1);
         assertEquals(1,e1.getExp());
     }

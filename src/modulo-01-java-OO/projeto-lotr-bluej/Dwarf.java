@@ -13,19 +13,17 @@ public class Dwarf
     private Inventario inv = new Inventario();
     private DataTerceiraEra dataNascimento = new DataTerceiraEra(1,1,1);
     
-    public Dwarf(){
-    }
+    
     public Dwarf(String nome){
         this.nome=nome;     
     }
     public Dwarf(String nome, DataTerceiraEra data){
-        this.dataNascimento=data;
-        this.nome=nome;     
+        this(nome); 
+        this.dataNascimento=data;    
     }
     
     public void anaoPerdeVida (){
         double a = getNumeroSorte();
-        
         if(a<0){
             this.experiencia += 2;
         }else if(a<=100){
@@ -66,14 +64,35 @@ public class Dwarf
         return dataNascimento.getAno();
     }
     
+    public Inventario getInventario(){
+        return this.inv;
+    }
+    
+    public void adicionarItem(Item item) {
+        this.inv.adicionarItem(item);
+    }
+
+    public void perderItem(Item item) {
+        this.inv.removerItem(item);
+    }
+    
     public double getNumeroSorte(){
         if(dataNascimento.ehBissexto()==true && this.vida>=80 && this.vida<=90){
             return (-33*101.0);        
         }
-        if(dataNascimento.ehBissexto()==false && this.nome=="Seixas" || this.nome=="Meireles"){
+        if(dataNascimento.ehBissexto()==false && this.nome != null &&
+        (this.nome.equals("Seixas") || this.nome.equals("Meireles"))){
             return (101*33)%100;        
         }
         return 101.0;
     }
     
+    public void tentarSorte(){
+        if(-3333.0 == getNumeroSorte()){
+            for(int i=0;i<inv.getLista().size();i++){
+                int q = inv.getLista().get(i).getQuantidade();
+                this.inv.getLista().get(i).setQuantidade(q);
+            }
+        }
+    }
 }

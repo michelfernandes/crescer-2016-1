@@ -3,11 +3,6 @@ public class Inventario
 {
     // instance variables - replace the example below with your own
     private  ArrayList<Item> lista = new ArrayList<>();
-    
-    public Inventario()
-    {
-        
-    }
 
     public void adicionarItem(Item item){
         lista.add(item);
@@ -17,7 +12,28 @@ public class Inventario
         lista.remove(item);
     }
     
-    public ArrayList getLista(){
+    public ArrayList<Item> getLista(){
         return lista;
+    }
+    
+    public String getDescricoesItens(){
+        String itens="";
+        for(int i=0;i<lista.size();i++){
+            if(i==lista.size()-1)itens += lista.get(i).getDescricao();
+            else itens += lista.get(i).getDescricao()+",";
+        }
+        return itens;
+    }
+    
+    public Item getItemPopular(){
+        int x,maior=0,ind=0;
+        for (int i=0;i<lista.size();i++){
+            x=lista.get(i).getQuantidade();
+            if(x>maior){
+                maior=x;
+                ind=i;
+            }
+        }
+        return lista.get(ind);
     }
 }
