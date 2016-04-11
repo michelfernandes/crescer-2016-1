@@ -24,7 +24,7 @@ public class ElfoTest
         Elfo e1 = new Elfo("elfo");
         Dwarf d1 = new Dwarf("jao");
         e1.atirarFlecha(d1);
-        assertEquals(1,e1.getExp());
+        assertEquals(1,e1.getExperiencia());
     }
     @Test
     public void testaToString()

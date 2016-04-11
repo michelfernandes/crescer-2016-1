@@ -5,30 +5,22 @@
  * @author (seu nome) 
  * @version (número de versão ou data)
  */
-public class Elfo
+public class Elfo extends Personagem
 {
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private String nome;
-    private int experiencia;
     private int flechas = 42;
-    protected Inventario inv = new Inventario();
 
     /**
      * COnstrutor para objetos da classe Elfo
      */
     public Elfo(String nome)
     {
-        // inicializa variáveis de instância
-        //this.nome refere-se a variável
-        this.nome = nome;
-        //System.out.println(nome);
+        super(nome);
     }
+    
     public Elfo(String nome, int f)
     {
-        // inicializa variáveis de instância
-        this.nome = nome;
+        super(nome);
         flechas = f;
-        
     }
   
     public void atirarFlecha(Dwarf anao)
@@ -42,16 +34,10 @@ public class Elfo
         return this.flechas;
     }
     
-    public int getExp(){
-        return this.experiencia;
-    }
-    
      public String toString() {  
         return String.format("%s possui %d flechas e %d níveis de experiência" ,this.nome,this.flechas,this.experiencia);  
     }
     
-    public Inventario getInventario(){
-        return this.inv;
-    }
+    
 }
 

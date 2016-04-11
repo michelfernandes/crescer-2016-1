@@ -4,21 +4,18 @@
  * @author (seu nome) 
  * @version (número de versão ou data)
  */
-public class Dwarf
+public class Dwarf extends Personagem
 {
     // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private String nome;
-    private int vida=110,experiencia=0;
+    private int vida=110;
     private Status status = Status.VIVO;
-    protected Inventario inv = new Inventario();
     private DataTerceiraEra dataNascimento = new DataTerceiraEra(1,1,1);
     
-    
     public Dwarf(String nome){
-        this.nome=nome;     
+        super(nome);  
     }
     public Dwarf(String nome, DataTerceiraEra data){
-        this(nome); 
+        super(nome); 
         this.dataNascimento=data;    
     }
     
@@ -34,24 +31,12 @@ public class Dwarf
         }
     }
     
-    public void setNome(String novoNome){
-        this.nome=novoNome;
-    }
-    
-    public String getNome(){
-        return this.nome;
-    }
-    
     public int getVida(){
         return this.vida;
     }
     
     public Status getStatus(){
         return status;        
-    }
-    
-    public int getExperiencia(){
-        return this.experiencia;
     }
     
     public int getDia(){
@@ -62,18 +47,6 @@ public class Dwarf
     }
     public int getAno(){
         return dataNascimento.getAno();
-    }
-    
-    public Inventario getInventario(){
-        return this.inv;
-    }
-    
-    public void adicionarItem(Item item) {
-        this.inv.adicionarItem(item);
-    }
-
-    public void perderItem(Item item) {
-        this.inv.removerItem(item);
     }
     
     public double getNumeroSorte(){
