@@ -36,4 +36,17 @@ public class Inventario
         }
         return lista.get(ind);
     }
+    
+    public void ordenarItens(){
+        Item aux;
+        for(int j=0;j<lista.size()-1;j++){
+            for (int i=0;i<lista.size()-1;i++){
+                if(lista.get(i).getQuantidade() > lista.get(i+1).getQuantidade()){
+                    aux=lista.get(i);
+                    lista.set(i,lista.get(i+1));
+                    lista.set(i+1,aux);
+                }            
+            }
+        }
+    }
 }

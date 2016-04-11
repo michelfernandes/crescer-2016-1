@@ -1,10 +1,11 @@
+
 /**
  * Escreva a descrição da classe Dwarf aqui.
  * 
  * @author (seu nome) 
  * @version (número de versão ou data)
  */
-public class Dwarf
+public class IrishDwarf
 {
     // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
     private String nome;
@@ -14,10 +15,10 @@ public class Dwarf
     private DataTerceiraEra dataNascimento = new DataTerceiraEra(1,1,1);
     
     
-    public Dwarf(String nome){
+    public IrishDwarf(String nome){
         this.nome=nome;     
     }
-    public Dwarf(String nome, DataTerceiraEra data){
+    public IrishDwarf(String nome, DataTerceiraEra data){
         this(nome); 
         this.dataNascimento=data;    
     }
@@ -90,7 +91,7 @@ public class Dwarf
     public void tentarSorte(){
         if(-3333.0 == getNumeroSorte()){
             for(int i=0;i<inv.getLista().size();i++){
-                this.inv.getLista().get(i).adiciona1000();
+                this.inv.getLista().get(i).irishSorte();
             }
         }
     }

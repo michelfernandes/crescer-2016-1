@@ -19,7 +19,15 @@ public class Item
         return this.descricao;
     }
     
-    public void setQuantidade(int quantidade){
-        this.quantidade = quantidade + 1000;
+    public void adiciona1000(){
+        this.quantidade = this.quantidade + 1000;
+    }
+    
+    public void irishSorte(){
+        int soma = 0;
+        for(int i=1;i<=this.quantidade;i++){
+            soma += i;
+        }
+        this.quantidade = this.quantidade + soma*1000;
     }
 }
