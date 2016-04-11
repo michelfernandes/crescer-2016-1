@@ -64,7 +64,18 @@ public class HobbitContadorTest
     @Test
     public void obtemMultiplosDeTresAte1(){
         HobbitContador contador = new HobbitContador();
-        ArrayList<Integer> multiplos = contador.obterMultiplosDeTresAte(10);
+        ArrayList<Integer> multiplos = contador.obterMultiplosDeTresAte(1);
         assertEquals(0,multiplos.get(0).intValue());
+    }
+    @Test
+    public void obtemMultiplosDeTresAte15(){
+        HobbitContador contador = new HobbitContador();
+        ArrayList<Integer> multiplos = contador.obterMultiplosDeTresAte(15);
+        assertEquals(0,multiplos.get(0).intValue());
+        assertEquals(3,multiplos.get(1).intValue());
+        assertEquals(6,multiplos.get(2).intValue());
+        assertEquals(9,multiplos.get(3).intValue());
+        assertEquals(12,multiplos.get(4).intValue());
+        assertEquals(15,multiplos.get(5).intValue());
     }
 }

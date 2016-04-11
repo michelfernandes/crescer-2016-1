@@ -31,9 +31,10 @@ public class HobbitContador
       // Não é necessário o uso de array apenas INT
       int maior = 0;
       int limite = numero; // Declarar variavel limite
-      for (int i = 0; i <= limite; i++) { //Deve começar do 0
+      for (int i = limite; i >= 0; i--) { 
           if (i % 3 == 0) {
               maior = i;
+              break;
           }
       }
       return maior; // Deve retornar um inteiro e não um Array
