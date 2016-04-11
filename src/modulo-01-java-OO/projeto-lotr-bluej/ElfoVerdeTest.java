@@ -40,4 +40,31 @@ public class ElfoVerdeTest
         assertEquals(2,e1.getExperiencia());
         assertEquals(6,e1.getFlecha());
     }
+    @Test
+    public void adicionarEspadaValiriana(){
+        ElfoVerde e1 = new ElfoVerde("Jorge",7);
+        Item i1 = new Item(1,"Espada de aço valiriano");
+        e1.adicionarItem(i1);
+        assertEquals(i1,e1.getInventario().getLista().get(0));
+    }
+    @Test
+    public void adicionarArcoDeVidro(){
+        ElfoVerde e1 = new ElfoVerde("Jorge",7);
+        Item i1 = new Item(1,"Arco e Flecha de Vidro");
+        e1.adicionarItem(i1);
+        assertEquals(i1,e1.getInventario().getLista().get(0));
+    }
+    @Test
+    public void adicionarOutrosItens(){
+        ElfoVerde e1 = new ElfoVerde("Jorge",7);
+        Item i1 = new Item(1,"Arco e Flecha de Vidro");
+        Item i2 = new Item(1,"Alfajor");
+        Item i3 = new Item(1,"Espada de aço valiriano");
+        e1.adicionarItem(i1);
+        e1.adicionarItem(i2);
+        e1.adicionarItem(i3);
+        assertEquals(i1,e1.getInventario().getLista().get(0));
+        assertEquals(i3,e1.getInventario().getLista().get(1));
+    }
+    
 }
