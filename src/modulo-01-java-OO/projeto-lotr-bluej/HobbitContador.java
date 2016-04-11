@@ -8,7 +8,6 @@ import java.util.*;
 public class HobbitContador
 {
     // instance variables - replace the example below with your own
-    //private ArrayList<ArrayList<Integer>> arrayDePares = new ArrayList<>();
     
     public int calcularDiferenca(ArrayList<ArrayList<Integer>> arrayDePares){
         int a,b,resto,mmc;
@@ -26,6 +25,18 @@ public class HobbitContador
             soma = soma + (produto - mmc); 
         }
         return soma;
+    }
+    
+    public int obterMaiorMultiploDeTresAte(int numero) {
+      // Não é necessário o uso de array apenas INT
+      int maior = 0;
+      int limite = numero; // Declarar variavel limite
+      for (int i = 1; i <= limite; i++) {
+          if (i % 3 == 0) {
+              maior = i;
+          }
+      }
+      return maior; // Deve retornar um inteiro e não um Array
     }
 
 }
