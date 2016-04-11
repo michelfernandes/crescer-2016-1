@@ -7,7 +7,7 @@
  */
 public class Elfo extends Personagem
 {
-    private int flechas = 42;
+    public int flechas = 42;
 
     /**
      * COnstrutor para objetos da classe Elfo
