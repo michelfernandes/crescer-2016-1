@@ -11,6 +11,7 @@ public class Elfo
     private String nome;
     private int experiencia;
     private int flechas = 42;
+    protected Inventario inv = new Inventario();
 
     /**
      * COnstrutor para objetos da classe Elfo
@@ -47,6 +48,10 @@ public class Elfo
     
      public String toString() {  
         return String.format("%s possui %d flechas e %d níveis de experiência" ,this.nome,this.flechas,this.experiencia);  
+    }
+    
+    public Inventario getInventario(){
+        return this.inv;
     }
 }
 
