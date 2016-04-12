@@ -43,4 +43,32 @@ public class ElfoTest
         String esperado = ("jao possui 2 flechas e 0 níveis de experiência");
         assertEquals(esperado,e1.toString());   
     }
+    @Test
+    public void conta3Elfos(){
+        int totalElfo = Elfo.contadorElfo;
+        Elfo e1 = new Elfo("jao");
+        Elfo e2 = new Elfo("jorge");
+        Elfo e3 = new Elfo("joe");
+        totalElfo = Elfo.contadorElfo - totalElfo;
+        assertEquals(3,totalElfo);
+    }
+    @Test
+    public void conta5Elfos(){
+        int totalElfo = Elfo.contadorElfo;
+        Elfo e1 = new Elfo("jao");
+        Elfo e2 = new Elfo("jorge");
+        Elfo e3 = new Elfo("joe");
+        Elfo e4 = new Elfo("jair");
+        Elfo e5 = new Elfo("joao");
+        totalElfo = Elfo.contadorElfo - totalElfo;
+        assertEquals(5,totalElfo);
+    }
+    @Test
+    public void contUm2ElfosNoturnosEUmElfoVerde(){
+        int totalElfo = Elfo.contadorElfo;
+        Elfo e1 = new ElfoNoturno("jao");
+        Elfo e2 = new ElfoVerde("gil");
+        totalElfo = Elfo.contadorElfo - totalElfo;
+        assertEquals(2,totalElfo);
+    }
 }
