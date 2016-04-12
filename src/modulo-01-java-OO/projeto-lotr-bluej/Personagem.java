@@ -5,6 +5,7 @@ public class Personagem
     protected int experiencia;
     protected Inventario inv = new Inventario();
     protected Status status = Status.VIVO;
+    protected int vida;
     
     public Personagem (String nome){
         this.nome=nome;
@@ -32,5 +33,9 @@ public class Personagem
     
     public Status getStatus(){
         return this.status;        
+    }
+    
+    public int getVida(){
+        return this.vida;
     }
 }
