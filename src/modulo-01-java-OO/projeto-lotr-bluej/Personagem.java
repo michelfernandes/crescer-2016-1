@@ -1,10 +1,11 @@
 
 public class Personagem
 {
-    // instance variables - replace the example below with your own
     protected String nome;
     protected int experiencia;
     protected Inventario inv = new Inventario();
+    protected Status status = Status.VIVO;
+    protected double vida;
     
     public Personagem (String nome){
         this.nome=nome;
@@ -28,5 +29,13 @@ public class Personagem
     
     public String getNome(){
         return this.nome;
+    }
+    
+    public Status getStatus(){
+        return this.status;        
+    }
+    
+    public double getVida(){
+        return this.vida;
     }
 }

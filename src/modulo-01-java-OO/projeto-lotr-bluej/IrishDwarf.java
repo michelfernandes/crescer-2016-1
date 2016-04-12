@@ -1,14 +1,6 @@
 
-/**
- * Escreva a descrição da classe Dwarf aqui.
- * 
- * @author (seu nome) 
- * @version (número de versão ou data)
- */
 public class IrishDwarf extends Dwarf
 {
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    
     public IrishDwarf(String nome){
         super(nome);
     }

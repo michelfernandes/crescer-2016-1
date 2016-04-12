@@ -1,13 +1,6 @@
 
-/**
- * Write a description of class DataTerceiraEra here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class DataTerceiraEra
 {
-    // instance variables - replace the example below with your own
     private int dia,mes,ano;
     
     public DataTerceiraEra(int dia, int mes, int ano){

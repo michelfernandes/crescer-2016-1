@@ -1,22 +1,16 @@
-/**
- * Escreva a descrição da classe Dwarf aqui.
- * 
- * @author (seu nome) 
- * @version (número de versão ou data)
- */
+
 public class Dwarf extends Personagem
 {
-    // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
-    private int vida=110;
-    private Status status = Status.VIVO;
     private DataTerceiraEra dataNascimento = new DataTerceiraEra(1,1,1);
     
     public Dwarf(String nome){
-        super(nome);  
+        super(nome);
+        vida=110;
     }
     public Dwarf(String nome, DataTerceiraEra data){
         super(nome); 
-        this.dataNascimento=data;    
+        this.dataNascimento=data;
+        vida=110;
     }
     
     public void anaoPerdeVida (){
@@ -29,14 +23,6 @@ public class Dwarf extends Personagem
             if(status != Status.MORTO)this.vida = this.vida-10;
             if(this.vida==0) status = Status.MORTO;
         }
-    }
-    
-    public int getVida(){
-        return this.vida;
-    }
-    
-    public Status getStatus(){
-        return status;        
     }
     
     public int getDia(){

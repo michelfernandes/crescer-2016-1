@@ -1,10 +1,4 @@
 
-/**
- * Write a description of class ElfoVerde here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class ElfoVerde extends Elfo
 {
     public ElfoVerde(String nome)
@@ -20,9 +14,8 @@ public class ElfoVerde extends Elfo
     
     public void atirarFlecha(Dwarf anao)
     {
-        flechas--;
-        experiencia += 2;
-        anao.anaoPerdeVida();
+        super.atirarFlecha(anao);
+        experiencia++;
     }
     
     public void adicionarItem(Item item) {

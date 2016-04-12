@@ -1,5 +1,3 @@
-
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -11,6 +9,11 @@ public class ElfoTest
     public void inicioFlecha(){
         Elfo e1 = new Elfo("elfo");
         assertEquals(42,e1.getFlecha());
+    }
+    @Test
+    public void inicioVida(){
+        Elfo e1 = new Elfo("elfo");
+        assertEquals(100,e1.getVida(),0.001);
     }
     @Test
     public void testaFlechaEmAtirarFlecha(){
