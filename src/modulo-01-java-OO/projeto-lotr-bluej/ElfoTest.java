@@ -15,7 +15,7 @@ public class ElfoTest
     @Test
     public void inicioVida(){
         Elfo e1 = new Elfo("elfo");
-        assertEquals(100,e1.getVida());
+        assertEquals(100,e1.getVida(),0.001);
     }
     @Test
     public void testaFlechaEmAtirarFlecha(){
