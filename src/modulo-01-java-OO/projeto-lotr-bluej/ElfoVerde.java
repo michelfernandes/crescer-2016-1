@@ -14,9 +14,8 @@ public class ElfoVerde extends Elfo
     
     public void atirarFlecha(Dwarf anao)
     {
-        flechas--;
-        experiencia += 2;
-        anao.anaoPerdeVida();
+        super.atirarFlecha(anao);
+        experiencia++;
     }
     
     public void adicionarItem(Item item) {
