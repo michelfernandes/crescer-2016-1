@@ -25,4 +25,16 @@ public class ItemTest
         i1.irishSorte();
         assertEquals(28007,i1.getQuantidade());
     }
+    @Test
+    public void umItemIgualAoOutro(){
+        Item i1 = new Item(1,"melao");
+        Item i2 = new Item(1,"melao");
+        assertEquals(i1,i2);
+    }
+    @Test
+    public void umItemDiferenteDoOutro(){
+        Item i1 = new Item(1,"melao");
+        Item i2 = new Item(1,"pato");
+        assertFalse(i1.equals(i2));
+    }
 }

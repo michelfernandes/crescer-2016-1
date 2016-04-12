@@ -29,4 +29,9 @@ public class Item
         }
         this.quantidade = this.quantidade + soma*1000;
     }
+    
+    public boolean equals(Object obj){
+        Item outro = (Item)obj;
+        return outro.getQuantidade()==this.quantidade && this.descricao!=null && outro!=null && outro.getDescricao()==this.descricao;
+    }
 }
