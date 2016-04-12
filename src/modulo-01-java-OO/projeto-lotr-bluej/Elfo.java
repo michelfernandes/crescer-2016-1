@@ -7,11 +7,9 @@
  */
 public class Elfo extends Personagem
 {
-    public int flechas = 42;
-
-    /**
-     * COnstrutor para objetos da classe Elfo
-     */
+    protected int flechas = 42;
+    protected int vida=100;
+    
     public Elfo(String nome)
     {
         super(nome);
@@ -38,6 +36,9 @@ public class Elfo extends Personagem
         return String.format("%s possui %d flechas e %d níveis de experiência" ,this.nome,this.flechas,this.experiencia);  
     }
     
+    public int getVida(){
+        return this.vida;
+    }
     
 }
 

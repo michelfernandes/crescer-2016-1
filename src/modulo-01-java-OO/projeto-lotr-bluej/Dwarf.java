@@ -8,7 +8,6 @@ public class Dwarf extends Personagem
 {
     // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
     private int vida=110;
-    private Status status = Status.VIVO;
     private DataTerceiraEra dataNascimento = new DataTerceiraEra(1,1,1);
     
     public Dwarf(String nome){
@@ -31,14 +30,6 @@ public class Dwarf extends Personagem
         }
     }
     
-    public int getVida(){
-        return this.vida;
-    }
-    
-    public Status getStatus(){
-        return status;        
-    }
-    
     public int getDia(){
         return dataNascimento.getDia();
     }
@@ -47,6 +38,10 @@ public class Dwarf extends Personagem
     }
     public int getAno(){
         return dataNascimento.getAno();
+    }
+    
+    public int getVida(){
+        return this.vida;
     }
     
     public double getNumeroSorte(){

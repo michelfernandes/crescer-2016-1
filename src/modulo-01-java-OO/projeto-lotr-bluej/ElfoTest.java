@@ -13,6 +13,11 @@ public class ElfoTest
         assertEquals(42,e1.getFlecha());
     }
     @Test
+    public void inicioVida(){
+        Elfo e1 = new Elfo("elfo");
+        assertEquals(100,e1.getVida());
+    }
+    @Test
     public void testaFlechaEmAtirarFlecha(){
         Elfo e1 = new Elfo("elfo");
         Dwarf d1 = new Dwarf("jao");
