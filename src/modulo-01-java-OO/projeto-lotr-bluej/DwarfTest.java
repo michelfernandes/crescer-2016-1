@@ -10,14 +10,14 @@ public class DwarfTest
     @Test
     public void inicioVida(){
         Dwarf anao = new Dwarf("Ma");
-        assertEquals(110,anao.getVida());
+        assertEquals(110,anao.getVida(),0.001);
     }
     
     @Test
     public void perderVida(){
         Dwarf anao = new Dwarf("s");
         anao.anaoPerdeVida();
-        assertEquals(100,anao.getVida());
+        assertEquals(100,anao.getVida(),0.001);
     }
     
     @Test
@@ -40,7 +40,7 @@ public class DwarfTest
         for(int i=0;i<14;i++){
             d1.anaoPerdeVida ();
         }
-        assertEquals(0,d1.getVida());
+        assertEquals(0,d1.getVida(),0.001);
     }
     @Test
     public void nasceComDataTerceiEraPadrao(){
@@ -85,7 +85,7 @@ public class DwarfTest
         d1.anaoPerdeVida();
         d1.anaoPerdeVida();
         assertEquals(2,d1.getExperiencia());
-        assertEquals(90,d1.getVida());
+        assertEquals(90,d1.getVida(),0.001);
     }
     public void anaoPerdeVidaSemAnoBissextoENomeSeixas(){
         DataTerceiraEra data = new DataTerceiraEra(2,12,2015);
@@ -94,7 +94,7 @@ public class DwarfTest
         d1.anaoPerdeVida();
         d1.anaoPerdeVida();
         assertEquals(0,d1.getExperiencia());
-        assertEquals(110,d1.getVida());
+        assertEquals(110,d1.getVida(),0.001);
     }
     @Test
     public void adicionarItemNoAnao() {
