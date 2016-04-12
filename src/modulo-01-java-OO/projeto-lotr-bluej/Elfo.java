@@ -1,10 +1,4 @@
 
-/**
- * Escreva a descrição da classe Elfo aqui.
- * 
- * @author (seu nome) 
- * @version (número de versão ou data)
- */
 public class Elfo extends Personagem
 {
     protected int flechas = 42;
@@ -39,6 +33,5 @@ public class Elfo extends Personagem
     public int getVida(){
         return this.vida;
     }
-    
 }
 

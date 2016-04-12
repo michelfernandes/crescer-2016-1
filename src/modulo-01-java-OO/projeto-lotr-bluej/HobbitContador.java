@@ -7,8 +7,6 @@ import java.util.*;
  */
 public class HobbitContador
 {
-    // instance variables - replace the example below with your own
-    
     public int calcularDiferenca(ArrayList<ArrayList<Integer>> arrayDePares){
         int a,b,resto,mmc;
         int soma=0,produto=0;

@@ -1,9 +1,4 @@
-/**
- * Escreva a descrição da classe Dwarf aqui.
- * 
- * @author (seu nome) 
- * @version (número de versão ou data)
- */
+
 public class Dwarf extends Personagem
 {
     // variáveis de instância - substitua o exemplo abaixo pelo seu próprio
