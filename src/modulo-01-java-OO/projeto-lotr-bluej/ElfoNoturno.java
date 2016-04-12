@@ -20,8 +20,8 @@ public class ElfoNoturno extends Elfo
     
     public void atirarFlecha(Dwarf anao)
     {
-        // ElfoNoturno nunca morre pois matematicamente o valor nunca chegará a exatamente 0.
-        vida -= vida*0.05;
+        if(status != Status.MORTO)this.vida -= this.vida*0.05;;
+        if(this.vida==0) status = Status.MORTO;
         flechas--;
         experiencia += 3;
         anao.anaoPerdeVida();

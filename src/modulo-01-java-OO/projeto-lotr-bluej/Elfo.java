@@ -8,7 +8,7 @@
 public class Elfo extends Personagem
 {
     protected int flechas = 42;
-    protected double vida=100;
+    protected int vida=100;
     
     public Elfo(String nome)
     {
@@ -36,7 +36,7 @@ public class Elfo extends Personagem
         return String.format("%s possui %d flechas e %d níveis de experiência" ,this.nome,this.flechas,this.experiencia);  
     }
     
-    public double getVida(){
+    public int getVida(){
         return this.vida;
     }
     

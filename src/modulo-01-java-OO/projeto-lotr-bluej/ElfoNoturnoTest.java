@@ -12,7 +12,7 @@ public class ElfoNoturnoTest
         ElfoNoturno e1 = new ElfoNoturno("Pelégolas");
         Dwarf d1 = new Dwarf("Sofrencio");
         e1.atirarFlecha(d1);
-        assertEquals(95,e1.getVida(),0.001);
+        assertEquals(95,e1.getVida());
     }
     @Test
     public void atirar2Flechas(){
@@ -20,7 +20,7 @@ public class ElfoNoturnoTest
         Dwarf d1 = new Dwarf("Sofrencio");
         e1.atirarFlecha(d1);
         e1.atirarFlecha(d1);
-        assertEquals(90.25,e1.getVida(),0.001);
+        assertEquals(90,e1.getVida());
     }
     @Test
     public void atirar3Flechas(){
@@ -29,6 +29,16 @@ public class ElfoNoturnoTest
         e1.atirarFlecha(d1);
         e1.atirarFlecha(d1);
         e1.atirarFlecha(d1);
-        assertEquals(85.7375,e1.getVida(),0.001);
+        assertEquals(85,e1.getVida());
+    }
+    @Test
+    public void atirarFlechasAteMorrer(){
+        ElfoNoturno e1 = new ElfoNoturno("Pelégolas");
+        Dwarf d1 = new Dwarf("Sofrencio");
+        for(int i=0;i<45;i++){
+            e1.atirarFlecha(d1);
+        }
+        assertEquals(0,e1.getVida());
+        assertEquals(Status.MORTO,e1.getStatus());
     }
 }
