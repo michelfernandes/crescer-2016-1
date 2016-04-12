@@ -31,4 +31,14 @@ public class ElfoNoturnoTest
         e1.atirarFlecha(d1);
         assertEquals( 85.7375,e1.getVida(),0.001);
     }
+    @Test
+    public void atirarFlechasAteMorrer(){
+        ElfoNoturno e1 = new ElfoNoturno("Pelégolas");
+        Dwarf d1 = new Dwarf("Sofrencio");
+        for(int i=0;i<90;i++){
+            e1.atirarFlecha(d1);
+        }
+        //assertEquals(0,e1.getVida(),0.001);
+        assertEquals(Status.MORTO,e1.getStatus());
+    }
 }
