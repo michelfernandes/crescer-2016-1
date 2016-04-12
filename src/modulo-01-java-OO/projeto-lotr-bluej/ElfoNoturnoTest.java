@@ -38,7 +38,23 @@ public class ElfoNoturnoTest
         for(int i=0;i<90;i++){
             e1.atirarFlecha(d1);
         }
-        //assertEquals(0,e1.getVida(),0.001);
+        assertEquals(0,(int)e1.getVida());
         assertEquals(Status.MORTO,e1.getStatus());
+    }
+    @Test
+    public void ganhar3PontosDeExperiencia(){
+        ElfoNoturno e1 = new ElfoNoturno("Pelégolas");
+        Dwarf d1 = new Dwarf("Sofrencio");
+        e1.atirarFlecha(d1);
+        assertEquals(3,e1.getExperiencia());
+    }
+    @Test
+    public void ganhar9PontosDeExperiencia(){
+        ElfoNoturno e1 = new ElfoNoturno("Pelégolas");
+        Dwarf d1 = new Dwarf("Sofrencio");
+        e1.atirarFlecha(d1);
+        e1.atirarFlecha(d1);
+        e1.atirarFlecha(d1);
+        assertEquals(9,e1.getExperiencia());
     }
 }
