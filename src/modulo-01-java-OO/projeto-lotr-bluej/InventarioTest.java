@@ -106,4 +106,44 @@ public class InventarioTest
         inv.ordenarItens();
         assertEquals(i1,inv.getLista().get(0));
     }
+    @Test
+    public void criaInventariosComDoisItensIguais(){
+        Inventario inv1 = new Inventario();
+        Inventario inv2 = new Inventario();
+        Item i1 = new Item(5,"mandioca");
+        Item i2 = new Item(3,"pepino");
+        inv1.adicionarItem(i1);
+        inv1.adicionarItem(i2);
+        inv2.adicionarItem(i1);
+        inv2.adicionarItem(i2);
+        assertEquals(inv1,inv2);
+    }
+    @Test
+    public void criaInventariosComUmItemIgual(){
+        Inventario inv1 = new Inventario();
+        Inventario inv2 = new Inventario();
+        Item i1 = new Item(55,"mamao papaia");
+        inv1.adicionarItem(i1);
+        inv2.adicionarItem(i1);
+        assertEquals(inv1,inv2);
+    }
+    @Test
+    public void criaInventariosSemNenhumItem(){
+        Inventario inv1 = new Inventario();
+        Inventario inv2 = new Inventario();
+        assertEquals(inv1,inv2);
+    }
+    @Test
+    public void criaInventariosComUmItemIgualEUmDiferente(){
+        Inventario inv1 = new Inventario();
+        Inventario inv2 = new Inventario();
+        Item i1 = new Item(2,"banana caturra");
+        Item i2 = new Item(5,"mandioca");
+        Item i3 = new Item(3,"pepino");
+        inv1.adicionarItem(i1);
+        inv2.adicionarItem(i1);
+        inv1.adicionarItem(i2);
+        inv2.adicionarItem(i3);
+        assertFalse(inv1.equals(inv2));
+    }
 }

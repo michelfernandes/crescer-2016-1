@@ -48,4 +48,15 @@ public class Inventario
             }
         }
     }
+    
+    public boolean equals(Object obj){
+        Inventario inv = (Inventario)obj;
+        if(this.lista.size() != inv.getLista().size())
+            return false;
+        for (int i=0; i<this.lista.size();i++){
+            if(!this.lista.get(i).equals(inv.getLista().get(i)))
+                return false;
+        }
+        return true;
+    }
 }
