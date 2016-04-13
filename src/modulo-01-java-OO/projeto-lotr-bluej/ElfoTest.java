@@ -52,7 +52,7 @@ public class ElfoTest
         Elfo e1 = new Elfo("jao");
         Elfo e2 = new Elfo("jorge");
         Elfo e3 = new Elfo("joe");
-        assertEquals(3,Elfo.contadorElfo);
+        assertEquals(3,Elfo.getContadorElfo());
     }
     @Test
     public void conta5Elfos(){
@@ -61,16 +61,16 @@ public class ElfoTest
         Elfo e3 = new Elfo("joe");
         Elfo e4 = new Elfo("jair");
         Elfo e5 = new Elfo("joao");
-        assertEquals(5,Elfo.contadorElfo);
+        assertEquals(5,Elfo.getContadorElfo());
     }
     @Test
     public void contaUmElfoNoturnosEUmElfoVerde(){
         Elfo e1 = new ElfoNoturno("jao");
         Elfo e2 = new ElfoVerde("gil");
-        assertEquals(2,Elfo.contadorElfo);
+        assertEquals(2,Elfo.getContadorElfo());
     }
     @Test
     public void conta0Elfos(){
-        assertEquals(0,Elfo.contadorElfo);
+        assertEquals(0,Elfo.getContadorElfo());
     }    
     }

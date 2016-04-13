@@ -2,7 +2,7 @@
 public class Elfo extends Personagem
 {
     protected int flechas = 42;
-    protected static int contadorElfo=0;
+    private static int contadorElfo=0;
     
     public Elfo(String nome)
     {
@@ -34,6 +34,10 @@ public class Elfo extends Personagem
     protected void finalize() throws Throwable {
         Elfo.contadorElfo--;
         super.finalize();
+    }
+    
+    public static int getContadorElfo(){
+        return contadorElfo;
     }
 }
 
