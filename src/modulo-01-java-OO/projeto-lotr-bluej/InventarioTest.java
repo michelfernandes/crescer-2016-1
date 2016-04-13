@@ -146,4 +146,16 @@ public class InventarioTest
         inv2.adicionarItem(i3);
         assertFalse(inv1.equals(inv2));
     }
+    @Test
+    public void itensIguaisEmPosicoesDiferentes(){
+        Inventario inv1 = new Inventario();
+        Inventario inv2 = new Inventario();
+        Item i1 = new Item(2,"banana caturra");
+        Item i2 = new Item(5,"mandioca");
+        inv1.adicionarItem(i1);
+        inv2.adicionarItem(i2);
+        inv1.adicionarItem(i2);
+        inv2.adicionarItem(i1);
+        assertTrue(inv1.equals(inv2));
+    }
 }

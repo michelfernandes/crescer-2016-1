@@ -54,7 +54,11 @@ public class Inventario
         if(this.lista.size() != inv.getLista().size())
             return false;
         for (int i=0; i<this.lista.size();i++){
-            if(!this.lista.get(i).equals(inv.getLista().get(i)))
+            if(!this.lista.contains(inv.getLista().get(i)))
+                return false;
+        }
+        for (int i=0; i<this.lista.size();i++){
+            if(!inv.getLista().contains(this.lista.get(i)))
                 return false;
         }
         return true;
