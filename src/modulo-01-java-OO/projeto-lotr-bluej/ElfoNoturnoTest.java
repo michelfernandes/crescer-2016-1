@@ -7,6 +7,10 @@ import org.junit.Test;
 
 public class ElfoNoturnoTest
 {
+    @After
+    public void gc() {
+        System.gc();
+    }
     @Test
     public void atirarUmaFlecha(){
         ElfoNoturno e1 = new ElfoNoturno("Pelégolas");

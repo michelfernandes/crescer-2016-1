@@ -5,7 +5,11 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class ElfoVerdeTest
-{
+{   
+    @After
+    public void gc() {
+        System.gc();
+    }
     @Test
     public void atirarUmaFlecha(){
         ElfoVerde e1 = new ElfoVerde("Jorge");
