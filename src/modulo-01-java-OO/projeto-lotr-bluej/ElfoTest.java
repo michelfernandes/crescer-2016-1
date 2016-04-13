@@ -5,6 +5,10 @@ import org.junit.Test;
 
 public class ElfoTest
 {
+    @After
+    public void gc() {
+        System.gc();
+    }
     @Test
     public void inicioFlecha(){
         Elfo e1 = new Elfo("elfo");
@@ -45,30 +49,28 @@ public class ElfoTest
     }
     @Test
     public void conta3Elfos(){
-        int totalElfo = Elfo.contadorElfo;
         Elfo e1 = new Elfo("jao");
         Elfo e2 = new Elfo("jorge");
         Elfo e3 = new Elfo("joe");
-        totalElfo = Elfo.contadorElfo - totalElfo;
-        assertEquals(3,totalElfo);
+        assertEquals(3,Elfo.contadorElfo);
     }
     @Test
     public void conta5Elfos(){
-        int totalElfo = Elfo.contadorElfo;
         Elfo e1 = new Elfo("jao");
         Elfo e2 = new Elfo("jorge");
         Elfo e3 = new Elfo("joe");
         Elfo e4 = new Elfo("jair");
         Elfo e5 = new Elfo("joao");
-        totalElfo = Elfo.contadorElfo - totalElfo;
-        assertEquals(5,totalElfo);
+        assertEquals(5,Elfo.contadorElfo);
     }
     @Test
-    public void contUm2ElfosNoturnosEUmElfoVerde(){
-        int totalElfo = Elfo.contadorElfo;
+    public void contaUmElfoNoturnosEUmElfoVerde(){
         Elfo e1 = new ElfoNoturno("jao");
         Elfo e2 = new ElfoVerde("gil");
-        totalElfo = Elfo.contadorElfo - totalElfo;
-        assertEquals(2,totalElfo);
+        assertEquals(2,Elfo.contadorElfo);
     }
-}
+    @Test
+    public void conta0Elfos(){
+        assertEquals(0,Elfo.contadorElfo);
+    }    
+    }

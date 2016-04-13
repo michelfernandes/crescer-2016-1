@@ -30,5 +30,10 @@ public class Elfo extends Personagem
      public String toString() {  
         return String.format("%s possui %d flechas e %d níveis de experiência" ,this.nome,this.flechas,this.experiencia);  
     }
+    
+    protected void finalize() throws Throwable {
+        Elfo.contadorElfo--;
+        super.finalize();
+    }
 }
 
