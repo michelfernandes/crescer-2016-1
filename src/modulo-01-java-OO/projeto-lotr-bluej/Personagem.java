@@ -38,4 +38,14 @@ public abstract class Personagem
     public double getVida(){
         return this.vida;
     }
+    
+    public boolean equals(Object obj){
+        Personagem personagem = (Personagem)obj;
+        if( vida != personagem.getVida() || experiencia != personagem.getExperiencia() ||
+        !inv.equals(personagem.getInventario()) || !nome.equals(personagem.getNome())|| 
+        !status.equals(personagem.getStatus())){
+            return false;
+        }
+        return true;
+    }
 }
