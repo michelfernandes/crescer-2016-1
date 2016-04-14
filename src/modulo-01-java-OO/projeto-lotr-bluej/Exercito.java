@@ -11,12 +11,7 @@ public class Exercito
     }
     
     public Elfo buscaNome(String nome){
-        for(Map.Entry<String,Elfo> chaveValor : exercito.entrySet()){
-            if(chaveValor.getKey().equals(nome)){
-                return chaveValor.getValue();
-            }
-        }
-        return null;
+        return exercito.get(nome);
     }
     
     public HashMap<String,Elfo> getExercito(){
@@ -46,12 +41,6 @@ public class Exercito
     }
     
     public ArrayList<Elfo> buscar(Status status){
-        if (status==Status.VIVO){
-            return exercitoPorStatus.get(Status.VIVO);
-        }else if(status==Status.MORTO){
-            return exercitoPorStatus.get(Status.MORTO);
-        }else{
-            return exercitoPorStatus.get(Status.INCONSCIENTE);
-        }
+        return exercitoPorStatus.get(status);
     }
 }
