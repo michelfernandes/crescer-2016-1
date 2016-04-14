@@ -2,7 +2,27 @@ import java.util.*;
 public class DicionarioSindarin
 {
     public static void main(String[] args){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("\n\n\n\nEscolha a linguagem: ");
+        System.out.println("[P]ortuguês [I]nglês");
+        String idioma = scanner.nextLine();
+        TradutorSindarin tradutor = criarTradutor(idioma);
+        String palavra = scanner.nextLine();
+        System.out.println(palavra + " significa " + tradutor.traduzir(palavra));
         // rodarExemplosHashMap();
+    }
+    
+    private static TradutorSindarin criarTradutor(String idioma){
+        TradutorSindarin tradutor = null;
+        switch (idioma.toLowerCase()){
+            case "i":
+                tradutor = new SindarinParaIngles();
+            break;
+            default:
+                tradutor = new SindarinParaPortugues();
+            break;
+        }
+        return tradutor; 
     }
     
     private static void rodarExemplosHashMap(){
