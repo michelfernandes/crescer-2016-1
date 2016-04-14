@@ -132,4 +132,30 @@ public class ExercitoTest
         assertEquals(e1,ex.buscar(Status.MORTO).get(0));
         assertEquals(e2,ex.buscar(Status.MORTO).get(1));
     }
+    @Test
+    public void agrupaPorStatusDuasVezes(){
+        Exercito exercito = new Exercito();
+        Elfo e1 = new ElfoNoturno("Ranger",120);
+        Elfo e2 = new ElfoNoturno("Nopturne",120);
+        Elfo e3 = new ElfoNoturno("Legolas",120);
+        Elfo e4 = new ElfoNoturno("Night One",120);
+        exercito.alistar(e1);
+        exercito.alistar(e2);
+        exercito.alistar(e3);
+        exercito.alistar(e4);
+        for(int i=0; i<90; i++){
+            e4.atirarFlecha(new Dwarf("DeadBorn"));
+        }
+        exercito.agruparPorStatus();
+        assertTrue(exercito.getExercitoPorStatus().get(Status.MORTO).contains(e4));
+        assertTrue(exercito.getExercitoPorStatus().get(Status.VIVO).contains(e2));
+        for(int i=0; i<90; i++){
+            e1.atirarFlecha(new Dwarf("DeadBorn"));
+            e2.atirarFlecha(new Dwarf("DeadBorn"));
+        }
+        exercito.agruparPorStatus();
+        assertFalse(exercito.getExercitoPorStatus().get(Status.VIVO).contains(e1));
+        assertFalse(exercito.getExercitoPorStatus().get(Status.VIVO).contains(e2));
+        assertFalse(exercito.getExercitoPorStatus().get(Status.MORTO).contains(e3));
+    }
 }
