@@ -2,11 +2,16 @@ import java.util.*;
 public class DicionarioSindarin
 {
     public static void main(String[] args){
+        // rodarExemplosHashMap();
+    }
+    
+    private static void rodarExemplosHashMap(){
         //cria um hashmap de strings
         HashMap<String, String> dicionarioSindarin = new HashMap<>();
         //adiciona valores e chaves no hashmap
         dicionarioSindarin.put("terra","amar");
         dicionarioSindarin.put("fogo","naur");
+        dicionarioSindarin.put("fire","naur");
         dicionarioSindarin.put("vento","gwaew");
         dicionarioSindarin.put("água","nen");
         dicionarioSindarin.put("coração","gûr");
