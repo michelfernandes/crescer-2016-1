@@ -39,5 +39,8 @@ public class Elfo extends Personagem
     public static int getContadorElfo(){
         return contadorElfo;
     }
+    
+    public void tentarSorte(){
+    }
 }
 

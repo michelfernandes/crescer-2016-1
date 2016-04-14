@@ -48,4 +48,6 @@ public abstract class Personagem
         }
         return true;
     }
+    
+    public abstract void tentarSorte();
 }
