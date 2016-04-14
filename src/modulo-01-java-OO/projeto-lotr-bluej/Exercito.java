@@ -44,4 +44,14 @@ public class Exercito
     public HashMap<Status, ArrayList<Elfo>> getExercitoPorStatus(){
         return this.exercitoPorStatus;
     }
+    
+    public ArrayList<Elfo> buscar(Status status){
+        if (status==Status.VIVO){
+            return exercitoPorStatus.get(Status.VIVO);
+        }else if(status==Status.MORTO){
+            return exercitoPorStatus.get(Status.MORTO);
+        }else{
+            return exercitoPorStatus.get(Status.INCONSCIENTE);
+        }
+    }
 }

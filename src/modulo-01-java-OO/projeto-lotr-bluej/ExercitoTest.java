@@ -95,4 +95,41 @@ public class ExercitoTest
         assertEquals(e3 ,ex.getExercitoPorStatus().get(Status.VIVO).get(0));
         assertEquals(e4 ,ex.getExercitoPorStatus().get(Status.VIVO).get(1));
     }
+    @Test
+    public void ordenaDoisElfosVivos(){
+        Elfo e1 = new ElfoNoturno("jorge");
+        Elfo e2 = new ElfoVerde("alberto");
+        Exercito  ex = new Exercito();
+        ex.alistar(e1);
+        ex.alistar(e2);
+        ex.agruparPorStatus();
+        assertEquals(e1 ,ex.getExercitoPorStatus().get(Status.VIVO).get(0));
+        assertEquals(e2 ,ex.getExercitoPorStatus().get(Status.VIVO).get(1));
+    }
+    @Test
+    public void buscaDoisElfosVivos(){
+        Elfo e1 = new ElfoNoturno("jorge");
+        Elfo e2 = new ElfoVerde("alberto");
+        Exercito  ex = new Exercito();
+        ex.alistar(e1);
+        ex.alistar(e2);
+        ex.agruparPorStatus();
+        assertEquals(e1,ex.buscar(Status.VIVO).get(0));
+        assertEquals(e2,ex.buscar(Status.VIVO).get(1));
+    }
+    @Test
+    public void buscaDoisElfosMortos(){
+        Elfo e1 = new ElfoNoturno("jorge");
+        Elfo e2 = new ElfoNoturno("alberto");
+        Exercito  ex = new Exercito();
+        for(int i=0;i<90;i++){
+            e1.atirarFlecha(new Dwarf("sofrencio"));
+            e2.atirarFlecha(new Dwarf("sofrencio"));
+        }
+        ex.alistar(e1);
+        ex.alistar(e2);
+        ex.agruparPorStatus();
+        assertEquals(e1,ex.buscar(Status.MORTO).get(0));
+        assertEquals(e2,ex.buscar(Status.MORTO).get(1));
+    }
 }
