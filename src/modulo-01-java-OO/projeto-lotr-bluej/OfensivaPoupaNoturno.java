@@ -12,7 +12,8 @@ public class OfensivaPoupaNoturno implements Estrategia
         ordemDoUltimoAtaque.clear();
         int intencaoTotal = exercitoVivo.size() * dwarves.size();
         int intencaoPermitida = (int)(intencaoTotal * 0.3);
-        int max = intencaoPermitida / dwarves.size();
+        double d = intencaoPermitida / dwarves.size();
+        int max = (int)d;
         int cont=0;
         for (int i=0;i<exercitoVivo.size();i++){
             if(exercitoVivo.get(i) instanceof ElfoNoturno)cont++;
