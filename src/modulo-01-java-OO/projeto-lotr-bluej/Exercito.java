@@ -5,9 +5,12 @@ public class Exercito
     private HashMap<String, Elfo> exercito = new HashMap<>();
     private HashMap<Status, ArrayList<Elfo>> exercitoPorStatus = new HashMap<>();
     private Estrategia estrategia = new OfensivaPoupaNoturno();
-    public void alistar( Elfo elfo){
-        if(elfo instanceof ElfoNoturno || elfo instanceof ElfoVerde)
-        exercito.put(elfo.getNome(),elfo);
+    public void alistar( Elfo elfo) throws NaoPodeAlistarException{
+        if(elfo instanceof ElfoNoturno || elfo instanceof ElfoVerde){
+            exercito.put(elfo.getNome(),elfo);
+        }else {
+            throw new NaoPodeAlistarException();
+        }
     }
     
     public Elfo buscaNome(String nome){
