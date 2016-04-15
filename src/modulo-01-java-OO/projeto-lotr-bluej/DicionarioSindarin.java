@@ -2,13 +2,21 @@ import java.util.*;
 public class DicionarioSindarin
 {
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+        try{
+            int resultado = 13/0;
+        }catch (ArithmeticException ae){
+            System.out.println("Tipo ArithmeticException");
+            throw ae;
+        }catch (Exception e){
+            System.out.println("Tipo Exception");
+        }
+        /*Scanner scanner = new Scanner(System.in);
         System.out.println("\n\n\n\nEscolha a linguagem: ");
         System.out.println("[P]ortuguês [I]nglês");
         String idioma = scanner.nextLine();
         TradutorSindarin tradutor = criarTradutor(idioma);
         String palavra = scanner.nextLine();
-        System.out.println(palavra + " significa " + tradutor.traduzir(palavra));
+        System.out.println(palavra + " significa " + tradutor.traduzir(palavra));*/
         // rodarExemplosHashMap();
     }
     
