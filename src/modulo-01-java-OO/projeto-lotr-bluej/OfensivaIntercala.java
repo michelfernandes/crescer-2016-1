@@ -23,6 +23,9 @@ public class OfensivaIntercala implements Estrategia
         ArrayList<Elfo> intercala = new ArrayList<>();
         int index0=0;
         int index1=1;
+        //////////////////////////////////////////////////////////////////
+        //////////////////EM ANDAMENTO///////////////////////////////////
+        //////////////////////////////////////////////////////////////////        
         for(int i=0;i<elfos.size();i++){
             if(elfos.get(i) instanceof ElfoVerde){
                 intercala.add(index0,elfos.get(i));
