@@ -11,14 +11,14 @@ public class ExercitoTest
     public void gc() {
         System.gc();
     }
-    @Test (expected = NaoPodeAlistarException.class)
+    @Test 
     public void alistaUmElfoNoturno() throws NaoPodeAlistarException{
         Elfo e1 = new ElfoNoturno("jorge");
         Exercito  ex = new Exercito();
         ex.alistar(e1);
         assertEquals(e1,ex.getExercito().get("jorge"));
     }
-    @Test (expected = NaoPodeAlistarException.class)
+    @Test 
     public void alistaUmElfoNoturnoEUmElfoVerde()throws NaoPodeAlistarException{
         Elfo e1 = new ElfoNoturno("jorge");
         Elfo e2 = new ElfoVerde("alberto");
@@ -38,19 +38,19 @@ public class ExercitoTest
         assertEquals(e1,ex.getExercito().get("jorge"));
         assertFalse(ex.getExercito().containsKey("alberto"));
     }
-    @Test (expected = NaoPodeAlistarException.class)
+    @Test 
     public void naoAlistaNenhumElfo()throws NaoPodeAlistarException{
         Exercito  ex = new Exercito();
         assertTrue(ex.getExercito().isEmpty());
     }
-    @Test (expected = NaoPodeAlistarException.class)
+    @Test 
     public void buscaNomeDeElfoNoturno()throws NaoPodeAlistarException{
         Elfo e1 = new ElfoNoturno("jorge");
         Exercito  ex = new Exercito();
         ex.alistar(e1);
         assertEquals(e1,ex.buscaNome("jorge"));
     }
-    @Test (expected = NaoPodeAlistarException.class)
+    @Test 
     public void buscaNomeDeElfoNoturnoEElfoVerde()throws NaoPodeAlistarException{
         Elfo e1 = new ElfoNoturno("jorge");
         Elfo e2 = new ElfoVerde("alberto");
@@ -60,7 +60,7 @@ public class ExercitoTest
         assertEquals(e1 ,ex.buscaNome("jorge"));
         assertEquals(e2 ,ex.buscaNome("alberto"));
     } 
-    @Test (expected = NaoPodeAlistarException.class)
+    @Test 
     public void ordenaUmElfoMortoEUmVivo()throws NaoPodeAlistarException{
         Elfo e1 = new ElfoNoturno("jorge");
         Elfo e2 = new ElfoVerde("alberto");
@@ -74,7 +74,7 @@ public class ExercitoTest
         assertEquals(e1 ,ex.getExercitoPorStatus().get(Status.MORTO).get(0));
         assertEquals(e2 ,ex.getExercitoPorStatus().get(Status.VIVO).get(0));
     }
-    @Test (expected = NaoPodeAlistarException.class)
+    @Test 
     public void ordenaDoisElfosMortosEDoisVivos()throws NaoPodeAlistarException{
         Elfo e1 = new ElfoNoturno("jorge");
         Elfo e2 = new ElfoNoturno("alberto");
@@ -95,7 +95,7 @@ public class ExercitoTest
         assertEquals(e3 ,ex.getExercitoPorStatus().get(Status.VIVO).get(0));
         assertEquals(e4 ,ex.getExercitoPorStatus().get(Status.VIVO).get(1));
     }
-    @Test (expected = NaoPodeAlistarException.class)
+    @Test
     public void ordenaDoisElfosVivos()throws NaoPodeAlistarException{
         Elfo e1 = new ElfoNoturno("jorge");
         Elfo e2 = new ElfoVerde("alberto");
@@ -106,7 +106,7 @@ public class ExercitoTest
         assertEquals(e1 ,ex.getExercitoPorStatus().get(Status.VIVO).get(0));
         assertEquals(e2 ,ex.getExercitoPorStatus().get(Status.VIVO).get(1));
     }
-    @Test (expected = NaoPodeAlistarException.class)
+    @Test 
     public void buscaDoisElfosVivos()throws NaoPodeAlistarException{
         Elfo e1 = new ElfoNoturno("jorge");
         Elfo e2 = new ElfoVerde("alberto");
@@ -117,7 +117,7 @@ public class ExercitoTest
         assertEquals(e1,ex.buscar(Status.VIVO).get(0));
         assertEquals(e2,ex.buscar(Status.VIVO).get(1));
     }
-    @Test (expected = NaoPodeAlistarException.class)
+    @Test 
     public void buscaDoisElfosMortos()throws NaoPodeAlistarException{
         Elfo e1 = new ElfoNoturno("jorge");
         Elfo e2 = new ElfoNoturno("alberto");
@@ -132,7 +132,7 @@ public class ExercitoTest
         assertEquals(e1,ex.buscar(Status.MORTO).get(0));
         assertEquals(e2,ex.buscar(Status.MORTO).get(1));
     }
-    @Test (expected = NaoPodeAlistarException.class)
+    @Test 
     public void agrupaPorStatusDuasVezes()throws NaoPodeAlistarException{
         Exercito exercito = new Exercito();
         Elfo e1 = new ElfoNoturno("Ranger",120);
