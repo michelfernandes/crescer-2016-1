@@ -9,33 +9,37 @@ public class OfensivaIntercala implements Estrategia
     }
     public void atacar(ArrayList<Elfo> exercitoVivo,ArrayList<Dwarf> dwarves){
         if(verificaMeioAMeio(exercitoVivo)){
-            ArrayList<Elfo> ordenado = ordenaOfensivaIntercalada(exercitoVivo);
-            for(int i=0;i<ordenado.size();i++){
+            ordenaOfensivaIntercalada(exercitoVivo);
+            for(int i=0;i<exercitoVivo.size();i++){
                 for (int j=0; j<dwarves.size();j++){
-                    ordenado.get(i).atirarFlecha(dwarves.get(j));
+                    ordemDoUltimoAtaque.get(i).atirarFlecha(dwarves.get(j));
                 }
-                ordemDoUltimoAtaque.add(exercitoVivo.get(i));
             }
         }
     }
     
-    private ArrayList<Elfo> ordenaOfensivaIntercalada(ArrayList<Elfo> elfos){
-        ArrayList<Elfo> intercala = new ArrayList<>();
-        int index0=0;
-        int index1=1;
-        //////////////////////////////////////////////////////////////////
-        //////////////////EM ANDAMENTO///////////////////////////////////
-        //////////////////////////////////////////////////////////////////        
-        for(int i=0;i<elfos.size();i++){
-            if(elfos.get(i) instanceof ElfoVerde){
-                intercala.add(index0,elfos.get(i));
-                index0+=2;
-            }else{
-                intercala.add(index1,elfos.get(i));
-                index1+=2;
+    private void ordenaOfensivaIntercalada(ArrayList<Elfo> elfos){
+        
+        Elfo primeiro = elfos.get(0);
+        ordemDoUltimoAtaque.add(primeiro);
+        Class classeDoUltimoAdicionado = primeiro.getClass();
+        elfos.remove(primeiro);
+
+        while (elfos.size() > 0) {
+            for (int j = 0; j < elfos.size(); j++) {
+                Elfo atual = elfos.get(j);
+                boolean estaIntercalado = atual.getClass() != classeDoUltimoAdicionado;
+
+                if (estaIntercalado) {
+                    ordemDoUltimoAtaque.add(atual);
+                    classeDoUltimoAdicionado = atual.getClass();
+                }
+                if (estaIntercalado || atual.getStatus() == Status.MORTO) {
+                    elfos.remove(atual);
+                }
             }
         }
-        return intercala;
+    
     }
     
     private boolean verificaMeioAMeio(ArrayList<Elfo> elfos){

@@ -25,10 +25,10 @@ public class OfensivaIntercalaTest
         exercito.add(e3);
         exercito.add(e4);
         estrategia.atacar(exercito,exercitoAnao);
-        assertEquals(e3,estrategia.getOrdemDoUltimoAtaque().get(0));
-        assertEquals(e1,estrategia.getOrdemDoUltimoAtaque().get(1));
-        assertEquals(e4,estrategia.getOrdemDoUltimoAtaque().get(2));
-        assertEquals(e2,estrategia.getOrdemDoUltimoAtaque().get(3));
+        assertEquals(e1,estrategia.getOrdemDoUltimoAtaque().get(0));
+        assertEquals(e3,estrategia.getOrdemDoUltimoAtaque().get(1));
+        assertEquals(e2,estrategia.getOrdemDoUltimoAtaque().get(2));
+        assertEquals(e4,estrategia.getOrdemDoUltimoAtaque().get(3));
     }
     
     private ArrayList<Dwarf> getExercitoAnao(){
