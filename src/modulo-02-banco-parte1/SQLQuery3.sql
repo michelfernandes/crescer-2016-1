@@ -92,22 +92,17 @@ select	NomeEmpregado,
 from	empregado
 
 --14) Elimine as cidades duplicadas (mantendo 1 registro para cada –com menor IDCidade).
-/*begin transaction
+begin transaction
 go
-////////////////////////////
-////EM ANDAMENTO///////////
-///////////////////////
-delete 
-from cidade
-where Nome in (
-	Select Nome
-	From Cidade
-	group by nome, uf
-	having count(1) > 1
-	) and 
-	nome not in ()
 
-rollback*/
+Delete From Cidade 
+Where IDCidade in(Select max(IDCidade) 
+From Cidade 
+Group By Nome 
+Having Count(Nome)>1 
+);
+
+commit
 
 --15) Adicione uma regra que impeça exista mais de uma cidade com o mesmo nome em um estado.
 begin transaction
