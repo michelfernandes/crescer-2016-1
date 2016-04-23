@@ -1,4 +1,4 @@
-select * from departamento
+select * from cidade
 
 --1)
 select	a.NomeEmpregado,
@@ -54,3 +54,29 @@ where idempregado in (
 	where b.localizacao in ('sao paulo') 
 )
 commit
+
+--7)
+select	sum(b.salario - a.salario)  as Diferença
+from empregado a
+	join empregadoaux b on a.idempregado = b.idempregado
+
+--8)
+select top 1 a.NomeDepartamento as Departamento
+from departamento a
+	join empregado b on b.idDepartamento = a.idDepartamento
+order by b.salario desc
+
+--9)
+select a.Nome, b.Nome
+From associado a
+	Join Cidade b On b.idCidade = a.idCidade
+UNION ALL
+Select a.NomeEmpregado, b.Localizacao
+From Empregado a
+	Join Departamento b On b.IDDepartamento = a.IDDepartamento
+
+--10)
+select	a.Nome,
+		a.UF
+from cidade a
+	join associado b on b.idcidade = a.idcidade
