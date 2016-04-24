@@ -53,7 +53,6 @@ public class OfensivaIntercala implements Estrategia
             }
         }
         
-        if (contNoturno != contVerde)return false;
-        else return true;
+        return contNoturno == contVerde;
     }
 }
