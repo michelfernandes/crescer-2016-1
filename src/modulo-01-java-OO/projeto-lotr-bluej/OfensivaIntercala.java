@@ -45,6 +45,7 @@ public class OfensivaIntercala implements Estrategia
     private boolean verificaMeioAMeio(ArrayList<Elfo> elfos){
         int contVerde=0;
         int contNoturno=0;
+        if(elfos.isEmpty()) return false;
         for(int i=0;i<elfos.size();i++){
             if(elfos.get(i) instanceof ElfoVerde){
                 contVerde++;
@@ -52,7 +53,6 @@ public class OfensivaIntercala implements Estrategia
                 contNoturno++;
             }
         }
-        
         return contNoturno == contVerde;
     }
 }
