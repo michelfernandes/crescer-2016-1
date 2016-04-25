@@ -25,15 +25,15 @@ public class Inventario
     }
     
     public Item getItemPopular(){
-        int x,maior=0,ind=0;
+        int qtdItemAtual,maior=0,ind=0;
         for (int i=0;i<lista.size();i++){
-            x=lista.get(i).getQuantidade();
-            if(x>maior){
-                maior=x;
+            qtdItemAtual=lista.get(i).getQuantidade();
+            if(qtdItemAtual>maior){
+                maior=qtdItemAtual;
                 ind=i;
             }
         }
-        return lista.get(ind);
+        return lista.isEmpty() ? null : lista.get(ind);
     }
     
     public void ordenarItens(){
