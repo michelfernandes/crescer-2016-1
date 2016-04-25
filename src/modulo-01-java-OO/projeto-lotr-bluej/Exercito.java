@@ -22,21 +22,19 @@ public class Exercito
     }
     
     void agruparPorStatus(){
-        ArrayList<Elfo> elfosVivos = new ArrayList<>();
-        ArrayList<Elfo> elfosMortos = new ArrayList<>();
-        ArrayList<Elfo> elfosInconscientes = new ArrayList<>();
+        exercitoPorStatus.clear();
         for(Map.Entry<String,Elfo> chaveValor : exercito.entrySet()){
-            if(chaveValor.getValue().getStatus()==Status.VIVO){
-                elfosVivos.add(chaveValor.getValue());
-            }else if(chaveValor.getValue().getStatus()==Status.MORTO){
-                elfosMortos.add(chaveValor.getValue());
-            }else{
-                elfosInconscientes.add(chaveValor.getValue());
+            Elfo elfo = chaveValor.getValue();
+            Status status = chaveValor.getValue().getStatus();
+            ArrayList<Elfo> statusNoAgrupamento = exercitoPorStatus.get(status);
+            boolean precisaCriarStatus = statusNoAgrupamento == null;
+
+            if (precisaCriarStatus) {
+                statusNoAgrupamento = new ArrayList<Elfo>();
+                exercitoPorStatus.put(status, statusNoAgrupamento);
             }
+            statusNoAgrupamento.add(elfo);
         }
-        exercitoPorStatus.put(Status.VIVO,elfosVivos);
-        exercitoPorStatus.put(Status.MORTO,elfosMortos);
-        exercitoPorStatus.put(Status.INCONSCIENTE,elfosInconscientes);
     }
     
     public HashMap<Status, ArrayList<Elfo>> getExercitoPorStatus(){
