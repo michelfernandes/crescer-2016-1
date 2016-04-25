@@ -68,6 +68,11 @@ public class InventarioTest
         assertEquals(i1,inv.getItemPopular());
     }
     @Test
+    public void pegarItemPopularComListaVazia(){
+        Inventario inv = new Inventario();
+        assertNull(inv.getItemPopular());
+    }
+    @Test
     public void ordenar2Itens(){
         Inventario inv = new Inventario();
         Item i1 = new Item(5,"mandioca");
