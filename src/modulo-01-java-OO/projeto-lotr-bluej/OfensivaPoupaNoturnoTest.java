@@ -26,7 +26,9 @@ public class OfensivaPoupaNoturnoTest
         exercito.add(e4);
         estrategia.atacar(exercito,exercitoAnao);
         assertEquals(e1,estrategia.getOrdemDoUltimoAtaque().get(0));
-        assertEquals(e4,estrategia.getOrdemDoUltimoAtaque().get(1));
+        assertEquals(e1,estrategia.getOrdemDoUltimoAtaque().get(1));
+        assertEquals(e4,estrategia.getOrdemDoUltimoAtaque().get(2));
+        assertEquals(e4,estrategia.getOrdemDoUltimoAtaque().get(3));
     }
     
     @Test
@@ -44,23 +46,25 @@ public class OfensivaPoupaNoturnoTest
         exercito.add(e4);
         estrategia.atacar(exercito,exercitoAnao);
         assertEquals(e1,estrategia.getOrdemDoUltimoAtaque().get(0));
-        assertEquals(e3,estrategia.getOrdemDoUltimoAtaque().get(1));
-        assertEquals(e4,estrategia.getOrdemDoUltimoAtaque().get(2));
+        assertEquals(e1,estrategia.getOrdemDoUltimoAtaque().get(1));
+        assertEquals(e3,estrategia.getOrdemDoUltimoAtaque().get(2));
+        assertEquals(e3,estrategia.getOrdemDoUltimoAtaque().get(3));
+        assertEquals(e4,estrategia.getOrdemDoUltimoAtaque().get(4));
+        assertEquals(e4,estrategia.getOrdemDoUltimoAtaque().get(5));
     }
     
     @Test
     public void atacarCom1ElfoNoturnosE1ElfoVerde(){
         Estrategia estrategia = new OfensivaPoupaNoturno();
         ArrayList<Elfo> exercito = new ArrayList<>();
-        ArrayList<Dwarf> ex = new ArrayList<Dwarf>();
-        Dwarf d1 = new Dwarf("D1");
-        ex.add(d1);
+        ArrayList<Dwarf> exercitoAnao = getExercitoAnao();
         Elfo e1 = new ElfoNoturno("E1");
         Elfo e2 = new ElfoVerde("E2");
         exercito.add(e1);
         exercito.add(e2);
-        estrategia.atacar(exercito,ex);
-        assertEquals(e2,estrategia.getOrdemDoUltimoAtaque().get(0));
+        estrategia.atacar(exercito,exercitoAnao);
+        assertEquals(e1,estrategia.getOrdemDoUltimoAtaque().get(0));
+        assertEquals(e2,estrategia.getOrdemDoUltimoAtaque().get(1));
     }
     
     @Test
@@ -75,7 +79,7 @@ public class OfensivaPoupaNoturnoTest
         exercito.add(e2);
         exercito.add(e3);
         estrategia.atacar(exercito,exercitoAnao);
-        assertTrue(estrategia.getOrdemDoUltimoAtaque().isEmpty());
+        assertEquals(e1,estrategia.getOrdemDoUltimoAtaque().get(0));
     }
     
     @Test
@@ -91,8 +95,11 @@ public class OfensivaPoupaNoturnoTest
         exercito.add(e3);
         estrategia.atacar(exercito,exercitoAnao);
         assertEquals(e1,estrategia.getOrdemDoUltimoAtaque().get(0));
-        assertEquals(e2,estrategia.getOrdemDoUltimoAtaque().get(1));
-        assertEquals(e3,estrategia.getOrdemDoUltimoAtaque().get(2));
+        assertEquals(e1,estrategia.getOrdemDoUltimoAtaque().get(1));
+        assertEquals(e2,estrategia.getOrdemDoUltimoAtaque().get(2));
+        assertEquals(e2,estrategia.getOrdemDoUltimoAtaque().get(3));
+        assertEquals(e3,estrategia.getOrdemDoUltimoAtaque().get(4));
+        assertEquals(e3,estrategia.getOrdemDoUltimoAtaque().get(5));
     }
     
     private ArrayList<Dwarf> getExercitoAnao(){
