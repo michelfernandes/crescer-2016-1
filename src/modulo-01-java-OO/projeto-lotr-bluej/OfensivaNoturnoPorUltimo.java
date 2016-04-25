@@ -22,11 +22,11 @@ public class OfensivaNoturnoPorUltimo implements Estrategia
     private ArrayList<Elfo> ordenaOfensiva(ArrayList<Elfo> elfos){
         ArrayList<Elfo> ordenado = new ArrayList<>();
         for(int i=0;i<elfos.size();i++){
-            if(elfos.get(i) instanceof ElfoVerde)
+            if(elfos.get(i) instanceof ElfoVerde && elfos.get(i).getStatus() == Status.VIVO)
             ordenado.add(elfos.get(i));
         }
         for(int i=0;i<elfos.size();i++){
-            if(elfos.get(i) instanceof ElfoNoturno)
+            if(elfos.get(i) instanceof ElfoNoturno && elfos.get(i).getStatus() == Status.VIVO)
             ordenado.add(elfos.get(i));
         }
         return ordenado;

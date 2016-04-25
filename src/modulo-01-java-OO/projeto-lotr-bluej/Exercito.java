@@ -48,7 +48,7 @@ public class Exercito
     }
     
     public void atacar(ArrayList<Dwarf> dwarves) {
-        estrategia.atacar(exercitoPorStatus.get(Status.VIVO),dwarves);
+        estrategia.atacar(new ArrayList<Elfo>(exercito.values()),dwarves);
     }
     
     public void mudarEstrategia(Estrategia estrategia) {
