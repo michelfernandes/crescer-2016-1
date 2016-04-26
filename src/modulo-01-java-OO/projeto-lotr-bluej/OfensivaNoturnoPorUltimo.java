@@ -9,26 +9,27 @@ public class OfensivaNoturnoPorUltimo implements Estrategia
     }
     
     public void atacar(ArrayList<Elfo> exercitoVivo,ArrayList<Dwarf> dwarves){
-        ArrayList<Elfo> ordenado = ordenaOfensiva(exercitoVivo);
-        for(int i=0;i<ordenado.size();i++){
+        ordenaOfensiva(exercitoVivo);
+        for(int i=0;i<exercitoVivo.size();i++){
+            if(exercitoVivo.get(i).getStatus() != Status.VIVO) continue;
             for (int j=0; j<dwarves.size();j++){
-                ordenado.get(i).atirarFlecha(dwarves.get(j));
+                exercitoVivo.get(i).atirarFlecha(dwarves.get(j));
             }
-            ordemDoUltimoAtaque.add(ordenado.get(i));
+            ordemDoUltimoAtaque.add(exercitoVivo.get(i));
         }
         
     }
     
-    private ArrayList<Elfo> ordenaOfensiva(ArrayList<Elfo> elfos){
-        ArrayList<Elfo> ordenado = new ArrayList<>();
-        for(int i=0;i<elfos.size();i++){
-            if(elfos.get(i) instanceof ElfoVerde && elfos.get(i).getStatus() == Status.VIVO)
-            ordenado.add(elfos.get(i));
-        }
-        for(int i=0;i<elfos.size();i++){
-            if(elfos.get(i) instanceof ElfoNoturno && elfos.get(i).getStatus() == Status.VIVO)
-            ordenado.add(elfos.get(i));
-        }
-        return ordenado;
+    private void ordenaOfensiva(ArrayList<Elfo> elfos){
+        //Comparator<Elfo> nomeComparador = new Comparator<Elfo>(); 
+        Collections.sort(elfos, new Comparator<Elfo>(){
+                public int compare(Elfo elfoAtual, Elfo proximoElfo) {
+                    boolean mesmoTipo = elfoAtual.getClass() == proximoElfo.getClass();
+
+                    if (mesmoTipo) return 0;
+                        
+                    return elfoAtual instanceof ElfoVerde && proximoElfo instanceof ElfoNoturno ? -1 : 1;
+                }
+            });
     }
 }
