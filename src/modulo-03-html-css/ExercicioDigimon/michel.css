@@ -1,0 +1,31 @@
+body{
+  margin: 0;
+}
+header h1 span:nth-child(2){
+  display:none;
+}
+.personagens h2:first-child{
+  display: none;
+}
+.personagens  ul:nth-of-type(1){
+  display: none;
+}
+.treinadores{
+  display:none;
+}
+a{
+  position: relative;
+  float: right;
+  text-decoration: none;
+  color: black;
+  text-shadow: 3px 3px 2px black;
+  top:-40px;
+}
+header{
+  width: 800px;
+  height: 90px;
+  margin: 80px auto;
+  border: solid black;
+  border-radius: 10px;
+  background-color: #ff8000;
+}
