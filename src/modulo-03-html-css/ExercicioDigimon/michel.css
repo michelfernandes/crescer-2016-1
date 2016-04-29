@@ -3,8 +3,7 @@ body{
   margin: 0;
   position: relative;
   background: url(https://nerdicesemdebate.files.wordpress.com/2016/04/new-digimon-adventure-tri-poster-original-cast-ret_zzdn-1920.jpg) no-repeat;
-  background-size:contain;
-  background-position: top;
+  background-position: center top;
   top: 110px;
 }
 header h1 span:nth-child(2){
