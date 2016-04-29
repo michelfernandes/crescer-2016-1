@@ -43,6 +43,8 @@ header{
 header h1{
   position: absolute;
   left:220px;
+  color:black;
+  text-shadow:rgb(36, 116, 173) 1px -1px 2px, rgb(36, 116, 173) -1px 1px 2px,rgb(36, 116, 173) 1px 1px 2px, rgb(36, 116, 173) -1px -1px 2px;
 }
 nav a:first-child{
   position: absolute;
