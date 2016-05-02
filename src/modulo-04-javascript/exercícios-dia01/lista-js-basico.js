@@ -7,7 +7,9 @@ var daisyGame = function(number){
 
 // 2 - Maior texto
 var maiorTexto = function(array){
-
-
+var maiorTexto="";
+for(var i=0; i<array.length; i++) {
+  if(array[i].length > maiorTexto.length) maiorTexto = array[i];
+}
   return maiorTexto;
 }
