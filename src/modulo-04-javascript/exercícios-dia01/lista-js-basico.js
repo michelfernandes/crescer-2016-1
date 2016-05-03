@@ -36,14 +36,12 @@ var fiboSum = function(numero){
   var proximo_numero = 1;
   var aux;
   var soma = 0;
-  var cont = 0;
   while ( cont <= numero )
   {
       soma += atual_numero;
       aux = proximo_numero;
       proximo_numero = proximo_numero + atual_numero;
       atual_numero = aux;
-      cont++;
   }
   return soma;
 }
