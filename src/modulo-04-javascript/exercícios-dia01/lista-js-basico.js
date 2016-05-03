@@ -58,15 +58,20 @@ var queroCafe = function(preco,array){
 }
 
 // 7 - Vários tipos
+function getType(v) {
+    return v === null ? 'null' : typeof v !== 'undefined' && v.constructor === Array ? 'array' : typeof v;
+  }
+
 var contarPorTipo = function(obj,tipo){
   var cont=0;
   for(var prop in obj) {
-    if  (typeof obj[prop] === tipo){
+    if  (getType(obj[prop]) === tipo){
     cont++;
     }
   }
   return cont;
 }
+
 
 // 8 - Reflexões
 var gohan = 'gohan', goku = 'Goku';
