@@ -66,20 +66,27 @@ var obterAlturaMediana = function(){
 }
 
 // 6 - Peso médio
-var obterPesoMedio = function(){
+var pesoMedio = function(array){
   var media = 0;
   var soma = 0;
   var cont = 0;
-  for (var i = 0; i < goldSaints.length; i++) {
-    for (var prop in goldSaints[i]) {
+  for (var i = 0; i < array.length; i++) {
+    for (var prop in array[i]) {
       if(prop === 'pesoLb'){
-         soma += goldSaints[i][prop];
+         soma += array[i][prop];
          cont++;
       }
     }
   }
   media = soma / cont * 0.453592;
   return Number(media.toFixed(2));
+}
+var obterPesoMedio = function(){
+  return pesoMedio(goldSaints);
+}
+
+var obterPesoMedioDoadores = function(){
+  return pesoMedio(obterDoadores());
 }
 
 

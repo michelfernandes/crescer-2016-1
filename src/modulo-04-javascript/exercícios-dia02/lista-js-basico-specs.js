@@ -33,7 +33,10 @@ describe('Ex 5. Altura mediana', function() {
 });
 
 describe('Ex 6. Peso médio', function() {
-  it('receber peso médio de 84.27', function() {
+  it('receber peso médio de todos', function() {
     expect(obterPesoMedio()).toEqual(84.27);
+  });
+  it('receber peso médio dos doadores', function() {
+    expect(obterPesoMedioDoadores()).toEqual(80.67);
   });
 });
