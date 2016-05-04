@@ -61,7 +61,7 @@ var obterAlturaMediana = function(){
   var arrayOrd = goldSaints.concat().sort(function(a, b) {
     return a.alturaCm > b.alturaCm ? 1 : -1;
   });
-  mediana = (arrayOrd[5].alturaCm + arrayOrd[6].alturaCm) / 2 / 100;
+  mediana = (arrayOrd[arrayOrd.length / 2 -1].alturaCm + arrayOrd[arrayOrd.length / 2].alturaCm) / 2 / 100;
   return Math.round(mediana*100)/100;
 }
 
