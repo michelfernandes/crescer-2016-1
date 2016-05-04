@@ -22,13 +22,13 @@ describe('Ex 3. Aniversários', function() {
 
 describe('Ex 4. Altura média', function() {
   it('receber altura média de 1.85', function() {
-    expect(obterAlturaMedia()).toEqual(1.85);
+    expect(obterAlturaMedia()).toEqual(1.86);
   });
 });
 
 describe('Ex 5. Altura mediana', function() {
   it('receber altura mediana de 1.84', function() {
-    expect(obterAlturaMediana()).toEqual(1.84);
+    expect(obterAlturaMediana()).toEqual(1.85);
   });
 });
 

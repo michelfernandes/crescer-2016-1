@@ -52,7 +52,7 @@ var obterAlturaMedia = function(){
     soma += goldSaints[i].alturaCm;
   }
   media = (soma / goldSaints.length) / 100;
-  return Number(media.toFixed(2));
+  return Math.round(media*100)/100;
 }
 
 // 5 - Altura mediana
@@ -62,7 +62,7 @@ var obterAlturaMediana = function(){
     return a.alturaCm > b.alturaCm ? 1 : -1;
   });
   mediana = (arrayOrd[5].alturaCm + arrayOrd[6].alturaCm) / 2 / 100;
-  return Number(mediana.toFixed(2));
+  return Math.round(mediana*100)/100;
 }
 
 // 6 - Peso médio
@@ -79,7 +79,7 @@ var pesoMedio = function(array){
     }
   }
   media = soma / cont * 0.453592;
-  return Number(media.toFixed(2));
+  return Math.round(media*100)/100;
 }
 var obterPesoMedio = function(){
   return pesoMedio(goldSaints);
@@ -97,7 +97,7 @@ var obterIMC = function(){
     for (var prop in goldSaints[i]) {
       if(prop === 'pesoLb'){
           imc = (goldSaints[i].pesoLb * 0.453592) / ((goldSaints[i].alturaCm / 100)*(goldSaints[i].alturaCm / 100));
-         array.push(Number(imc.toFixed(2)));
+         array.push(Math.round(imc*100)/100);
       }
     }
   }
