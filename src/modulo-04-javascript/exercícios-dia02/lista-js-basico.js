@@ -65,7 +65,22 @@ var obterAlturaMediana = function(){
   return Number(mediana.toFixed(2));
 }
 
-
+// 6 - Peso médio
+var obterPesoMedio = function(){
+  var media = 0;
+  var soma = 0;
+  var cont = 0;
+  for (var i = 0; i < goldSaints.length; i++) {
+    for (var prop in goldSaints[i]) {
+      if(prop === 'pesoLb'){
+         soma += goldSaints[i][prop];
+         cont++;
+      }
+    }
+  }
+  media = soma / cont * 0.453592;
+  return Number(media.toFixed(2));
+}
 
 
 

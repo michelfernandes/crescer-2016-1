@@ -31,3 +31,9 @@ describe('Ex 5. Altura mediana', function() {
     expect(obterAlturaMediana()).toEqual(1.84);
   });
 });
+
+describe('Ex 6. Peso médio', function() {
+  it('receber peso médio de 84.27', function() {
+    expect(obterPesoMedio()).toEqual(84.27);
+  });
+});
