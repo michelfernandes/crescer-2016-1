@@ -19,3 +19,9 @@ describe('Ex 3. Aniversários', function() {
     expect(obterMesesComMaisAniversarios()).toEqual(["Março", "Maio", "Novembro"]);
   });
 });
+
+describe('Ex 4. Altura média', function() {
+  it('receber altura média de 1.85', function() {
+    expect(obterAlturaMedia()).toEqual(1.85);
+  });
+});

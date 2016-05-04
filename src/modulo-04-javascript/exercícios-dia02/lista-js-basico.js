@@ -46,6 +46,17 @@ var obterMesesComMaisAniversarios = function(){
   return retorna;
 }
 
+// 4 - Altura média
+var obterAlturaMedia = function(){
+  var media = 0;
+  var soma = 0;
+  for(var i=0; i<goldSaints.length; i++){
+    soma += goldSaints[i].alturaCm;
+  }
+  media = (soma / goldSaints.length) / 100;
+  return Number(media.toFixed(2));
+}
+
 
 
 
