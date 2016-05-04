@@ -35,8 +35,6 @@ var obterMesesComMaisAniversarios = function(){
         if (array[i]-1 === j)cont[j]++;
       }
     }
-    console.log(array);
-    console.log(cont);
     for(var i=0; i<12; i++){
       if (cont[i] > maior) maior=cont[i];
     }
