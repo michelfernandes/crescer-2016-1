@@ -13,9 +13,9 @@ describe('Ex 2. Canivete suíço', function() {
     expect(obterCavaleiroComMaisGolpes()).toEqual(goldSaints[5]);
   });
 });
-/*
-describe('Ex 3. Canivete suíço', function() {
-  it('receber o cavaleio com mais golpes', function() {
-    expect(obterCavaleiroComMaisGolpes()).toEqual(goldSaints[5]);// março, maio, novembro
+
+describe('Ex 3. Aniversários', function() {
+  it('receber o meses de março, maio e novembro', function() {
+    expect(obterMesesComMaisAniversarios()).toEqual(["Março", "Maio", "Novembro"]);
   });
-});*/
+});

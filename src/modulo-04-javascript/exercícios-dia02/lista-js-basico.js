@@ -24,24 +24,31 @@ var obterCavaleiroComMaisGolpes = function(){
 
 // 3 - Aniversários
 var obterMesesComMaisAniversarios = function(){
-  var arrayOrd = parseInt(goldSaints[0].dataNascimento.substring(5,7)).concat().sort();
+  var array = [];
+  var cont = [0,0,0,0,0,0,0,0,0,0,0,0];
+  var retorna = [];
   var meses = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
-  for(var i=0; i<goldSaints.length; i++){
-    mes = goldSaints[i].dataNascimento.substring(5,7);
-  }
-  return array;
+  var maior = 0;
+    for(var i=0; i<goldSaints.length; i++){
+      array.push( parseInt(goldSaints[i].dataNascimento.substring(5,7)));
+      for(var j=0; j<12; j++){
+        if (array[i]-1 === j)cont[j]++;
+      }
+    }
+    console.log(array);
+    console.log(cont);
+    for(var i=0; i<12; i++){
+      if (cont[i] > maior) maior=cont[i];
+    }
+    for(var i=0; i<12; i++){
+      if (cont[i] === maior) retorna.push(meses[i]);
+    }
+  return retorna;
 }
-//var mes = parseInt(goldSaints[0].dataNascimento.substring(5,7));
-var arrayOrd = [];
-for(var i=0; i<goldSaints.length; i++){
-arrayOrd.push( parseInt(goldSaints[i].dataNascimento.substring(5,7)));
-}
-arrayOrd.sort();
-console.log(arrayOrd);
 
-///////////////////////////////////////////
-//////////// Em Andamento /////////////////
-///////////////////////////////////////////
+
+
+
 
 
 
