@@ -46,3 +46,9 @@ describe('Ex 7. IMC', function() {
     expect(obterIMC()).toEqual([22.64, 29.48, 24.62, 24.22, 24.84, 20.53, 24.54, 24.31, 23.99, 22.45, 21.5]);
   });
 });
+
+describe('Ex 8. IMC', function() {
+  it('receber os cavaleiros acima do peso', function() {
+    expect(obterSobrepeso()[0]).toEqual(goldSaints[1]);
+  });
+});

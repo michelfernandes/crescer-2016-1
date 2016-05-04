@@ -104,7 +104,14 @@ var obterIMC = function(){
   return array;
 }
 
-// 8 - 
+// 8 - Sobrepeso
+var obterSobrepeso = function(){
+  var array=[];
+  for (var i = 0; i < obterIMC().length; i++) {
+    if (obterIMC()[i] > 25 && obterIMC()[i] < 30) array.push(goldSaints[i]);
+  }
+  return array;
+}
 
 
 
