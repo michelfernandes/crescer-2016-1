@@ -89,6 +89,22 @@ var obterPesoMedioDoadores = function(){
   return pesoMedio(obterDoadores());
 }
 
+// 7 - IMC
+var obterIMC = function(){
+  var array = [];
+  var imc = 0;
+  for (var i = 0; i < goldSaints.length; i++) {
+    for (var prop in goldSaints[i]) {
+      if(prop === 'pesoLb'){
+          imc = (goldSaints[i].pesoLb * 0.453592) / ((goldSaints[i].alturaCm / 100)*(goldSaints[i].alturaCm / 100));
+         array.push(Number(imc.toFixed(2)));
+      }
+    }
+  }
+  return array;
+}
+
+// 8 - 
 
 
 
