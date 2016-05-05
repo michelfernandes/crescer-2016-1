@@ -13,7 +13,9 @@ var $img = $('<img>')
 $('#cavaleiros').append($('<li>').append($img));
 }
 
-
+$("#hide").click(function(){
+    $("#toggle").toggle(1000);
+});
 
 
 
