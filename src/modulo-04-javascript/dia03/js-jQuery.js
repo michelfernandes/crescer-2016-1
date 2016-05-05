@@ -8,14 +8,34 @@ for(var i=0; i<goldSaints.length;i++){
 var url = goldSaints[i].imagens[0].url;
 var $img = $('<img>')
 .attr('src',url)
-.attr('alt',goldSaints[i].nome);
+.attr('alt',goldSaints[i].nome)
+.attr('id',i);
 
 $('#cavaleiros').append($('<li>').append($img));
+
 }
 
 $("#hide").click(function(){
     $("#toggle").toggle(1000);
 });
+
+goldSaints.forEach(function(e){
+  for(var prop in e){
+  $('#dados').append($('<li>').append(e[prop]));
+  }
+});
+
+
+  $('#cavaleiros').hover(
+    function(){
+      $(this).css("background-color", "yellow");
+      $('#dados').show();
+      },
+    function(){
+      $(this).css("background-color", "pink");
+      $('#dados').hide();
+  });
+
 
 
 
