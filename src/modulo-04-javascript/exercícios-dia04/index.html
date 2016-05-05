@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dia 04 - jQuery</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+  </head>
+  <body>
+    <form id="frmNovoCavaleiro" method="POST">
+      <label for="txtNomeCavaleiro">Nome</label>
+      <input id="txtNomeCavaleiro" type="text" name="nome" placeholder="Ex: Shiryu"><br>
+      <label for="slTipoSanguineo">Tipo Sanguíneo</label>
+      <select id="slTipoSanguineo" name="tipoSanguineo">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="AB">AB</option>
+        <option value="O">O</option>
+      </select><br>
+      <label for="txtUrlImagem">URL Imagem</label>
+      <input id="txtUrlImagem" type="text" name="urlImagem" placeholder="Ex: bit.ly/shiryu.png"><br>
+      <label for="txtDataNascimento">Data de nascimento</label>
+      <input id="txtDataNascimento" type="date" name="dataNascimento" placeholder=" dd/mm/aaaa"><br>
+      <label for="txtAltura">Altura em metros</label>
+      <input id="txtAltura" type="text" name="peso" placeholder="Ex: 1.80"><br>
+      <label for="txtPeso">Peso em kg</label>
+      <input id="txtPeso" type="text" name="peso" placeholder="Ex: 165.35"><br>
+      <label for="txtSigno">Signo</label>
+      <input id="txtSigno" type="text" name="signo" placeholder="Ex: Áries"><br>
+      <label for="txtLocalNascimento">Local de nascimento</label>
+      <input id="txtLocalNascimento" type="text" name="nascimento" placeholder="Ex: Brasil"><br>
+      <label for="txtLocalTreinamento">Local de treinamento</label>
+      <input id="txtLocalTreinamento" type="text" name="treinamento" placeholder="Ex: Brasil"><br>
+
+      <!--<input type="submit" value="Cadastrar!">-->
+      <button type="submit">Cadastrar!</button>
+    </form>
+    <hr>
+    <div id="detalhes-cavaleiro"></div>
+    <ul id="cavaleiros"></ul>
+    <script type="text/javascript" src="lib/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="cadastro-cavaleiros.js"></script>
+  </body>
+</html>
