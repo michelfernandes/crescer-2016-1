@@ -54,7 +54,10 @@ function converterFormParaCavaleiro($form) {
 
   // Obtém o objeto nativo Form através da posição 0 no objeto jQuery e cria um FormData a partir dele
   var formData = new FormData($form[0]);
-
+  var arrayGolpe = [];
+  for (var i = 0; i <= cont; i++) {
+      arrayGolpe.push($('#golpe'+i).val());
+  }
   return {
     nome: formData.get('nome'),
     // solução sem FormData:
@@ -68,7 +71,8 @@ function converterFormParaCavaleiro($form) {
     pesoLb: formData.get('peso') * 2.20462,
     signo: formData.get('signo'),
     localNascimento: formData.get('localNascimento'),
-    localTreinamento: formData.get('localTreinamento')
+    localTreinamento: formData.get('localTreinamento'),
+    golpes: arrayGolpe
   };
   // FormData: https://developer.mozilla.org/en/docs/Web/API/FormData
   /*
@@ -82,16 +86,19 @@ function converterFormParaCavaleiro($form) {
 
 var cont=0;
 $('#btnGolpe').click(function(){
-  cont++;
-  var $input = $('<input>').attr('id',cont).attr('placeholder','Golpe ' + cont);
+  var $input = $('<input>').attr('id','golpe'+cont).attr('placeholder','Golpe ' + cont);
   $("#ulGolpe").append($('<li>').append($input));
+  cont++;
+  //arrayGolpe.push($('#golpe'+cont).val());
 });
 
 var cont2=0;
 $('#btnImg').click(function(){
-  cont2++;
   var $input = $('<input>').attr('id',cont2).attr('placeholder','Url ' + cont2);
-  $("#ulImg").append($('<li>').append($input));
+  $('#ulImg').append($('<li>').append($input));
+  $('#ulImg').append($('<label>').text('Thumbnail: '));
+  $('#ulImg').append($('<input>').attr('type','checkbox').attr('name','checkbox'+cont2));
+  cont2++;
 });
 
 function renderizarCavaleiroNaTela(cavaleiro) {
