@@ -33,7 +33,7 @@ $(function() {
     imgCavaleiro.onload = function() {
       var $img = $(imgCavaleiro);
       $img.appendTo($('<li>').appendTo($('#cavaleiros'))).fadeIn();
-      $img.on('click mouseleave', function() {
+      $img.on('click', function() {
         var self = $(this);
         var nome = self.attr('alt');
         var altura = goldSaints.filter(function(elem) {
@@ -43,9 +43,7 @@ $(function() {
         $detalhesCavaleiro.append($('<h3>').text( nome ));
         $detalhesCavaleiro.append($('<h3>').text( altura / 100 ));
       });
-      setTimeout(function() {
-        $img.off('mouseleave');
-      }, 5000);
+
       if (indice < goldSaints.length - 1) carregaImg(indice + 1);
     };
   })(0);
@@ -65,9 +63,13 @@ function converterFormParaCavaleiro($form) {
     imagens: [
       { url: formData.get('urlImagem'), isThumb: true }
     ],
-    dataNascimento: formData.get('dataNascimento').toString() + 'T03:00:00.000Z'
+    dataNascimento: formData.get('dataNascimento').toString() + 'T03:00:00.000Z',
+    alturaCm : formData.get('altura') * 100,
+    pesoLb: formData.get('peso') * 2.20462,
+    signo: formData.get('signo'),
+    localNascimento: formData.get('localNascimento'),
+    localTreinamento: formData.get('localTreinamento')
   };
-
   // FormData: https://developer.mozilla.org/en/docs/Web/API/FormData
   /*
   var $frmNovoCavaleiro = $('#frmNovoCavaleiro');
@@ -78,9 +80,19 @@ function converterFormParaCavaleiro($form) {
   }*/
 };
 
-var validaPositivos = function(num){
-  
-}
+var cont=0;
+$('#btnGolpe').click(function(){
+  cont++;
+  var $input = $('<input>').attr('id',cont).attr('placeholder','Golpe ' + cont);
+  $("#ulGolpe").append($('<li>').append($input));
+});
+
+var cont2=0;
+$('#btnImg').click(function(){
+  cont2++;
+  var $input = $('<input>').attr('id',cont2).attr('placeholder','Url ' + cont2);
+  $("#ulImg").append($('<li>').append($input));
+});
 
 function renderizarCavaleiroNaTela(cavaleiro) {
   $('#cavaleiros')
