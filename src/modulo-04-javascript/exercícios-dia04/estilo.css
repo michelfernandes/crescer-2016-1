@@ -14,3 +14,8 @@
 #cavaleiros img {
   display: none;
 }
+#btnRemove{
+  position:relative;
+  left:-140px;
+  top: -5px;
+}

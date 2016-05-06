@@ -16,6 +16,7 @@ $(function() {
     goldSaints.push(cavaleiro);
     localStorage['cavaleiros'] = JSON.stringify(goldSaints);
     renderizarCavaleiroNaTela(cavaleiro);
+    renderizarBotao();
     console.log(goldSaints);
     return e.preventDefault();
   });
@@ -33,6 +34,7 @@ $(function() {
     imgCavaleiro.onload = function() {
       var $img = $(imgCavaleiro);
       $img.appendTo($('<li>').appendTo($('#cavaleiros'))).fadeIn();
+      renderizarBotao();
       $img.on('click', function() {
         var self = $(this);
         var nome = self.attr('alt');
@@ -51,13 +53,13 @@ $(function() {
 });
 
 function converterFormParaCavaleiro($form) {
-
   // Obtém o objeto nativo Form através da posição 0 no objeto jQuery e cria um FormData a partir dele
   var formData = new FormData($form[0]);
   var arrayGolpe = [];
   for (var i = 0; i <= cont; i++) {
       arrayGolpe.push($('#golpe'+i).val());
   }
+
   return {
     nome: formData.get('nome'),
     // solução sem FormData:
@@ -89,7 +91,6 @@ $('#btnGolpe').click(function(){
   var $input = $('<input>').attr('id','golpe'+cont).attr('placeholder','Golpe ' + cont);
   $("#ulGolpe").append($('<li>').append($input));
   cont++;
-  //arrayGolpe.push($('#golpe'+cont).val());
 });
 
 var cont2=0;
@@ -100,6 +101,11 @@ $('#btnImg').click(function(){
   $('#ulImg').append($('<input>').attr('type','checkbox').attr('name','checkbox'+cont2));
   cont2++;
 });
+
+function renderizarBotao(){
+  var $remover = $('<button/>',{ text: 'Remover', click: function () { alert('Sumiu?!'); }}).attr('id','btnRemove');
+  $remover.appendTo($('<li>').appendTo($('#cavaleiros')));
+}
 
 function renderizarCavaleiroNaTela(cavaleiro) {
   $('#cavaleiros')
