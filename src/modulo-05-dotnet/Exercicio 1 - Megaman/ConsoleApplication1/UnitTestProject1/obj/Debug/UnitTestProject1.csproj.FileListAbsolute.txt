@@ -1,0 +1,8 @@
+C:\Users\Michel\Desktop\dia01\ConsoleApplication1\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\Users\Michel\Desktop\dia01\ConsoleApplication1\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\Users\Michel\Desktop\dia01\ConsoleApplication1\UnitTestProject1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Michel\Desktop\dia01\ConsoleApplication1\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Michel\Desktop\dia01\ConsoleApplication1\UnitTestProject1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Michel\Desktop\dia01\ConsoleApplication1\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+C:\Users\Michel\Desktop\dia01\ConsoleApplication1\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\Users\Michel\Desktop\dia01\ConsoleApplication1\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
