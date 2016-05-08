@@ -41,5 +41,10 @@ namespace ConsoleApplication1
             int dano = ataque - this.Defesa;
             this.Vida -= dano;
         }
+
+        public override string ToString()
+        {
+            return ("Vida:" + this.Vida +", Ataque:" + this.Ataque + ", Defesa:" + this.Defesa);
+        }
     }
 }

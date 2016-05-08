@@ -152,5 +152,16 @@ namespace UnitTestProject1
             }
             Assert.AreEqual(0, protoman.Vida);
         }
+
+        [TestMethod]
+        public void TodosComAFuncaoToString()
+        {
+            var protoman = new Protoman();
+            var megaman = new Megaman();
+            var bot = new Bot();
+            Assert.AreEqual("Vida:100, Ataque:5, Defesa:2", protoman.ToString());
+            Assert.AreEqual("Vida:100, Ataque:6, Defesa:0", megaman.ToString());
+            Assert.AreEqual("Vida:100, Ataque:5, Defesa:0", bot.ToString());
+        }
     }
 }
