@@ -31,8 +31,8 @@ namespace ConsoleApplication1
         private bool jaMorreu = false;
         public override void ReceberAtaque(int ataque)
         {
-            int dano = ataque - this.Defesa;
-            this.Vida -= dano;
+            int dano = ataque - this.Defesa - BonusDefesa;
+            if(dano > 0) this.Vida -= dano;
             if (this.Vida <= 0 && !jaMorreu)
             {
                 this.Vida = 20;
