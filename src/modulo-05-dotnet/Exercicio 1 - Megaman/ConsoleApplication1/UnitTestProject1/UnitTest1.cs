@@ -163,5 +163,142 @@ namespace UnitTestProject1
             Assert.AreEqual("Vida:100, Ataque:6, Defesa:0", megaman.ToString());
             Assert.AreEqual("Vida:100, Ataque:5, Defesa:0", bot.ToString());
         }
+
+        [TestMethod]
+        public void BonusDeAtaqueEDefesaParaTodosUpgrades()
+        {
+            var canhao = new CanhaoDePlasma();
+            var escudo = new EscudoDeEnergia();
+            var botas = new BotasDeSuperVelocidade();
+            Assert.AreEqual(2, canhao.BonusDeAtaque);
+            Assert.AreEqual(0, canhao.BonusDeDefesa);
+            Assert.AreEqual(0, escudo.BonusDeAtaque);
+            Assert.AreEqual(2, escudo.BonusDeDefesa);
+            Assert.AreEqual(1, botas.BonusDeAtaque);
+            Assert.AreEqual(1, botas.BonusDeDefesa);
+        }
+
+        [TestMethod]
+        public void MegamanEquipadoComCanhao()
+        {
+            var canhao = new CanhaoDePlasma();
+            var megaman = new Megaman();
+            var bot = new Bot();
+            megaman.EquiparUpgrade(canhao);
+            megaman.Atacar(bot);
+            Assert.AreEqual(92, bot.Vida);
+        }
+
+        [TestMethod]
+        public void MegamanEquipadoComEscudo()
+        {
+            var escudo = new EscudoDeEnergia();
+            var megaman = new Megaman();
+            var bot = new Bot();
+            megaman.EquiparUpgrade(escudo);
+            bot.Atacar(megaman);
+            Assert.AreEqual(97, megaman.Vida);
+        }
+
+        [TestMethod]
+        public void ProtomanEquipadoComDoisEscudosESemPerderVida()
+        {
+            var escudo = new EscudoDeEnergia();
+            var escudo2 = new EscudoDeEnergia();
+            var protoman = new Protoman();
+            var bot = new Bot();
+            protoman.EquiparUpgrade(escudo);
+            protoman.EquiparUpgrade(escudo2);
+            bot.Atacar(protoman);
+            Assert.AreEqual(100, protoman.Vida);
+        }
+
+        [TestMethod]
+        public void MegamanEquipadoComCanhaoEComMenosDe30DeVida()
+        {
+            var canhao = new CanhaoDePlasma();
+            var megaman = new Megaman();
+            var bot = new Bot();
+            megaman.EquiparUpgrade(canhao);
+            for (int i = 0; i < 18; i++)
+            {
+                bot.Atacar(megaman);
+            }
+            megaman.Atacar(bot);
+            Assert.AreEqual(89, bot.Vida);
+        }
+
+        [TestMethod]
+        public void BotEquipadoComTodosUpgrades()
+        {
+            var canhao = new CanhaoDePlasma();
+            var escudo = new EscudoDeEnergia();
+            var botas = new BotasDeSuperVelocidade();
+            var bot = new Bot();
+            var bot2 = new Bot();
+            bot.EquiparUpgrade(canhao);
+            bot.EquiparUpgrade(escudo);
+            bot.EquiparUpgrade(botas);
+            bot2.Atacar(bot);
+            bot.Atacar(bot2);
+            Assert.AreEqual(98, bot.Vida);
+            Assert.AreEqual(92, bot2.Vida);
+        }
+
+        [TestMethod]
+        public void ProtomanEquipadoComTodosUpgrades()
+        {
+            var canhao = new CanhaoDePlasma();
+            var escudo = new EscudoDeEnergia();
+            var botas = new BotasDeSuperVelocidade();
+            var protoman = new Protoman();
+            var bot = new Bot();
+
+            protoman.EquiparUpgrade(canhao);
+            protoman.EquiparUpgrade(escudo);
+            protoman.EquiparUpgrade(botas);
+            bot.Atacar(protoman);
+            protoman.Atacar(bot);
+            Assert.AreEqual(92, bot.Vida);
+            Assert.AreEqual(100, protoman.Vida);
+        }
+
+        [TestMethod]
+        public void ProtomanRenasceComEEquipa3Canhoes()
+        {
+            var canhao = new CanhaoDePlasma();
+            var canhao2 = new CanhaoDePlasma();
+            var canhao3 = new CanhaoDePlasma();
+            var protoman = new Protoman();
+            var megaman = new Megaman();
+            for (int i = 0; i < 25; i++)
+            {
+                megaman.Atacar(protoman);
+            }
+            protoman.EquiparUpgrade(canhao);
+            protoman.EquiparUpgrade(canhao2);
+            protoman.EquiparUpgrade(canhao3);
+            protoman.Atacar(megaman);
+            Assert.AreEqual(87, megaman.Vida);
+        }
+
+        [TestMethod]
+        public void BotTentaEquiparMaisDe3Upgrades()
+        {
+            var canhao = new CanhaoDePlasma();
+            var escudo = new EscudoDeEnergia();
+            var botas = new BotasDeSuperVelocidade();
+            var outroCanhao = new CanhaoDePlasma();
+            var bot = new Bot();
+            var megaman = new Megaman();
+
+            bot.EquiparUpgrade(canhao);
+            bot.EquiparUpgrade(escudo);
+            bot.EquiparUpgrade(botas);
+            bot.EquiparUpgrade(outroCanhao);
+            bot.Atacar(megaman);
+
+            Assert.AreEqual(92, megaman.Vida);
+        }
     }
 }
