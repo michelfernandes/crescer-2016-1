@@ -60,14 +60,21 @@ function converterFormParaCavaleiro($form) {
       arrayGolpe.push($('#golpe'+i).val());
   }
 
+  var arrayImagens = [];
+    for (var i = 0; i <= cont2; i++) {
+        arrayImagens.push({
+          url: $(this).find('input[name=urlImagem]').val(),
+          isThumb: $(this).find('input[name=checkbox]').is(':checked')
+    });
+    }
+
+
   return {
     nome: formData.get('nome'),
     // solução sem FormData:
     // tipoSanguineo: $('#slTipoSanguineo :selected').val()
     tipoSanguineo: formData.get('tipoSanguineo'),
-    imagens: [
-      { url: formData.get('urlImagem'), isThumb: true }
-    ],
+    imagens: arrayImagens,
     dataNascimento: formData.get('dataNascimento').toString() + 'T03:00:00.000Z',
     alturaCm : formData.get('altura') * 100,
     pesoLb: formData.get('peso') * 2.20462,
@@ -95,7 +102,7 @@ $('#btnGolpe').click(function(){
 
 var cont2=0;
 $('#btnImg').click(function(){
-  var $input = $('<input>').attr('id',cont2).attr('placeholder','Url ' + cont2);
+  var $input = $('<input>').attr('id','imagem'+cont2).attr('placeholder','Url' + cont2).attr('name','urlImagem');
   $('#ulImg').append($('<li>').append($input));
   $('#ulImg').append($('<label>').text('Thumbnail: '));
   $('#ulImg').append($('<input>').attr('type','checkbox').attr('name','checkbox'+cont2));
@@ -103,7 +110,7 @@ $('#btnImg').click(function(){
 });
 
 function renderizarBotao(){
-  var $remover = $('<button/>',{ text: 'Remover', click: function () { alert('Sumiu?!'); }}).attr('id','btnRemove');
+  var $remover = $('<button/>',{ text: 'Remover', click: function () { alert('Excluir'); }}).attr('id','btnRemove');
   $remover.appendTo($('<li>').appendTo($('#cavaleiros')));
 }
 
