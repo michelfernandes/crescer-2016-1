@@ -7,3 +7,6 @@ C:\Users\Michel\Desktop\dia01\ConsoleApplication1\ConsoleApplication1\obj\Debug\
 C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
