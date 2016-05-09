@@ -14,3 +14,11 @@ C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Exercicio 1 - Megaman
 C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
 C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\UnitTestProject1\obj\Debug\UnitTestProject1.dll
 C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\UnitTestProject1\obj\Debug\UnitTestProject1.pdb
+C:\Users\michel.fernandes\Documents\Meu GIT\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\Users\michel.fernandes\Documents\Meu GIT\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\Users\michel.fernandes\Documents\Meu GIT\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\UnitTestProject1\bin\Debug\ConsoleApplication1.exe
+C:\Users\michel.fernandes\Documents\Meu GIT\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\michel.fernandes\Documents\Meu GIT\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\UnitTestProject1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\michel.fernandes\Documents\Meu GIT\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\UnitTestProject1\obj\Debug\UnitTestProject1.csprojResolveAssemblyReference.cache
+C:\Users\michel.fernandes\Documents\Meu GIT\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\Users\michel.fernandes\Documents\Meu GIT\src\modulo-05-dotnet\Exercicio 1 - Megaman\ConsoleApplication1\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

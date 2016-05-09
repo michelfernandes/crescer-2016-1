@@ -497,5 +497,120 @@ namespace UnitTestProject1
             Assert.AreEqual(90,megaman.Vida);
             Assert.AreEqual(98,protoman.Vida);
         }
+
+        [TestMethod]
+        public void RushAtacaMegaman()
+        {
+            var megaman = new Megaman();
+            var rush = new Rush();
+            rush.Atacar(megaman);
+            Assert.AreEqual(100, megaman.Vida);
+        }
+
+        [TestMethod]
+        public void RushAtacaProtoman()
+        {
+            var protoman = new Protoman();
+            var rush = new Rush();
+            rush.Atacar(protoman);
+            Assert.AreEqual(98, protoman.Vida);
+        }
+
+        [TestMethod]
+        public void RushComCanhaoAtacaMegamanComEscudo()
+        {
+            var megaman = new Megaman();
+            var rush = new Rush();
+            var escudo = new EscudoDeEnergia();
+            var canhao = new CanhaoDePlasma();
+            rush.EquiparUpgrade(canhao);
+            megaman.EquiparUpgrade(escudo);
+            rush.Atacar(megaman);
+            Assert.AreEqual(100, megaman.Vida);
+        }
+
+        [TestMethod]
+        public void RushNivel3AtacaMegamanNivel1()
+        {
+            var megaman = new Megaman(Chip.Nivel1);
+            var rush = new Rush(Chip.Nivel3);
+            rush.Atacar(megaman);
+            Assert.AreEqual(100, megaman.Vida);
+        }
+
+        [TestMethod]
+        public void MegamanNivel3AtacaRushNivel3()
+        {
+            var megaman = new Megaman(Chip.Nivel3);
+            var rush = new Rush(Chip.Nivel3);
+            megaman.Atacar(rush);
+            Assert.AreEqual(96, rush.Vida);
+        }
+
+        [TestMethod]
+        public void MegamanNivel3EComMenosDe30DeVida()
+        {
+            var megaman = new Megaman(Chip.Nivel3);
+            var bot = new Bot();
+            for (int i = 0; i < 18; i++)
+            {
+                bot.Atacar(megaman);
+            }
+            megaman.Atacar(bot);
+            Assert.AreEqual(89, bot.Vida);
+        }
+
+        [TestMethod]
+        public void MegamanNivel1ComMenosDe30DeVidaEquipadoComRush()
+        {
+            var megaman = new Megaman(Chip.Nivel3);
+            var bot = new Bot();
+            var rush = new Rush();
+            for (int i = 0; i < 18; i++)
+            {
+                bot.Atacar(megaman);
+            }
+            megaman.EquiparUpgrade(rush);
+            megaman.Atacar(bot);
+            bot.Atacar(megaman);
+            Assert.AreEqual(85, bot.Vida);
+        }
+
+        [TestMethod]
+        public void ToStringDePersonagensEquipadosComEscudoNivel3()
+        {
+            var protoman = new Protoman(Chip.Nivel3);
+            var megaman = new Megaman(Chip.Nivel3);
+            var bot = new Bot(Chip.Nivel3);
+            var rush = new Rush(Chip.Nivel3);
+            var escudo = new EscudoDeEnergia();
+            protoman.EquiparUpgrade(escudo);
+            megaman.EquiparUpgrade(escudo);
+            bot.EquiparUpgrade(escudo);
+            rush.EquiparUpgrade(escudo);
+            Assert.AreEqual("Vida:100, Ataque:7, Defesa:3", protoman.ToString());
+            Assert.AreEqual("Vida:100, Ataque:8, Defesa:1", megaman.ToString());
+            Assert.AreEqual("Vida:100, Ataque:7, Defesa:1", bot.ToString());
+            Assert.AreEqual("Vida:100, Ataque:6, Defesa:4", rush.ToString());
+        }
+
+        [TestMethod]
+        public void ToStringDePersonagensEquipadosComCanhaoNivel1()
+        {
+            var protoman = new Protoman(Chip.Nivel1);
+            var megaman = new Megaman(Chip.Nivel1);
+            var bot = new Bot(Chip.Nivel1);
+            var rush = new Rush(Chip.Nivel1);
+            var canhao = new CanhaoDePlasma();
+            protoman.EquiparUpgrade(canhao);
+            megaman.EquiparUpgrade(canhao);
+            bot.EquiparUpgrade(canhao);
+            rush.EquiparUpgrade(canhao);
+            Assert.AreEqual("Vida:100, Ataque:4, Defesa:2", protoman.ToString());
+            Assert.AreEqual("Vida:100, Ataque:5, Defesa:0", megaman.ToString());
+            Assert.AreEqual("Vida:100, Ataque:4, Defesa:0", bot.ToString());
+            Assert.AreEqual("Vida:100, Ataque:3, Defesa:3", rush.ToString());
+        }
+
     }
 }

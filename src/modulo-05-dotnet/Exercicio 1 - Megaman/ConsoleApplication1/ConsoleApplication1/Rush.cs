@@ -44,5 +44,11 @@ namespace ConsoleApplication1
                return this.Defesa + BonusDefesa;
             }
         }
+
+        public override void Atacar(Robo robo)
+        {
+            if (!(robo is Megaman))
+            robo.ReceberAtaque(this.Ataque + BonusAtaque);
+        }
     }
 }
