@@ -451,5 +451,51 @@ namespace UnitTestProject1
             Assert.AreEqual(91, bot.Vida);
             Assert.AreEqual(94, megaman.Vida);
         }
+
+        [TestMethod]
+        public void CriarRobosComChips()
+        {
+            var protoman = new Protoman();
+            var megaman = new Megaman(Chip.Nivel1);
+            var bot = new Bot(Chip.Nivel2);
+            var rush = new Rush(Chip.Nivel3);
+            Assert.AreEqual("Vida:100, Ataque:5, Defesa:2", protoman.ToString());
+            Assert.AreEqual("Vida:100, Ataque:5, Defesa:0", megaman.ToString());
+            Assert.AreEqual("Vida:100, Ataque:5, Defesa:0", bot.ToString());
+            Assert.AreEqual("Vida:100, Ataque:6, Defesa:4", rush.ToString());
+        }
+
+        [TestMethod]
+        public void CriarRobosComChipNivel1EAtacar()
+        {
+            var protoman = new Protoman();
+            var megaman = new Megaman(Chip.Nivel1);
+            megaman.Atacar(protoman);
+            Assert.AreEqual(97, protoman.Vida);
+        }
+
+        [TestMethod]
+        public void CriarRobosComChipNivel1EReceberAtaque()
+        {
+            var megaman = new Megaman();
+            var protoman = new Protoman(Chip.Nivel1);
+            protoman.Atacar(megaman);
+            Assert.AreEqual(96, megaman.Vida);
+        }
+
+        [TestMethod]
+        public void CriarRoboComChipNivel3EUpgrades()
+        {
+            var megaman = new Megaman();
+            var protoman = new Protoman(Chip.Nivel3);
+            var canhao = new CanhaoDePlasma();
+            var botas = new BotasDeSuperVelocidade();
+            protoman.EquiparUpgrade(canhao);
+            protoman.EquiparUpgrade(botas);
+            protoman.Atacar(megaman);
+            megaman.Atacar(protoman);
+            Assert.AreEqual(90,megaman.Vida);
+            Assert.AreEqual(98,protoman.Vida);
+        }
     }
 }

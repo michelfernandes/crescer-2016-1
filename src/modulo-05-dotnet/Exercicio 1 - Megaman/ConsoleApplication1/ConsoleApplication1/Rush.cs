@@ -8,12 +8,17 @@ namespace ConsoleApplication1
 {
     public class Rush : Robo , IUpgrade
     {
-        
+        public Rush()
+        {
+        }
+        public Rush(Chip chip) : base(chip)
+        {
+        }
         protected override int Ataque
         {
             get
             {
-                return 4;
+                return 4 + BonusAtaqueChip;
             }
         }
 
@@ -21,7 +26,7 @@ namespace ConsoleApplication1
         {
             get
             {
-                return 3;
+                return 3 + BonusDefesaChip;
             }
         }
         public int BonusDeAtaque

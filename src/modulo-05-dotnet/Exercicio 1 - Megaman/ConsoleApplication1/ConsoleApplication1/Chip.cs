@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
-    public class Bot : Robo
+    public enum Chip
     {
-        public Bot()
-        {
-        }
-        public Bot(Chip chip) : base(chip)
-        {
-        }
+        Nivel1,
+        Nivel2,
+        Nivel3
     }
 }

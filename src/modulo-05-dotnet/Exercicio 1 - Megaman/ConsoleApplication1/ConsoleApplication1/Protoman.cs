@@ -11,12 +11,15 @@ namespace ConsoleApplication1
         public Protoman()
         {
         }
+        public Protoman(Chip chip) : base(chip)
+        {
+        }
 
         protected override int Defesa
         {
             get
             {
-                return 2;
+                return 2 + BonusDefesaChip;
             }
         }
 
@@ -24,7 +27,7 @@ namespace ConsoleApplication1
         {
             get
             {
-                return jaMorreu ?  7 : 5;
+                return BonusAtaqueChip + (jaMorreu ?  7 : 5);
             }
         }
 

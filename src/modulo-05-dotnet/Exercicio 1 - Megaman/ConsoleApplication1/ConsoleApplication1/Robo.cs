@@ -10,16 +10,45 @@ namespace ConsoleApplication1
     {
         public Robo()
         {
+            this.chip = Chip.Nivel2;
+            VerificarChip(chip);
             Vida = 100;
         }
+        public Robo(Chip chip) : this()
+        {
+            VerificarChip(chip);
+        }
 
+        protected Chip chip;
         public int Vida { get; protected set; }
+
+        protected int BonusAtaqueChip = 0;
+        protected int BonusDefesaChip = 0;
+
+        protected void VerificarChip(Chip chip)
+        {
+            switch (chip)
+            {
+                case Chip.Nivel1:
+                    BonusAtaqueChip = -1;
+                    break;
+                case Chip.Nivel3:
+                    BonusAtaqueChip = 2;
+                    BonusDefesaChip = 1;
+                    break;
+                default:
+                    BonusAtaqueChip = 0;
+                    BonusDefesaChip = 0;
+                    break;
+            }
+        }
+        
 
         protected virtual int Ataque
         {
             get
             {
-                return 5;
+                return 5 + BonusAtaqueChip;
             }
         }
 
@@ -27,7 +56,7 @@ namespace ConsoleApplication1
         {
             get
             {
-                return 0;
+                return 0 + BonusDefesaChip;
             }
         }
 

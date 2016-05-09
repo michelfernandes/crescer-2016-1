@@ -10,14 +10,16 @@ namespace ConsoleApplication1
     {
         public Megaman()
         {
-         
+        }
+        public Megaman(Chip chip) : base (chip)
+        {
         }
 
         protected override int Ataque
         {
             get
             {
-                return 6;
+                return 6 + BonusAtaqueChip;
             }
         }
 
