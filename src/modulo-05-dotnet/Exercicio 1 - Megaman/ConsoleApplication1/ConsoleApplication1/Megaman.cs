@@ -24,7 +24,7 @@ namespace ConsoleApplication1
         public override void Atacar(Robo robo)
         {
 
-            int novoAtaque = this.Vida > 30 ? this.Ataque : this.Ataque + 3;
+            int novoAtaque = this.Ataque + BonusAtaque + (this.Vida > 30 ? 0 : 3);
             robo.ReceberAtaque(novoAtaque);
         }
     }
