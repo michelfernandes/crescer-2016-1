@@ -96,12 +96,14 @@ namespace Repositorio
 
         public IList<Funcionario> BuscarPorNome(string nome)
         {
-            throw new NotImplementedException();
+            return Funcionarios.Where(x => x.Nome.Contains(nome)).ToList();
         }        
 
         public IList<Funcionario> BuscarPorTurno(params TurnoTrabalho[] turnos)
         {
-            throw new NotImplementedException();
+            var retorna = Funcionarios.Where (x => turnos
+            .Contains(x.TurnoTrabalho)).ToList(); 
+            return turnos.Count() == 0 ? Funcionarios : retorna;
         }        
 
         public IList<Funcionario> FiltrarPorIdadeAproximada(int idade)
@@ -116,7 +118,8 @@ namespace Repositorio
 
         public IList<Funcionario> AniversariantesDoMes()
         {
-            throw new NotImplementedException();
+            return Funcionarios.Where(x => x.DataNascimento.Month ==
+            DateTime.Now.Month).ToList();
         }
 
         public IList<dynamic> BuscaRapida()
