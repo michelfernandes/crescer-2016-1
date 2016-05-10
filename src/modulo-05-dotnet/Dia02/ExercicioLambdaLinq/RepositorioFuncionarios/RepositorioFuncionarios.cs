@@ -103,7 +103,7 @@ namespace Repositorio
         {
             var retorna = Funcionarios.Where (x => turnos
             .Contains(x.TurnoTrabalho)).ToList(); 
-            return turnos.Count() == 0 ? Funcionarios : retorna;
+            return turnos.Length == 0 ? Funcionarios : retorna;
         }        
 
         public IList<Funcionario> FiltrarPorIdadeAproximada(int idade)
