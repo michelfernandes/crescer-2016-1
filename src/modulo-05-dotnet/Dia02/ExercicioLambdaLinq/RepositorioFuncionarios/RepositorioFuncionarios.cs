@@ -96,6 +96,7 @@ namespace Repositorio
 
         public IList<Funcionario> BuscarPorNome(string nome)
         {
+        //stackoverflow.com/questions/10797309/case-insensitive-comparison-in-c-sharp
             return Funcionarios.Where(x =>
             x.Nome.IndexOf(nome, StringComparison.CurrentCultureIgnoreCase) >= 0)
             .ToList();
@@ -126,7 +127,12 @@ namespace Repositorio
 
         public IList<dynamic> BuscaRapida()
         {
-            throw new NotImplementedException();
+        //stackoverflow.com/questions/10419709/how-can-i-create-my-own-selectlist-with-values-of-00-and-in-c-sharp-for-mvc
+            return Funcionarios.Select(x => new
+            {
+                NomeFuncionario = x.Nome,
+                TituloCargo = x.Cargo.Titulo
+            }).ToArray();
         }
 
         public IList<dynamic> QuantidadeFuncionariosPorTurno()
