@@ -1,0 +1,24 @@
+﻿@model  SobreMimModel
+@{
+    ViewBag.Title = "Sobre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<img src="~/Content/Imagens/foto.png" alt="Foto" style="width:200px;float: right;"/>
+
+<p>
+    <h2 id="jogo">@Model.Nome</h2>
+<p>
+    
+    <strong>Idade:</strong> @Model.Idade <br>
+    <strong>Data de nascimento:</strong> @Model.DataNascimento<br>
+    <strong>País:</strong> @Model.Pais <br>
+    <strong>Cidade:</strong> @Model.Cidade <br>
+    <strong>Gosta:</strong> @Model.Gosta<br>
+    <strong>Não gosta:</strong> @Model.NaoGosta<br>
+</p>
+<h2 id="historia">História</h2>
+<p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mollis, justo ut pulvinar finibus, nunc felis ultricies dolor, et mattis magna justo imperdiet nisi. Suspendisse a mi turpis. Maecenas tincidunt sapien vitae eros mollis, ut efficitur odio ultricies. Interdum et malesuada fames ac ante ipsum primis in faucibus. Duis pretium orci quis ex suscipit, a hendrerit odio imperdiet. Interdum et malesuada fames ac ante ipsum primis in faucibus. Integer semper felis ut luctus hendrerit. Vestibulum sagittis ultrices nisl quis mollis. Morbi sed sem ac purus ornare dictum eu id enim. Proin sit amet diam eu ante viverra vulputate.
+</p>
+</p>
