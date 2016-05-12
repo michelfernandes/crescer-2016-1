@@ -1,5 +1,4 @@
 C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Dia02\ExercicioLambdaLinq\RepositorioFuncionarios\bin\Debug\Repositorio.dll
 C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Dia02\ExercicioLambdaLinq\RepositorioFuncionarios\bin\Debug\Repositorio.pdb
-C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Dia02\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.csprojResolveAssemblyReference.cache
 C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Dia02\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.dll
 C:\Users\Michel\Documents\Git Desktop\src\modulo-05-dotnet\Dia02\ExercicioLambdaLinq\RepositorioFuncionarios\obj\Debug\Repositorio.pdb
