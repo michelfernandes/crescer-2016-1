@@ -58,6 +58,14 @@
       <Project>{151c75ce-d844-4cf4-a2ba-1e4de8b44f0c}</Project>
       <Name>LojaNinja.Dominio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LojaNinja.MVC\LojaNinja.MVC.csproj">
+      <Project>{f398ec8e-6164-40b1-b6a6-671f771cc449}</Project>
+      <Name>LojaNinja.MVC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LojaNinja.Repositorio\LojaNinja.Repositorio.csproj">
+      <Project>{1fc9476a-0cdb-43d7-87e8-a220ae93b437}</Project>
+      <Name>LojaNinja.Repositorio</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

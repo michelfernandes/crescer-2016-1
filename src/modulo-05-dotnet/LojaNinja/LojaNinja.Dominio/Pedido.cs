@@ -22,7 +22,7 @@ namespace LojaNinja.Dominio
             Estado = estado;
 
             //DateTime.Now contaria as horas, minutos e segundos, isso inviabliziaria algumas validações a seguir
-            DataPedido = DateTime.Now; 
+            DataPedido = DateTime.Today; 
 
             var diasRestantesParaConcluirEntrega = (dataEntregaDesejada - DateTime.Today).TotalDays;
             ValidaPossibilidadeEntrega(diasRestantesParaConcluirEntrega);
