@@ -39,14 +39,6 @@ namespace LojaNinja.Domino.Test
             var pedido = new Pedido(data, "kunai", 1200, TipoPagamento.Amex, "Mariana", "SL", "RS");
 
             Assert.AreEqual(true, pedido.PedidoUrgente);
-        }
-        [TestMethod]
-        public void IntanciaComADataMenorQueAAtual()
-        {
-            var data = new DateTime(2015, 05, 17);
-            var pedido = new Pedido(data, "kunai", 1200, TipoPagamento.Amex, "Mariana", "SL", "RS");
-
-            Assert.IsNull(pedido.PedidoUrgente);
-        }
+        }       
     }
 }
