@@ -1,33 +1,10 @@
 ﻿@model LojaNinja.Models.DadosNinjasModel
 
 @{
-    Layout = null;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <link href="~/Content/bootstrap.css" rel="stylesheet" />
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <title>Index</title>
-
-    <style>
-        .container {
-            margin:40px;
-            padding: 10px;
-            width:auto;
-            background-color:mediumaquamarine;
-            border-radius: 10px;
-        }
-        body {
-            background-color:#2F4F4F;
-        }
-    </style>
-
-</head>
-<body>
     
     <div class="container">
         @using (Html.BeginForm("SucessoPedido", "DadosNinjas", FormMethod.Post))
@@ -175,18 +152,16 @@
     </div>
 
 
-    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    @section scripts{ 
     <script src="~/Scripts/jquery.validate.min.js"></script>
     <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-    <script src="~/scripts/bootstrap.js"></script>
-
+    
     <script>
         $(function () {
             $('.datepicker').datepicker({
             dateFormat: 'dd/mm/yy'});
         });
     </script>
+    }
 
-</body>
-</html>

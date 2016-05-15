@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <title>Index</title>
+
+    <style>
+        .container {
+            margin: 40px;
+            padding: 10px;
+            width: auto;
+            background-color: mediumaquamarine;
+            border-radius: 10px;
+        }
+
+        body {
+            background-color: #2F4F4F;
+        }
+    </style>
+
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script> 
+    <script src="~/scripts/bootstrap.js"></script>
+    @RenderSection("scripts", false)
+           
+</body>
+</html>
