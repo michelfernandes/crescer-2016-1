@@ -22,6 +22,7 @@ namespace LojaNinja.Controllers
                 ModelState.AddModelError("Valor", "O valor do pedido não deve ser negativo");
                 return View("Index", dados);
             }
+
             if (ModelState.IsValid) { 
                 ViewBag.MensagemSucesso = "Pedido cadastrado com sucesso!";
             }
