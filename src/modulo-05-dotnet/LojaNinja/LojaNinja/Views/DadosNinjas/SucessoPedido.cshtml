@@ -1,0 +1,101 @@
+﻿@model LojaNinja.Models.DadosNinjasModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <title>Sucesso</title>
+
+    <style>
+        .container {
+            margin:40px;
+            padding: 10px;
+            width:auto;
+            background-color:mediumaquamarine;
+            border-radius: 10px;
+        }
+        body {
+            background-color:#2F4F4F;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"> 
+        <h2>@ViewBag.MensagemSucesso</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.NumeroPedido)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumeroPedido)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DataPedido)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DataPedido)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DataEntrega)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DataEntrega)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NomeProduto)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NomeProduto)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Valor)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Valor)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NomeCliente)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NomeCliente)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cidade)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Estado)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Estado)
+            </dd>
+        </dl>
+        <div class="col-md-10">
+            <a href="/DadosNinjas" class="btn btn-default">Voltar</a>
+        </div>
+    </div>
+</body>
+</html>
