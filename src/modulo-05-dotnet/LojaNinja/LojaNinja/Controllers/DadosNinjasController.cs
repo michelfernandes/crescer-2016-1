@@ -14,9 +14,14 @@ namespace LojaNinja.Controllers
             return View();
         }
 
-        public ActionResult SucessoPedido(DadosNinjasModel dados)
+        public ActionResult Detalhes(DadosNinjasModel dados)
         {
 
+            if (dados.Valor < 0)
+            {
+                ModelState.AddModelError("Valor", "O valor do pedido não deve ser negativo");
+                return View("Index", dados);
+            }
             if (ModelState.IsValid) { 
                 ViewBag.MensagemSucesso = "Pedido cadastrado com sucesso!";
             }
@@ -25,7 +30,7 @@ namespace LojaNinja.Controllers
                 ModelState.AddModelError("", "Existem erros nos campos do formulário. Por favor corrija.");
             }
 
-            return View("SucessoPedido", dados);
+            return View("Detalhes", dados);
         }
     }
 }

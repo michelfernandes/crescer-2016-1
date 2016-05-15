@@ -11,7 +11,6 @@ namespace LojaNinja.Models
     public class DadosNinjasModel
     {
         [DisplayName("Número do Pedido")]
-        [Range(0, int.MaxValue, ErrorMessage = "O valor não pode ser negativo.")]
         public int NumeroPedido { get; set; }
 
         [DisplayName("Data do Pedido")]
@@ -24,7 +23,6 @@ namespace LojaNinja.Models
         public string NomeProduto { get; set; }
 
         [DisplayName("Valor do Produto")]
-        [Range(0.0, Double.MaxValue,ErrorMessage ="O valor não pode ser negativo.")]
         public decimal Valor { get; set; }
 
         [DisplayName("Tipo de Pagamento")]
