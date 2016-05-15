@@ -75,6 +75,15 @@ namespace LojaNinja.MVC.Controllers
         {
             var pedidos = repositorio.ObterPedidos();
 
+            if (!string.IsNullOrEmpty(cliente))
+            {                
+                pedidos = pedidos.Where(x => x.NomeCliente.IndexOf(cliente, StringComparison.InvariantCultureIgnoreCase) >= 0).ToList();
+            }
+            if (!string.IsNullOrEmpty(produto))
+            {
+                pedidos = pedidos.Where(x => x.NomeProduto.IndexOf(produto, StringComparison.InvariantCultureIgnoreCase) >= 0).ToList();
+            }
+
             return View(pedidos);
         }
 
