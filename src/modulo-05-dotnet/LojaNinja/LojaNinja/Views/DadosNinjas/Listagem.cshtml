@@ -7,10 +7,8 @@
 
 <h2>Listagem</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+
+<table class="table table-bordered table-striped">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.NumeroPedido)
@@ -74,3 +72,6 @@
 }
 
 </table>
+<div class="col-md-10">
+    <a href="/DadosNinjas" class="btn btn-default">Voltar</a>
+</div>
