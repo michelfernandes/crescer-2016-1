@@ -30,6 +30,9 @@
         <th>
             Estado
         </th>
+        <th>
+            Urgente
+        </th>
         <th></th>
     </tr>
 
@@ -56,6 +59,12 @@
             </td>
             <td>
                 @item.Estado
+            </td>
+            <td>
+                @if(item.PedidoUrgente)
+                { <div>Sim <span class="glyphicon glyphicon-warning-sign"></span> </div> }
+                else
+                { <div>Não</div>}
             </td>
             <td>
                 <a href="~/Pedido/Manter/@item.Id">Editar</a>

@@ -48,7 +48,7 @@
         </dd>
 
         <dt>
-            Cliente
+            Cliente:
         </dt>
 
         <dd>
@@ -56,7 +56,7 @@
         </dd>
 
         <dt>
-            Cidade
+            Cidade:
         </dt>
 
         <dd>
@@ -64,7 +64,7 @@
         </dd>
 
         <dt>
-            Estado
+            Estado:
         </dt>
 
         <dd>
@@ -72,11 +72,12 @@
         </dd>
 
         <dt>
-            Urgente
+            Urgente:
         </dt>
 
         <dd>
-            @Model.PedidoUrgente
+            @if (Model.PedidoUrgente) { <div>Sim <span class="glyphicon glyphicon-warning-sign"></span> </div> }
+            else { <div>Não</div>}
         </dd>
 
     </dl>
