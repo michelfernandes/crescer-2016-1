@@ -27,7 +27,7 @@ namespace LojaNinja.Models
         [Range(0.0, Double.MaxValue,ErrorMessage ="O valor não pode ser negativo.")]
         public decimal Valor { get; set; }
 
-        [DisplayName("Tipo de Pagamento/Cartão")]
+        [DisplayName("Tipo de Pagamento")]
         public EnumTipoPagamento TipoPagamento { get; set; }
 
         [DisplayName("Nome do Cliente")]
