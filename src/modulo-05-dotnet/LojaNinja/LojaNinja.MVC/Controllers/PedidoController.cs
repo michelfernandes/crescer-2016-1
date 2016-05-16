@@ -1,4 +1,5 @@
-﻿using LojaNinja.Dominio;
+﻿using BaseAulaSeguranca.Filters;
+using LojaNinja.Dominio;
 using LojaNinja.MVC.Models;
 using LojaNinja.Repositorio;
 using System;
@@ -13,6 +14,7 @@ namespace LojaNinja.MVC.Controllers
     {
         private RepositorioVendas repositorio = new RepositorioVendas();
 
+        [CWIToken]
         public ActionResult Manter(int? id)
         {
             if (id.HasValue)
@@ -36,6 +38,7 @@ namespace LojaNinja.MVC.Controllers
             }
         }
 
+        [CWIToken]
         public ActionResult Salvar(PedidoModel model)
         {
             if (model.Estado == "RS" && model.Cidade == "SL")
@@ -64,6 +67,7 @@ namespace LojaNinja.MVC.Controllers
             return View("Manter", model);
         }
 
+        [CWIToken]
         public ActionResult Detalhes(int id)
         {
             var pedido = repositorio.ObterPedidoPorId(id);
@@ -71,6 +75,7 @@ namespace LojaNinja.MVC.Controllers
             return View(pedido);
         }
 
+        [CWIToken]
         public ActionResult Listagem(string cliente, string produto)
         {
             var pedidos = repositorio.ObterPedidos();
@@ -87,6 +92,7 @@ namespace LojaNinja.MVC.Controllers
             return View(pedidos);
         }
 
+        [CWIToken]
         public ActionResult Excluir(int id)
         {
             repositorio.ExcluirPedido(id);
