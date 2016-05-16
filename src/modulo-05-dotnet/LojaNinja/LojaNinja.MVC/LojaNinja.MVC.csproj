@@ -143,6 +143,7 @@
     <Content Include="Views\Shared\Mensagem.cshtml" />
     <Content Include="Views\Pedido\Excluir.cshtml" />
     <Content Include="Views\Pedido\Login.cshtml" />
+    <Content Include="Views\Pedido\CadastroUsuario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

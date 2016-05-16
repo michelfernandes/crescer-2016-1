@@ -1,12 +1,11 @@
 ﻿@model LojaNinja.MVC.Models.LoginViewModel
 @{
-    ViewBag.Title = "Login";
+    ViewBag.Title = "CadastroUsuario";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Login</h2>
-
-@using (Html.BeginForm("Login", "Pedido", FormMethod.Post, new { @class = "form" }))
+<h2>Criar conta</h2>
+@using (Html.BeginForm("UsuarioCadastro", "Pedido", FormMethod.Post, new { @class = "form" }))
 {
     <!-- Este carinha aqui que gera o token de segurança do form. -->
     @Html.AntiForgeryToken()
@@ -18,13 +17,19 @@
         @Html.TextBoxFor(m => m.Email)
     </div>
     <div class="form-group">
+        @Html.LabelFor(m => m.Nome) <br />
+        @Html.TextBoxFor(m => m.Nome)
+    </div>
+    <div class="form-group">
         @Html.LabelFor(m => m.Senha) <br />
         @Html.PasswordFor(m => m.Senha)
     </div>
     <div class="form-group">
-        <input type="submit" value="Entrar" />
+        @Html.LabelFor(m => m.ConfirmarSenha) <br />
+        @Html.PasswordFor(m => m.ConfirmarSenha)
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Cadastrar" />
     </div>
 }
-<div>
-    <a href="~/Pedido/CadastroUsuario">Cadastre-se.</a>
-</div>
+

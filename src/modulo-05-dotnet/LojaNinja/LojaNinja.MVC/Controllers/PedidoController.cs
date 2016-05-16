@@ -15,17 +15,22 @@ namespace LojaNinja.MVC.Controllers
 
         public ActionResult Login()
         {
-            if (false)//verifica se esta logado
-            {
-                return View();
-            }
+            /* if (false)//verifica se esta logado
+             {
+                 return View();
+             }
 
-            return RedirectToAction("Listagem");
+             return RedirectToAction("Listagem");*/
+            return View();
+
         }
 
         public ActionResult UsuarioCadastro()
         {
-            return View("Login");
+           /* if (model.Senha != model.ConfirmarSenha )
+                ModelState.AddModelError("", "As senhas devem ser iguais");*/
+
+            return View("CadastroUsuario");
         }
 
         public ActionResult Manter(int? id)
