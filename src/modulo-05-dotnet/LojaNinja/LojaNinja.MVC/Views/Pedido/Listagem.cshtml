@@ -22,6 +22,9 @@
             Valor
         </th>
         <th>
+            Tipo Pagamento
+        </th>
+        <th>
             Cliente
         </th>
         <th>
@@ -49,7 +52,10 @@
                 @item.NomeProduto
             </td>
             <td>
-               R$ @item.Valor.ToString("0.00")
+                R$@item.Valor.ToString("0.00")
+            </td>
+            <td>
+                @item.TipoPagamento
             </td>
             <td>
                 @item.NomeCliente

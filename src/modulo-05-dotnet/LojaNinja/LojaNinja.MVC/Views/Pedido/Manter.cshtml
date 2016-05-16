@@ -37,6 +37,14 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.TipoPagamento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.TipoPagamento, new SelectList(Enum.GetValues(typeof(LojaNinja.Dominio.TipoPagamento))))
+                @Html.ValidationMessageFor(model => model.TipoPagamento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
             @Html.LabelFor(model => model.NomeCliente, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.TextBoxFor(model => model.NomeCliente, new { @class = "form-control" })

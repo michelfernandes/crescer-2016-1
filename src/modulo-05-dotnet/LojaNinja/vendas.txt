@@ -1000,3 +1000,4 @@
 999;15/05/2016 18:52;23/12/2016 00:00;dsadsa;123,45;0;dsa;das;asd;False
 1000;15/05/2016 19:22;12/06/2016 00:00;Alahuakbar ;1200,50;0;dasdas;dsa;das;False
 1001;15/05/2016 19:23;15/12/2020 00:00;dadas;0;0;dasddas;adsasd;32423432;False
+1002;15/05/2016 21:25;16/05/2016 00:00;katana;2132;Diners;Jon;Toquio;Azerbaijao;True
