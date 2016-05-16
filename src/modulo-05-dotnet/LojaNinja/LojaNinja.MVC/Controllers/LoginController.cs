@@ -1,4 +1,6 @@
-﻿using LojaNinja.Dominio;
+﻿using BaseAulaSeguranca.Models.Login;
+using BaseAulaSeguranca.Services;
+using LojaNinja.Dominio;
 using LojaNinja.MVC.Models;
 using LojaNinja.Repositorio;
 using System;
@@ -58,9 +60,36 @@ namespace LojaNinja.MVC.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Entrar(LoginViewModel model)
+        public ActionResult Entrar(LoginModel loginViewModel)
         {
-            return View("Index");
+            if (ModelState.IsValid)
+            {
+                // Buscamos o usuário de nosso "Banco de Dados" por seu login e senha.
+                Usuario usuarioEncontrado =
+                    _usuarioServico.BuscarUsuarioPorAutenticacao(
+                            loginViewModel.Email, loginViewModel.Senha
+                        );
+
+                if (usuarioEncontrado != null)
+                {
+                    // É sempre bom criar uma Model só para o usuário logado.
+                    // Digamos que você queira utilizar somente a classe Usuário para isso,
+                    // então se quisesse guardar coisas que são da sessão e não da classe usuário, como faria?
+                    // mudaria a classe Usuario? Não, porque não é de sua responsabilidade os dados de sessão.
+                    // mas uma view model pode ser mais flexivel.
+                    var usuarioLogadoModel = new UsuarioLogadoModel(usuarioEncontrado);
+
+                    // Encapsulamos aqui a regra para criar a sessão.
+                    ServicoDeSessao.CriarSessao(usuarioLogadoModel);
+                    return RedirectToAction("Listagem","Pedido");
+                }
+                else
+                {
+                    ModelState.AddModelError("INVALID_USER", "Usuário ou senha inválido.");
+                }
+            }
+
+            return View("Index", loginViewModel);
         }
     }
 }
