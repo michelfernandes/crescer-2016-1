@@ -13,6 +13,21 @@ namespace LojaNinja.MVC.Controllers
     {
         private RepositorioVendas repositorio = new RepositorioVendas();
 
+        public ActionResult Login()
+        {
+            if (false)//verifica se esta logado
+            {
+                return View();
+            }
+
+            return RedirectToAction("Listagem");
+        }
+
+        public ActionResult UsuarioCadastro()
+        {
+            return View("Login");
+        }
+
         public ActionResult Manter(int? id)
         {
             if (id.HasValue)
