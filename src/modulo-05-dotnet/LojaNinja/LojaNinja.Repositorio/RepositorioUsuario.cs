@@ -10,7 +10,7 @@ namespace LojaNinja.Repositorio
     public class RepositorioUsuario : IUsuarioRepositorio
     {
 
-        private List<Usuario> _usuarios;
+        static private List<Usuario> _usuarios;
 
         public RepositorioUsuario()
         {
