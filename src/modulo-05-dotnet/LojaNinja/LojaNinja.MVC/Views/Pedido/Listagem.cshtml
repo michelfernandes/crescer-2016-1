@@ -40,16 +40,16 @@
     {
         <tr>
             <td>
-                @item.DataPedido
+                @item.DataPedido.ToShortDateString()
             </td>
             <td>
-                @item.DataEntregaDesejada
+                @item.DataEntregaDesejada.ToShortDateString()
             </td>
             <td>
                 @item.NomeProduto
             </td>
             <td>
-               R$ @item.Valor
+               R$ @item.Valor.ToString("0.00")
             </td>
             <td>
                 @item.NomeCliente
