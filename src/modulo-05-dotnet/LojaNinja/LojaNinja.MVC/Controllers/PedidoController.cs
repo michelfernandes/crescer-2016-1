@@ -91,9 +91,9 @@ namespace LojaNinja.MVC.Controllers
         {
             repositorio.ExcluirPedido(id);
 
-            ViewBag.Mensagem = "Pedido excluído!";
+            ViewBag.Mensagem = "Pedido excluído com sucesso!";
 
-            return View("Mensagem");
+            return View();
         }
     }
 }

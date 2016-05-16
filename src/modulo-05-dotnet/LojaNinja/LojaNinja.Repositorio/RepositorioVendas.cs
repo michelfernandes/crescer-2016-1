@@ -61,7 +61,14 @@ namespace LojaNinja.Repositorio
 
         public void ExcluirPedido(int id)
         {
-            //TODO: Implementar
+            string texto = "Número Pedido;Data Pedido;Data Desejo Entrega;Nome Produto;Valor Venda;Tipo Pagamento;Nome Cliente;Cidade;Estado;Urgente";
+            var pedidos = this.ObterPedidos();
+            pedidos.Remove(pedidos.FirstOrDefault(pedido => pedido.Id == id));            
+            foreach (var x in pedidos)
+            {
+                texto += this.ConvertePedidoEmLinhaCSV(x, x.Id);
+            }
+            File.WriteAllText(PATH_ARQUIVO, texto);
         }
 
         private List<Pedido> ConverteLinhasEmPedidos(List<string> linhasArquivo)
