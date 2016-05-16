@@ -6,9 +6,8 @@
 
 <h2>Login</h2>
 
-@using (Html.BeginForm("Login", "Pedido", FormMethod.Post, new { @class = "form" }))
+@using (Html.BeginForm("Entrar", "Login", FormMethod.Post, new { @class = "form" }))
 {
-    <!-- Este carinha aqui que gera o token de segurança do form. -->
     @Html.AntiForgeryToken()
     <div>
         @Html.ValidationSummary(excludePropertyErrors: false)
@@ -26,5 +25,6 @@
     </div>
 }
 <div>
-    <a href="~/Pedido/CadastroUsuario">Cadastre-se.</a>
+    Ainda não tem uma conta?
+    <a href="~/Login/Cadastro">Cadastre-se.</a>
 </div>

@@ -13,26 +13,6 @@ namespace LojaNinja.MVC.Controllers
     {
         private RepositorioVendas repositorio = new RepositorioVendas();
 
-        public ActionResult Login()
-        {
-            /* if (false)//verifica se esta logado
-             {
-                 return View();
-             }
-
-             return RedirectToAction("Listagem");*/
-            return View();
-
-        }
-
-        public ActionResult UsuarioCadastro()
-        {
-           /* if (model.Senha != model.ConfirmarSenha )
-                ModelState.AddModelError("", "As senhas devem ser iguais");*/
-
-            return View("CadastroUsuario");
-        }
-
         public ActionResult Manter(int? id)
         {
             if (id.HasValue)
@@ -113,7 +93,7 @@ namespace LojaNinja.MVC.Controllers
 
             ViewBag.Mensagem = "Pedido excluído com sucesso!";
 
-            return View();
+            return View("Mensagem");
         }
     }
 }

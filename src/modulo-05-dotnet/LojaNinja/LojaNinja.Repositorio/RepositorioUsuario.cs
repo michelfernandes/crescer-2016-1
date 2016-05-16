@@ -7,32 +7,34 @@ using System.Threading.Tasks;
 
 namespace LojaNinja.Repositorio
 {
-    class RepositorioUsuario
+    public class RepositorioUsuario : IUsuarioRepositorio
     {
-         // FINGE QUE ESSA LISTA É NOSSO BANCO DE DADOS =)
-         private List<Usuario>  usuarios = new List<Usuario>();
 
-        private void CadastroPadrao()
+        private List<Usuario> _usuarios;
+
+        public RepositorioUsuario()
         {
-            usuarios.Add(new Usuario()
+            _usuarios = new List<Usuario>();
+
+            _usuarios.Add(new Usuario()
             {
                 Email = "admin@admin.com",
-                Nome = "Administrador",
-                Senha = "63874adc5789a6e2e1fc51e40871dd53",
-                Permissoes = new string[] { "ADMIN" }
+                Senha = "e99a18c428cb38d5f260853678922e03", //abc123
+                Nome = "Usuário Comum"
             });
-        }
-         // VOCE NUNCA VIU ISSO =P
 
-         public Usuario BuscarUsuarioPorAutenticacao(string email, string senha)
+           
+        }
+
+        public Usuario BuscarUsuarioPorAutenticacao(string email, string senha)
          {
-             return usuarios.FirstOrDefault(
+             return _usuarios.FirstOrDefault(
                  c => c.Email.Equals(email) && c.Senha.Equals(senha));
          }
 
         public void CadastrarUsuario(string email, string nome, string senha, string[] permissoes)
         {
-            usuarios.Add(new Usuario()
+            _usuarios.Add(new Usuario()
             {
                 Email = email,
                 Nome = nome,

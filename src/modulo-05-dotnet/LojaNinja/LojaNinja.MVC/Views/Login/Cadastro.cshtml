@@ -4,10 +4,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Criar conta</h2>
-@using (Html.BeginForm("UsuarioCadastro", "Pedido", FormMethod.Post, new { @class = "form" }))
+@if (@ViewBag.Mensagem != null)
 {
-    <!-- Este carinha aqui que gera o token de segurança do form. -->
+    <h3 class="alert alert-success">@ViewBag.Mensagem</h3>
+}
+
+
+<h2>Criar conta</h2>
+@using (Html.BeginForm("ValidaCadastro", "Login", FormMethod.Post, new { @class = "form" }))
+{
     @Html.AntiForgeryToken()
     <div>
         @Html.ValidationSummary(excludePropertyErrors: false)
@@ -30,6 +35,8 @@
     </div>
     <div class="form-group">
         <input type="submit" value="Cadastrar" />
-    </div>
+    </div>    
 }
+
+<a href="~/Login/Index" class="btn btn-default">Voltar</a>
 
