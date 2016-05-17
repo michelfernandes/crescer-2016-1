@@ -11,26 +11,16 @@ namespace LojaNinja.Dominio
     {
         private IUsuarioRepositorio _usuarioRepositorio;
 
-        // Nós sabemos que precisaremos buscar nosso usuário de um repositório,
-        // Mas aqui, não nos interessa de onde ele vem, se vem do banco, se vem de um arquivo texto, etc.
-        public UsuarioServico(IUsuarioRepositorio usuarioRepositorio)
+         public UsuarioServico(IUsuarioRepositorio usuarioRepositorio)
         {
             _usuarioRepositorio = usuarioRepositorio;
         }
 
         public Usuario BuscarUsuarioPorAutenticacao(string email, string senha)
         {
-            // a senha por padrão está normal.
-            // como no banco ela está criptografada, vamos criptografar ela e então comparar com a criptografada
-            // no banco.
-            string senhaCriptografada = Criptografar(senha);
+           string senhaCriptografada = Criptografar(senha);
 
-            // você deve estar se perguntando por que diabos eu não uso direto o repositório ao invés de 
-            // ter criado uma classe de serviço?
-            // Bem, repositórios devem apenas buscar dados e guardar dados.
-            // Aqui nós temos algo a mais, temos uma CRIPTOGRAFIA!
-            // Criptografia não faz parte do repositório, por isso criamos essa classe intermediária.
-            Usuario usuarioEncontrado = _usuarioRepositorio.BuscarUsuarioPorAutenticacao(email, senhaCriptografada);
+           Usuario usuarioEncontrado = _usuarioRepositorio.BuscarUsuarioPorAutenticacao(email, senhaCriptografada);
 
             return usuarioEncontrado;
         }
@@ -45,10 +35,6 @@ namespace LojaNinja.Dominio
         }
 
 
-        // Utilizamos este cara para criptografar um texto.
-        // MD5 é muito simples e poderíamos utilizar SALT e etc, mas por hora, vamos simplificar.
-        // No futuro, se precisarmos utilizar esse método em um outro lugar, devemos refatorar e
-        // separá-lo em outra classe.
         private string Criptografar(string texto)
         {
             using (MD5 md5Hash = MD5.Create())

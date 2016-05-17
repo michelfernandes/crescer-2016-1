@@ -14,6 +14,7 @@ namespace LojaNinja.MVC.Controllers
     {
         private RepositorioVendas repositorio = new RepositorioVendas();
 
+        [HttpGet]
         [CWIToken]
         public ActionResult Manter(int? id)
         {
@@ -38,6 +39,7 @@ namespace LojaNinja.MVC.Controllers
             }
         }
 
+        [HttpGet]
         [CWIToken]
         public ActionResult Salvar(PedidoModel model)
         {
@@ -67,6 +69,7 @@ namespace LojaNinja.MVC.Controllers
             return View("Manter", model);
         }
 
+        [HttpGet]
         [CWIToken]
         public ActionResult Detalhes(int id)
         {
@@ -75,6 +78,7 @@ namespace LojaNinja.MVC.Controllers
             return View(pedido);
         }
 
+        [HttpGet]
         [CWIToken]
         public ActionResult Listagem(string cliente, string produto)
         {
@@ -92,6 +96,7 @@ namespace LojaNinja.MVC.Controllers
             return View(pedidos);
         }
 
+        [HttpGet]
         [CWIToken]
         public ActionResult Excluir(int id)
         {

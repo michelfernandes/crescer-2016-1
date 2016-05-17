@@ -9,7 +9,6 @@ namespace LojaNinja.MVC.Models
 {
     public class LoginViewModel
     {
-        // Criamos esta model para seja o modelo do post de dados do login.
             [Required]
             [DisplayName("E-mail")]
             [StringLength(100)]
