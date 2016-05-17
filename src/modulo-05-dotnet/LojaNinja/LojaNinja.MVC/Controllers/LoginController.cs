@@ -14,13 +14,13 @@ namespace LojaNinja.MVC.Controllers
     public class LoginController : Controller
     {
 
-        private UsuarioServico _usuarioServico; 
+        private UsuarioServico _usuarioServico;
 
         public LoginController()
-        {
-            _usuarioServico = new UsuarioServico(
-                    new RepositorioUsuario()
-                );
+        {            
+             _usuarioServico = new UsuarioServico(
+                 new RepositorioUsuarioADO()
+             );            
         }
 
         [HttpGet]
