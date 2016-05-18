@@ -9,7 +9,7 @@
 @using (Html.BeginForm("Salvar", "Pedido", FormMethod.Post))
 {
     <div class="form-horizontal">
-        <h4>PedidoModel</h4>
+        <h2>Cadastro</h2>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
@@ -76,9 +76,6 @@
     </div>
 }
 
-<div>
-    <a href="~/Pedido/Listagem">Listagem de pedidos</a>
-</div>
 
 
 
