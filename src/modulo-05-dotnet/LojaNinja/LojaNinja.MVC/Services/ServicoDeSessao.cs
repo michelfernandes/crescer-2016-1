@@ -51,5 +51,19 @@ namespace BaseAulaSeguranca.Services
 
             HttpContext.Current.Response.Cookies.Set(cookieDeAutenticacao);
         }
+
+        public static void Sair()
+        {
+            if (EstaLogado)
+            {
+                HttpCookie cookieDeAutenticacao = HttpContext.Current.Request.Cookies.Get(COOKIE_AUTENTICACAO);
+
+                _usuariosLogados.Remove(cookieDeAutenticacao.Value);
+
+                cookieDeAutenticacao.Expirar();
+
+                HttpContext.Current.Session.Abandon();
+            }
+        }
     }
 }

@@ -79,5 +79,12 @@ namespace LojaNinja.MVC.Controllers
 
             return View("Index", loginViewModel);
         }
+
+        [HttpGet]
+        public ActionResult Loggout()
+        {
+            ServicoDeSessao.Sair();
+            return RedirectToAction("Index");
+        }
     }
 }
