@@ -23,7 +23,7 @@ namespace LojaNinja.MVC.Models
             [Required]
             [DisplayName("Senha")]
             [RegularExpression(@"^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$",
-            ErrorMessage = "A senha deve ter no mínimo 8 caracteres, uma letra minúscula e uma maiúscula.")]
+            ErrorMessage = "A senha deve ter no mínimo 8 caracteres, um dígito, uma letra minúscula e uma maiúscula.")]
         public string Senha { get; set; }
 
             [Required]
