@@ -41,7 +41,8 @@ namespace LojaNinja.MVC.Controllers
             {
                 ModelState.AddModelError("", "As senhas devem ser iguais");                
             }
-            else
+            
+            if(ModelState.IsValid)
             {
                 string[] permissoes = new string[] { "COMUM" };
 

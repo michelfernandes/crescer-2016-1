@@ -43,7 +43,8 @@ namespace LojaNinja.Repositorio
 
         public void CadastrarUsuario(string email, string nome, string senha, string[] permissoes)
         {
-            throw new NotImplementedException();
+           // TODO: implementar cadastro ADO
+           // throw new NotImplementedException();
         }
     }
 }
