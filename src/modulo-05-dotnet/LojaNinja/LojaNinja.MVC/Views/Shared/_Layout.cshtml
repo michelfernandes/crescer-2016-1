@@ -12,14 +12,54 @@
     <title>@ViewBag.Title</title>
     <link href="~/Content/bootstrap.css" rel="stylesheet" />
     <link href="~/Content/Custom/principal.css" rel="stylesheet" />
+
+    <style>
+        body{
+            background-color:#E0FFFF;
+        }
+    </style>
+
 </head>
 <body>
-    <h1 class="site-title">Loja Ninja</h1>
-    <div class="container"> 
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Loja Ninja</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="~/Pedido/Manter">Cadastrar <span class="glyphicon glyphicon-plus-sign"></span></a></li>
+                    <li><a href="~/Pedido/Listagem">Listar <span class="glyphicon glyphicon-align-justify"></span></a></li>                   
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="http://placehold.it/18x18" class="profile-image img-circle"> Usuario <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#"><i class="fa fa-cog"></i> Sobre</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#"><i class="fa fa-sign-out"></i> Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div><!--/.container-fluid -->
+    </nav>
+
+    <div class="container corpo"> 
         @RenderBody()
     </div>
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script> 
+    <script src="~/Scripts/bootstrap.min.js"></script>
     @RenderSection("scripts", false)   
 </body>
 </html>
