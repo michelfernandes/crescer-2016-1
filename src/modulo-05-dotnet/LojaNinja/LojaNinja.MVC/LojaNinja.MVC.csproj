@@ -125,6 +125,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PedidoController.cs" />
+    <Compile Include="Extensions\HttpCookieExtensions.cs" />
     <Compile Include="Filters\CWIToken.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
