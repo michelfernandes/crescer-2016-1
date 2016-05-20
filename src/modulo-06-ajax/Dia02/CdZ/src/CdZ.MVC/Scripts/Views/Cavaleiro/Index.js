@@ -1,5 +1,7 @@
 ﻿'use strict';
 
+var arrayCavaleiros = [];
+
 function carregarDadosNaPagina() {
     $.ajax({ url: urlCavaleiroGet, type: 'GET' })
     .then(
@@ -10,6 +12,7 @@ function carregarDadosNaPagina() {
                 $cavaleiros.append(
                     $('<li>').append(cava.Nome)
                 );
+                arrayCavaleiros.push(cava.Id);
             });
         },
         function onError(res) {
@@ -64,6 +67,26 @@ function registrarEventoDoBotao() {
     });
 };
 registrarEventoDoBotao();
+
+$(document).ready(
+            function () {
+                setInterval(function () {                    
+                    $.ajax({ url: urlCavaleiroGet, type: 'GET' })
+                    .done(function (res) {
+
+                        res.data.forEach(function (e) {
+                            if($.inArray(e.Id,arrayCavaleiros) === -1)
+                            {
+                                $('#cavaleiros').append(
+                                     $('<li>').append(e.Nome)
+                                    );
+                                arrayCavaleiros.push(e.Id);
+                            }
+                        });
+
+                    })
+                }, 5000);
+            });
 
 
 /*.done(function (res) {
