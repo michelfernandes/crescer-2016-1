@@ -7,7 +7,7 @@ $frmBuscaEcletica.submit(function (e) {
     $('#lista').children().detach();
 
     var idArtista;
-    var $artista = encodeURI( $('input[name=nome]').val() );
+    var $artista =  $('input[name=nome]').val() ;
     
     $.ajax({ url: 'https://api.spotify.com/v1/search?q=' + $artista + '&type=artist', type: 'GET' })
        .done(function (res) {
