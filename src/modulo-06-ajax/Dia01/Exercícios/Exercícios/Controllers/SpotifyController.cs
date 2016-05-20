@@ -13,5 +13,10 @@ namespace Exercícios.Controllers
         {
             return View();
         }
+
+        public ActionResult ConsultaEcletica()
+        {
+            return View();
+        }
     }
 }

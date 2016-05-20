@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewBag.Title = "ConsultaEcletica";
+}
+
+<h2>Consulta ecletica</h2>
+
+<form id="frmBuscaEcletica" method="POST">
+    <label for="txtArtista">Nome do artista: </label>
+    <input id="txtArtista" type="text" name="nome" placeholder="Ex: Elza Ramalho"> <br/>
+    <button type="submit" class="btn btn-primary">Pesquisar!</button>
+</form>
+
+<ul id="lista"></ul>
+
+    @section scripts
+{
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+        <script src="~/scripts/View/BuscaEcletica.js"></script>
+    }
