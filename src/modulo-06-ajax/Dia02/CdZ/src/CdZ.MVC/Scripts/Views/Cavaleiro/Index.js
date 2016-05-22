@@ -109,26 +109,19 @@ $(document).ready(
                 }, 5000);
             });
 
+$('#btnAdicionarGolpe').click(function () {
+    var $novoTxt = $('<input>').attr('name', 'golpe').attr('type', 'text').attr('placeholder', 'Ex: Pó de diamante');
+    $('#novosGolpes').append( $('<li>').append($novoTxt) );
+});
 
-/*.done(function (res) {
-    console.log(res.data);
-        var $cavaleiros = $('#cavaleiros');
-        res.data.forEach(function (cava) {
-            $cavaleiros.append(
-                $('<li>').append(cava.Nome)
-            );
-        });
-})
-.fail(function (res) {
-    console.error(':(');
-    console.error(res);
-
-    var criarSpanComErro = function (msg) {
-        return $('<span>').text(msg).addClass('erro');
-    };
-
-    $('#feedback')
-    .append(criarSpanComErro(res.status))
-    .append($('<br>'))
-    .append(criarSpanComErro(res.statusText));
-});*/
+$('#btnAdicionarImg').click(function () {
+var $novoTxt = $('<input>').attr('name', 'urlImagem').attr('type', 'text').attr('placeholder', 'Ex: bit.ly/shiryu.png');
+var $novoCheckbox =
+  $('<label>').append(
+    $('<input>')
+    .attr('type', 'checkbox')
+    .attr('name', 'isThumb')
+    .attr('checked', 'checked')
+  ).append('É thumbnail?');
+$('#novasImagens').append( $('<li>').append($novoTxt).append($novoCheckbox));
+});
