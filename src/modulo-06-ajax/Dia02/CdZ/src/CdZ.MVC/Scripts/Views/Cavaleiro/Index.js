@@ -7,11 +7,10 @@ function carregarDadosNaPagina() {
     .then(
         function onSuccess(res) {
             console.log(res.data);
-            var $cavaleiros = $('#cavaleiros');
             res.data.forEach(function (cava) {
-                $cavaleiros.append(
-                    $('<li>').append(cava.Nome)
-                );
+                
+                carregarCavaleiro(cava.Nome);
+
                 arrayCavaleiros.push(cava.Id);
             });
         },
@@ -68,6 +67,14 @@ function registrarEventoDoBotao() {
 };
 registrarEventoDoBotao();
 
+function carregarCavaleiro(nome){
+    $('#cavaleiros').append(
+                    $('<li>').append(nome)
+                     .append($('<button>').text('Editar'))
+                     .append($('<button>').text('Excluir'))
+                );
+}
+
 function notificarNovosCavaleiros(numero) {
     Notification.requestPermission().then(function (result) {
         console.log(result);
@@ -91,9 +98,8 @@ $(document).ready(
                         res.data.forEach(function (e) {
                             if($.inArray(e.Id,arrayCavaleiros) === -1)
                             {
-                                $('#cavaleiros').append(
-                                     $('<li>').append(e.Nome)
-                                    );
+                                carregarCavaleiro(e.Nome);
+
                                 arrayCavaleiros.push(e.Id);
                                 cont++;
                             }
