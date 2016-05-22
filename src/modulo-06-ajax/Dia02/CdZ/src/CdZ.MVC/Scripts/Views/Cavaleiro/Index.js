@@ -68,12 +68,26 @@ function registrarEventoDoBotao() {
 };
 registrarEventoDoBotao();
 
+function notificarNovosCavaleiros(numero) {
+    Notification.requestPermission().then(function (result) {
+        console.log(result);
+        if (result === 'granted') {
+            var plural = (numero === 1 ? '' : 's');
+            var options = {
+                body: numero + ' novo'+ plural +' cavaleiro' + plural + ' adicionado' + plural,
+                icon: 'http://vignette1.wikia.nocookie.net/vsbattles/images/4/41/Seiya_Render_1.png/revision/latest?cb=20160227173402'
+            }
+            new Notification('', options);
+        }
+    });
+};
+
 $(document).ready(
             function () {
                 setInterval(function () {                    
                     $.ajax({ url: urlCavaleiroGet, type: 'GET' })
                     .done(function (res) {
-
+                        var cont = 0;
                         res.data.forEach(function (e) {
                             if($.inArray(e.Id,arrayCavaleiros) === -1)
                             {
@@ -81,9 +95,10 @@ $(document).ready(
                                      $('<li>').append(e.Nome)
                                     );
                                 arrayCavaleiros.push(e.Id);
+                                cont++;
                             }
                         });
-
+                        if (cont != 0)notificarNovosCavaleiros(cont);
                     })
                 }, 5000);
             });
