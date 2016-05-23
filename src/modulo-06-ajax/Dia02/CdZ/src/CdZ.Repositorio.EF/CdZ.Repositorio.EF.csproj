@@ -59,6 +59,10 @@
     <Compile Include="Migrations\201605231845047_ExcluirEmCascata.Designer.cs">
       <DependentUpon>201605231845047_ExcluirEmCascata.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201605231908094_CascadeDeleteLocal.cs" />
+    <Compile Include="Migrations\201605231908094_CascadeDeleteLocal.Designer.cs">
+      <DependentUpon>201605231908094_CascadeDeleteLocal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="CavaleiroRepositorioEF.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201605231845047_ExcluirEmCascata.resx">
       <DependentUpon>201605231845047_ExcluirEmCascata.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201605231908094_CascadeDeleteLocal.resx">
+      <DependentUpon>201605231908094_CascadeDeleteLocal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
