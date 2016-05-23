@@ -43,6 +43,7 @@ function registrarEventoDoBotao() {
             data: {
                 Nome: 'Xiru ' + new Date().getTime(),
                 AlturaCm: 187,
+                pesoLb: 220.423432,
                 Signo: 7,
                 TipoSanguineo: 1,
                 DataNascimento: new Date(),
@@ -88,7 +89,7 @@ function registrarEventoDoBotao() {
             data: {
                 Nome: formData.get('nome'),
                 AlturaCm: parseFloat(formData.get('alturaMetros')) * 100,
-                pesoLb: parseFloat(formData.get('pesoKg')) * 2.20462262,
+                PesoLb: parseFloat(formData.get('pesoKg')) * 2.20462262,
                 Signo: formData.get('signo'),
                 TipoSanguineo: formData.get('tipoSanguineo'),
                 DataNascimento: formData.get('dataNascimento'),
