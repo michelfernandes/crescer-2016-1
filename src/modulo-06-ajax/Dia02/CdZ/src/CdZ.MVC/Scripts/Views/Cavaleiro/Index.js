@@ -9,7 +9,7 @@ function carregarDadosNaPagina() {
             console.log(res.data);
             res.data.forEach(function (cava) {
                 
-                carregarCavaleiro(cava.Nome);
+                carregarCavaleiro(cava);
 
                 arrayCavaleiros.push(cava.Id);
             });
@@ -109,9 +109,19 @@ function registrarEventoDoBotao() {
 };
 registrarEventoDoBotao();
 
-function carregarCavaleiro(nome){
+function obterThumb(cavaleiro) {
+    // Pegando a primeira imagem que é thumbnail
+    return cavaleiro.Imagens.filter(function (i) {
+        return i.IsThumb.is(':checked');
+    })[0];
+};
+
+function carregarCavaleiro(cavaleiro) {
+
+    var imagem = obterThumb(cavaleiro) || { Url: 'https://i.ytimg.com/vi/trKzSiBOqt4/hqdefault.jpg' };
+
     $('#cavaleiros').append(
-                    $('<li>').append(nome)
+                    $('<li>').append(cavaleiro.Nome).append($('<img>').attr('src', imagem.Url).addClass('imgCava'))
                      .append($('<button>').text('Editar'))
                      .append($('<button>').text('Excluir'))
                 );
@@ -140,7 +150,7 @@ $(document).ready(
                         res.data.forEach(function (e) {
                             if($.inArray(e.Id,arrayCavaleiros) === -1)
                             {
-                                carregarCavaleiro(e.Nome);
+                                carregarCavaleiro(e);
 
                                 arrayCavaleiros.push(e.Id);
                                 cont++;
