@@ -39,7 +39,13 @@ namespace CdZ.MVC.Controllers
         {
             _cavaleiros.Excluir(id);
             //retornar a lista atualizada de todos cavaleiros
-            return Json(new { data = _cavaleiros.Todos() });
+            return NoContentJsonVazio();
+        }
+
+        private JsonResult NoContentJsonVazio()
+        {
+            Response.StatusCode = (int)HttpStatusCode.NoContent;
+            return Json(new { });
         }
     }
 }
