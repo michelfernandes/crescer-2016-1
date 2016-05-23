@@ -47,6 +47,7 @@ namespace CdZ.Repositorio.EF
                     .Include(_ => _.LocalTreinamento)
                     .Include(_ => _.Golpes)
                     .Include(_ => _.Imagens)
+                    .OrderBy(c => c.Nome)
                     .ToList();
             }
         }
