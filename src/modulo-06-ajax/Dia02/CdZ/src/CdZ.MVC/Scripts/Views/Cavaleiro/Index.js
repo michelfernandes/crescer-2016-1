@@ -64,6 +64,48 @@ function registrarEventoDoBotao() {
         });
 
     });
+
+    $('#btnNovoCavaleiro').click(function (e) {
+
+        var formData = new FormData($('#frmNovoCavaleiro')[0]);
+
+        var novasImagens = [];
+        $('#novasImagens li').each(function (i) {
+            novasImagens.push({
+                url: $(this).find('input[name=urlImagem]').val(),
+                isThumb: $(this).find('input[name=isThumb]').is(':checked')
+            });
+        });
+
+        var novosGolpes = [];
+        $('#novosGolpes li').each(function (i) {
+            novosGolpes.push($(this).find('input[name=golpe]').val());
+        });
+
+        $.ajax({
+            url: urlCavaleiroPost,
+            type: 'POST',
+            data: {
+                Nome: formData.get('nome'),
+                AlturaCm: parseFloat(formData.get('alturaMetros')) * 100,
+                pesoLb: parseFloat(formData.get('pesoKg')) * 2.20462262,
+                Signo: formData.get('signo'),
+                TipoSanguineo: formData.get('tipoSanguineo'),
+                DataNascimento: formData.get('dataNascimento'),
+                Golpes: novosGolpes,
+                LocalNascimento: {
+                    Texto: formData.get('localNascimento')
+                },
+                LocalTreinamento: {
+                    Texto: formData.get('localTreinamento')
+                },
+                Imagens: novasImagens
+            }
+        });
+
+        $frmNovoCavaleiro[0].reset();
+        e.preventDefault();
+    });
 };
 registrarEventoDoBotao();
 
