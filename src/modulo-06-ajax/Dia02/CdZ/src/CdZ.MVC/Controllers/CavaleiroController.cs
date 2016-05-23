@@ -33,5 +33,13 @@ namespace CdZ.MVC.Controllers
             Response.StatusCode = (int)HttpStatusCode.Created;
             return Json(new { id = novoId });
         }
+
+        [HttpDelete]
+        public JsonResult Delete(int id)
+        {
+            _cavaleiros.Excluir(id);
+            //retornar a lista atualizada de todos cavaleiros
+            return Json(new { data = _cavaleiros.Todos() });
+        }
     }
 }

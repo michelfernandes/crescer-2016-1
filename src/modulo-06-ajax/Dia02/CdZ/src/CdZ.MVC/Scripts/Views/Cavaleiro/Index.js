@@ -112,20 +112,31 @@ registrarEventoDoBotao();
 function obterThumb(cavaleiro) {
     // Pegando a primeira imagem que é thumbnail
     return cavaleiro.Imagens.filter(function (i) {
-        return i.IsThumb.is(':checked');
+        return i.IsThumb==true;
     })[0];
 };
 
 function carregarCavaleiro(cavaleiro) {
 
+    console.log(cavaleiro.Imagens);
+
+    
     var imagem = obterThumb(cavaleiro) || { Url: 'https://i.ytimg.com/vi/trKzSiBOqt4/hqdefault.jpg' };
 
     $('#cavaleiros').append(
-                    $('<li>').append(cavaleiro.Nome).append($('<img>').attr('src', imagem.Url).addClass('imgCava'))
+                    $('<li>').append($('<img>').attr('src', imagem.Url).addClass('imgCava')).append(cavaleiro.Nome)
                      .append($('<button>').text('Editar'))
-                     .append($('<button>').text('Excluir'))
+
+                     .append($('<button>', { text: 'Excluir', click: function () { excluirCavaleiro(cavaleiro); } }))
                 );
 }
+
+function excluirCavaleiro(cava) {
+
+    $.ajax({ url: '/Cavaleiro/Delete', type: 'DELETE', data: { id: cava.Id } })
+        .fail(function (res) { console.error(res); })
+        .done(function(res) { console.log(res) });
+};
 
 function notificarNovosCavaleiros(numero) {
     Notification.requestPermission().then(function (result) {
