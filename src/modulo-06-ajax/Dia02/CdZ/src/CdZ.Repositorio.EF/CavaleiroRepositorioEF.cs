@@ -28,7 +28,12 @@ namespace CdZ.Repositorio.EF
         {
             using (var db = new ContextoDeDados())
             {
-                return db.Cavaleiro.Find(id);
+                return db.Cavaleiro
+                   .Include(_ => _.LocalNascimento)
+                   .Include(_ => _.LocalTreinamento)
+                   .Include(_ => _.Golpes)
+                   .Include(_ => _.Imagens)
+                   .SingleOrDefault(_ => _.Id == id);
             }
         }
 
@@ -37,7 +42,12 @@ namespace CdZ.Repositorio.EF
             using (var db = new ContextoDeDados())
             {
                 //TODO: paginar
-                return db.Cavaleiro.ToList();
+                return db.Cavaleiro
+                    .Include(_ => _.LocalNascimento)
+                    .Include(_ => _.LocalTreinamento)
+                    .Include(_ => _.Golpes)
+                    .Include(_ => _.Imagens)
+                    .ToList();
             }
         }
 
@@ -50,8 +60,13 @@ namespace CdZ.Repositorio.EF
                  * infelizmente precisamos buscar o objeto no banco para então
                  * removê-lo.
                  */
-                Cavaleiro cavaleiroASerExcluido = db.Cavaleiro.Find(id);
-                db.Entry<Cavaleiro>(cavaleiroASerExcluido).State = EntityState.Deleted;
+                var cavaleiroASerExcluido = db.Cavaleiro.Find(id);
+                var localNascimento = db.Cavaleiro.Include(_ => _.LocalNascimento).Single(_ => _.Id == id).LocalNascimento;
+                var localTreinamento = db.Cavaleiro.Include(_ => _.LocalTreinamento).Single(_ => _.Id == id).LocalTreinamento;
+                // devido à FK partindo de cavaleiro para local primeiro removemos cavaleiro
+                db.Cavaleiro.Remove(cavaleiroASerExcluido);
+                db.Local.Remove(localNascimento);
+                db.Local.Remove(localTreinamento);
                 db.SaveChanges();
             }
         }
