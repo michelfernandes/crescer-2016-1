@@ -33,10 +33,11 @@ COMMIT;
 
 --5)Identifique e liste os produtos que não tiveram nenhum pedido, considere os relacionamentos no modelo de dados,
 --pois não há relacionamento direto entre Produto e Pedido (será preciso relacionar PedidoItem).
-SELECT A.*
-FROM PRODUTO A
-LEFT JOIN PEDIDOITEM B ON A.IDPRODUTO = B.IDPRODUTO
-WHERE B.IDPEDIDOITEM IS NULL;
+SELECT *
+FROM PRODUTO 
+WHERE NOT EXISTS(SELECT 1
+                  FROM PEDIDOITEM
+                  WHERE PEDIDOITEM.IDPRODUTO = PRODUTO.IDPRODUTO);
 
 --6)Liste todos os pedidos de um determinado cliente, considere que sempre que for executar esta consulta será informado
 --o IDCliente como parâmetro. Deverão ser listados: Data do Pedido, Produto, Quantide, Valor Unitário, e valor total.
@@ -61,4 +62,13 @@ AND C.IDPEDIDO = :pIDPEDIDO;
 --8)Utilizando de funções de agrupamento (aggregation function), faça uma consulta que liste agrupando por ano e mês
 --a quantidade de pedidos comprados, a quantidade de produtos distintos comprados, o valor total dos pedidos,
 --o menor valor de um pedido, o maior valor de um pedido e valor médio de um pedido.
-
+SELECT TO_CHAR( ped.DATAPEDIDO, 'mm/yyyy') as ANO_MES,
+      COUNT(DISTINCT item.IDPRODUTO)as PRODUTOS_DISTINTOS,
+      SUM(ped.VALORPEDIDO) as VALOR_PEDIDOS,
+      MIN(ped.VALORPEDIDO) as MENOR_PEDIDO,
+      MAX(ped.VALORPEDIDO) as MAIOR_PEDIDO,
+      round(AVG(ped.VALORPEDIDO),2) as MEDIA_PEDIDOS,
+      COUNT(DISTINCT ped.IDPEDIDO) as TOTAL_PEDIDOS
+FROM PEDIDO ped
+  INNER JOIN PEDIDOITEM item ON item.IDPEDIDO = ped.IDPEDIDO
+  GROUP BY TO_CHAR(ped.DATAPEDIDO,'mm/yyyy');
