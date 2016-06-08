@@ -10,7 +10,7 @@ public class Parcelator {
     public void parcelar(double valor, double j,int parcelas,Date data){
         Calendar c = Calendar.getInstance();
         c.setTime(data);
-        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyy");
+        SimpleDateFormat dt = new SimpleDateFormat("dd/MM/yyyy");
         double valorParcela = valor / parcelas;
         double juros = valorParcela * (j/100);
         double resultado = juros + valorParcela;

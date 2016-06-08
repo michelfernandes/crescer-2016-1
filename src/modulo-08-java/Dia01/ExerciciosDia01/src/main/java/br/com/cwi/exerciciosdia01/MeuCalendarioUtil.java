@@ -67,10 +67,7 @@ public class MeuCalendarioUtil {
     }
     
     public static void main(String[] args) {
-        String aux;
-        MeuCalendarioUtil teste = new MeuCalendarioUtil();  
-        Date data = new Date("06/10/2016");
-        aux = teste.diaDaSemanda(data);
-        System.out.print(aux);
+        System.out.println("- Retornar dia da semana");
+        System.out.println("- Tempo decorrido até hoje");
     }
 }

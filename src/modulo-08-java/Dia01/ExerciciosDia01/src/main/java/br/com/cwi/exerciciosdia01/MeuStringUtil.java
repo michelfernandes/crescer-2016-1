@@ -60,10 +60,10 @@ public class MeuStringUtil {
     }
     
     public static void main(String[] args) {
-        boolean aux;        
-        MeuStringUtil teste = new MeuStringUtil();
-        aux = teste.verificaPalindromo("teste");
-        System.out.print(aux);
+        System.out.println("- Verificar se a string está vazia");
+        System.out.println("- Contar o número de vogais");
+        System.out.println("- Inverter string");
+        System.out.println("- Verificar se a string é um palíndromo");
     }
     
 }
