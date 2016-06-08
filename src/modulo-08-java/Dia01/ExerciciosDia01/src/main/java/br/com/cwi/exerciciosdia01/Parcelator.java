@@ -9,8 +9,8 @@ public class Parcelator {
     public void parcelar(double valor, double j,int parcelas,Date data){
         Calendar c = Calendar.getInstance();
         c.setTime(data);
-        double juros = valor * (j/100);
         double valorParcela = valor / parcelas;
+        double juros = valorParcela * (j/100);
         double resultado = juros + valorParcela;
         for (int i=0;i<parcelas;i++){
         c.add(Calendar.MONTH, 1);
@@ -22,7 +22,7 @@ public class Parcelator {
     public static void main(String[] args) {
         Parcelator parcelator = new Parcelator();
         
-        parcelator.parcelar(1000,10,3,new Date());
+        parcelator.parcelar(1000,10,10,new Date());
         
     }
 }
