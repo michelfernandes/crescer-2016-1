@@ -1,0 +1,1 @@
+insert into pessoa (ID_PESSOA,NM_PESSOA) VALUES (3,'TESTE')
