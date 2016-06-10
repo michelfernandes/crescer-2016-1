@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -36,8 +37,56 @@ public class MeuSQLUtils {
             System.err.format("SQLException: %s", e);
         }
     }
+    
+    public static void importarCSV(){
+        
+        BufferedReader bufferReader = null;    
+        try {
+            bufferReader = MeuSQLUtils.getReader("importar.csv");
+            String linha;
+            long id;
+            String nome;
+            
+            String insert = "INSERT INTO PESSOA (ID_PESSOA,NM_PESSOA)"
+                           +"VALUES(?,?)";
+            while (true) {
+                linha = bufferReader.readLine();
+                if (linha != null) {
+                    id = Long.parseLong(linha.split(";")[0]);
+                    nome = linha.split(";")[1];
+                
+                    try(Connection connection = ConnectionUtils.getConnection()){
+                        try(PreparedStatement preparedStatement = connection.prepareStatement(insert)){
+                            preparedStatement.setLong(1, id);
+                            preparedStatement.setString(2, nome);
+                            preparedStatement.executeUpdate();
+                        }catch(final SQLException e){
+                            System.err.format("SQLException: %s", e);
+                        }
+                    }catch(final SQLException e){
+                        System.err.format("SQLException: %s", e);
+                    }                   
+                    
+                } else {
+                    break;
+                }
+            }
+                        
+        } catch (Exception e) {
+            //....
+        } finally {
+            try {
+                if (bufferReader != null) {
+                    bufferReader.close();
+                }
+            } catch (IOException ex) {
 
-    public static void lerSQL() {
+            }
+        }
+        
+    }
+
+    public static void lerArquivo() {
 
         BufferedReader bufferReader = null;
         try {
@@ -53,9 +102,9 @@ public class MeuSQLUtils {
                     break;
                 }
             }
-
+            
             executarIntrucao(instrucao);
-
+            
         } catch (Exception e) {
             //....
         } finally {

@@ -6,7 +6,7 @@ public class Run {
     
     public static void main(String[] args) {
          
-        MeuSQLUtils.lerSQL();
-        
+        //MeuSQLUtils.lerArquivo();
+       MeuSQLUtils.importarCSV();
     }
 }
