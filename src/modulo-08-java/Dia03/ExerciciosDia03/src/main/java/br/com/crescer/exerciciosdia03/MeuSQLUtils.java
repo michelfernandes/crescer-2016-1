@@ -19,11 +19,16 @@ public class MeuSQLUtils {
     }
 
     private static void executarIntrucao(String instrucao) {
-        final String comando = instrucao;
+        final String comando[] = instrucao.split(";");
 
         try (final Connection connection = ConnectionUtils.getConnection()) {
             try (final Statement statement = connection.createStatement()) {
-                statement.executeUpdate(comando);
+                
+                for (String eachComando : comando) {
+                    statement.addBatch(eachComando);
+                }
+             statement.executeBatch();
+                
             } catch (final SQLException e) {
                 System.err.format("SQLException: %s", e);
             }
