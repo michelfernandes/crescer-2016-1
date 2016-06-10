@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -123,7 +124,6 @@ public class MeuSQLUtils {
 
             }
         }
-
     }
 
     public static void lerArquivo() {
@@ -156,6 +156,33 @@ public class MeuSQLUtils {
 
             }
         }
-
     }
+    
+    public static void exibirTabela(){
+        final String query = "SELECT * FROM PESSOA";
+        
+        try (final Connection connection = ConnectionUtils.getConnection()) {
+            try (final Statement statement = connection.createStatement()) {
+                try (final ResultSet resultSet = statement.executeQuery(query)) {
+                    
+                    //Referência: http://stackoverflow.com/questions/696782/retrieve-column-names-from-java-sql-resultset
+                    ResultSetMetaData rsmd = resultSet.getMetaData();
+                    String coluna1 = rsmd.getColumnName(1);
+                    String coluna2 = rsmd.getColumnName(2);
+                    System.out.println(coluna1 + " | " +coluna2);
+                    System.out.println("--------------------");
+                    while (resultSet.next()) {
+                        System.out.println(resultSet.getLong("ID_PESSOA")+" | "+resultSet.getString("NM_PESSOA"));
+                        }
+                } catch (final SQLException e) {
+                  System.err.format("SQLException: %s", e);
+                }
+            } catch (final SQLException e) {
+              System.err.format("SQLException: %s", e);
+            }
+        }catch (SQLException e) {
+          System.err.format("SQLException: %s", e);
+        }
+    }
+    
 }

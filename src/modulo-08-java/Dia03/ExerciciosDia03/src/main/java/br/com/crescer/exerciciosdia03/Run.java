@@ -8,6 +8,7 @@ public class Run {
          
         //MeuSQLUtils.lerArquivo();
         //MeuSQLUtils.importarCSV();
-        MeuSQLUtils.exportarCSV();
+        //MeuSQLUtils.exportarCSV();
+        MeuSQLUtils.exibirTabela();
     }
 }
