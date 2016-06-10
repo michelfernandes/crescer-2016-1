@@ -58,7 +58,7 @@ public class MeuSQLUtils {
                     while (resultSet.next()) {
                         try{
                         bufferedWriter = getWriter("exportar.csv");
-                        bufferedWriter.write(resultSet.getLong("ID_PESSOA")+";"+resultSet.getString("NM_PESSOA")+";");
+                        bufferedWriter.write(resultSet.getLong("ID_PESSOA")+";"+resultSet.getString("NM_PESSOA"));
                         bufferedWriter.newLine();
                         bufferedWriter.flush();
                         }catch(Exception e){
