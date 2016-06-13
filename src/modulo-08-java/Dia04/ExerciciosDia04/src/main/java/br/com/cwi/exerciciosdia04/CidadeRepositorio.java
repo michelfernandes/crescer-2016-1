@@ -11,22 +11,22 @@ public class CidadeRepositorio implements IRepositorio<Cidade>{
 
     @Override
     public List listAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ManagerUtils.session.createCriteria(Cidade.class).list();
     }
 
     @Override
-    public void insert(Cidade object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void insert(Cidade cidade) {
+        ManagerUtils.session.persist(cidade);
     }
 
     @Override
-    public void update(Cidade object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(Cidade cidade) {
+        ManagerUtils.session.merge(cidade);
     }
 
     @Override
-    public void delete(Cidade object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void delete(Cidade cidade) {
+        ManagerUtils.session.delete(cidade);
     }
     
 }

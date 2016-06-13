@@ -14,23 +14,23 @@ import java.util.List;
 public class ClienteRepositorio implements IRepositorio<Cliente>{
 
     @Override
-    public void insert(Cliente object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void insert(Cliente cliente) {
+        ManagerUtils.session.persist(cliente);
     }
 
     @Override
-    public void update(Cliente object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void update(Cliente cliente) {
+        ManagerUtils.session.merge(cliente);
     }
 
     @Override
-    public void delete(Cliente object) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void delete(Cliente cliente) {
+        ManagerUtils.session.delete(cliente);
     }
 
     @Override
     public List<Cliente> listAll() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return ManagerUtils.session.createCriteria(Cliente.class).list();
     }
     
 }
