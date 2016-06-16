@@ -21,6 +21,7 @@ public abstract class AbstractController<Entity, Service extends AbstractService
     @Override
     public void remove() {
         this.getService().remove(entity);
+        this.listAll();
     }
 
     @Override
