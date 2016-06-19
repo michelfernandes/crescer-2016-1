@@ -6,11 +6,16 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>         
     </head>
     <body> 
-        
+
         <div class="container">
-        <h1 th:text="'Bem vindo ' + ${name}"/>        
-        
-        <a href="/pessoa.html"> Manutenção de pessoas </a>
+            <h1 th:text="'Bem vindo ' + ${name}"/>        
+
+            <div>
+                <a href="/pessoa.html"> Manutenção de pessoas </a>
+            </div>
+            <div>
+                <a href="/cidade.html"> Manutenção de cidades </a>
+            </div>
         </div>
     </body>
 </html>
