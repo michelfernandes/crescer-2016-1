@@ -25,7 +25,7 @@ public class PessoaController {
         }
         model.addAttribute("pessoa", new Pessoa());
         model.addAttribute("pessoas", service.findAll());
-        return "manutencao";
+        return "pessoa-manutencao";
     }
     
     @RequestMapping(method = RequestMethod.POST)
@@ -33,6 +33,7 @@ public class PessoaController {
         if (p.getNascimento() == null) {
             p.setNascimento(new Date());
         }
+        
         service.save(p);
         return list(model, null);
     }
