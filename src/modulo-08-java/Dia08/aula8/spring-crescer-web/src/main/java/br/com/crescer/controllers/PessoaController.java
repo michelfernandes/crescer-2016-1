@@ -25,7 +25,7 @@ public class PessoaController {
         }
         model.addAttribute("pessoa", new Pessoa());
         model.addAttribute("pessoas", service.findAll());
-        return "index";
+        return "manutencao";
     }
     
     @RequestMapping(method = RequestMethod.POST)
