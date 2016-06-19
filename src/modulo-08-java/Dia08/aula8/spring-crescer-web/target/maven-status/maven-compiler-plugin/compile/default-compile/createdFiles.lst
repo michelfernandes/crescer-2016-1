@@ -1,1 +1,5 @@
+br\com\crescer\controllers\PessoaRest.class
+br\com\crescer\Pessoa.class
 br\com\crescer\AppRun.class
+br\com\crescer\services\PessoaService.class
+br\com\crescer\controllers\Example.class
