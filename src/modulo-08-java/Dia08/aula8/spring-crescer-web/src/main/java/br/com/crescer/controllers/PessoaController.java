@@ -19,10 +19,8 @@ public class PessoaController {
     PessoaService service;
     
     @RequestMapping(method = RequestMethod.GET)
-    public String list(Model model, @RequestParam(required = false) Long id) {
-        if (id != null) {
-            service.delete(id);
-        }
+    public String list(Model model) {
+        
         model.addAttribute("pessoa", new Pessoa());
         model.addAttribute("pessoas", service.findAll());
         return "pessoa-manutencao";
@@ -33,9 +31,15 @@ public class PessoaController {
         if (p.getNascimento() == null) {
             p.setNascimento(new Date());
         }
-        
         service.save(p);
-        return list(model, null);
+        return list(model);
     }
+    
+    @RequestMapping(value="/delete",method = RequestMethod.GET)
+    public String delete(@RequestParam ("id") Long id, Model model) {
+        
+        service.delete(id);
+        return list(model);
+    }  
     
 }
