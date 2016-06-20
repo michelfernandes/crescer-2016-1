@@ -5,30 +5,31 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-        <title th:text="#{title.cidade}"></title>
+        <title th:text="#{title.pessoa}"></title>
     </head>
     <body>
         <div class="container">
-
             <h1 th:text="#{cidade.form}" class="page-header"></h1>
-          
 
-            <table class="table table-hover">
-                <thead>
-                    <tr>
-                        <th th:text="#{cidade.id}"/>
-                        <th th:text="#{cidade.nome}"/>
-                        <th th:text="#{cidade.uf}"/>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr th:each="p : ${cidades}">
-                        <td th:text="${p.id}">ID</td>
-                        <td th:text="${p.nome}">NOME</td>
-                        <td th:text="${p.uf}">UF</td>
-                    </tr>
-                </tbody>
-            </table>
+            <form action="#" th:action="@{/cidade}" th:object="${cidade}" method="post">
+
+                <div class="form-group">
+                    <label for="nome" th:text="#{pessoa.nome}"></label>
+                    <input class="form-control" type="text" th:field="*{nome}" />
+                </div>
+
+                <div class="form-group">
+                    <label for="uf" th:text="#{cidade.uf}"></label>
+                    <input class="form-control" type="text" th:field="*{uf}" />
+                </div>
+
+                <div class="form-group">
+                    <input class="btn btn-success" type="submit" th:value="#{form.submit}" /> 
+                    <input class="btn btn-primary" type="reset" th:value="#{form.reset}" />
+                </div>
+            </form>
+            <a href="/" class="button btn btn-info">Voltar</a>
+            <a href="/cidade/listar" class="button btn btn-info">Listar</a>
         </div>
     </body>
 

@@ -25,13 +25,17 @@ public class CidadeController {
         model.addAttribute("cidades", service.findAll());
         return "cidade-manutencao";
     }
-//    
-//    @RequestMapping(method = RequestMethod.POST)
-//    public String salvar(@ModelAttribute Cidade c, Model model) {
-//        
-//        service.save(c);
-//        return list(model, null);
-//        
-//    }
+    
+    @RequestMapping(method = RequestMethod.POST)
+    public String save(@ModelAttribute Cidade c, Model model) {        
+        service.save(c);
+        return list(model, null);
+    }
+    
+    @RequestMapping("/listar")
+    public String listar(Model model) {
+        model.addAttribute("cidades", service.findAll());
+        return "cidade-listar";
+    }
     
 }
